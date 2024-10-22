@@ -1,6 +1,6 @@
 # Repository == ADSO == 3063934
 # analysis &amp; Software Development
-### SENA - CPIC - caldas regional
+### SENA - CPIC - Caldas Regional
 ---
 ## URL Resources
 - [drive documentation](https://drive.google.com/drive/folders/1cUEOsM44rpspMfyWvY_YlnXlIm9uffej?usp=share_link)   
