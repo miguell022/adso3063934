@@ -35,7 +35,7 @@ html {
 /*------------*/
 body {
     font-family: Roboto, sans-serif;
-    color: rgb(234, 234, 238);
+    color: rgb(205, 205, 211);
 }
 
 main {
@@ -59,14 +59,14 @@ main {
             font-weight: 200;
         }
         figure {
-            background-color: #fff3;
+            background-color: rgba(228, 224, 224, 0.382);
             border-radius: 100px;
             border: 10px; solid: #fff9;
             height: 200px;
             width: 200px;
         }
         h4 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 300;
         }
     }
