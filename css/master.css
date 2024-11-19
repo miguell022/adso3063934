@@ -35,7 +35,38 @@ html {
 /*------------*/
 body {
     font-family: Roboto, sans-serif;
-    color: rgb(16, 16, 94);
+    color: rgb(0, 0, 0);
+}
+
+
+nav.nav {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    a:is(:link, ::visited) {
+        border-radius: 50%;
+        border: 2xp solid red;
+        background-color: #fff6;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease-in;
+        width: 40px;
+        svg {
+            width: 24px;
+            transition: all 0.4s 0.2s ease-in;
+            fill: white;
+        }
+        &:hover {
+            background-color: #fffc;
+            svg {
+                transform: scale(1.2);
+            }
+            
+
+        }
+    }    
 }
 
 main {
@@ -45,7 +76,7 @@ main {
     flex-direction: column;
     min-height: 100dvh;
 
-    header {
+    header.header {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -55,22 +86,53 @@ main {
             font-weight: 500;
         }
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 200;
         }
         figure {
-            background-color: rgba(228, 224, 224, 0.382);
             border-radius: 100px;
-            border: 10px solid #fff9;
+            border: 6px solid #fff9;
             height: 200px;
             width: 200px;
+            img {
+                border-radius: 100%;
+                height: 188px;
+                width: 188px;
+                object-fit: cover;
+                
+            }
         }
-        h4 {
+        h3 {
             font-size: 1.6rem;
             font-weight: 300;
+            
         }
     }
-    menu {
+    section.section {
+        margin-top: 1rem;
+        border-radius: 6px;
+        padding: 1rem;
+        min-height: 30dvh;
+        width: 400px;
+        background-color: #0009;
+        h3 {
+            font-size: 1.8rem;
+            border-bottom: 2px dotted #fff6;
+        }
+        p.example {
+            color: rgb(0, 228, 8);
+            margin-top: 0.4rem;
+            font-size: 1.6rem;
+        }
+        xmp {
+            background-color: #0006;
+            border-radius: 6px;
+            color: #6fbf07;
+            font-size: 1rem;
+            padding: 10px 10px 20px;
+        }
+    }
+    menu.menu {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -84,7 +146,7 @@ main {
             gap: 0.6rem;
             text-decoration: none;
             width: 220px;
-            transition:  all 0.4s ease-in;
+            transition:  all 0.2s ease-in;
             span {
                 background-color: rgba(6, 6, 6, 0.6);
                 border-radius: 50%;
@@ -97,13 +159,15 @@ main {
                 width: 40px;
             }
             &:hover {
-                transform: scale(1.1);
+                background-color: #fffc;
+                span {
+                    border-radius: 50px;
+                    width: 60px;
+
+                }
             }
-            &:hover span {
-                transform: translateX(8px);
-                border-radius: 50px;
-                width: 60px;
-            }
+            
+            
         }
     }
 }
@@ -117,5 +181,33 @@ body.main-menu {
     background-attachment: fixed;
     background-size: cover;
 }
+/*-------------*/
+/* E M M E T*/
+/*-------------*/
+body.emmet {
+    background-color: #7ACB16;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%2367a818' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%2354851a' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%2342621c' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%232f3f1e' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%231C1C20' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+
+nav.nav {
+    a {
+        svg {
+            fill: #7ACB16;
+        }
+    }
+}
+menu.menu {
+    a:is(:link, :visited) {
+        color: #6fbf07;
+        span {
+            background-color: #79c911;
+        }
+    }
+}
+
+
+}
+
    
 
