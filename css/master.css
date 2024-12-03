@@ -43,10 +43,10 @@ nav.nav {
     position: fixed;
     top: 20px;
     left: 20px;
-    a:is(:link, ::visited) {
+    a:is(:link, :visited) {
         border-radius: 50%;
         border: 2xp solid red;
-        background-color: #fff6;
+        background-color: rgba(239, 231, 231, 0.4);
         height: 40px;
         display: flex;
         align-items: center;
