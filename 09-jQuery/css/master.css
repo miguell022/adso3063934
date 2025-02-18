@@ -1,0 +1,106 @@
+body {
+    background-color: #82d8ea;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    justify-content: center;
+    min-height: 100dvh;
+    color: rgb(254, 255, 255);
+}
+
+main {
+    background-color: #aca0a0;
+    border-radius: 3rem;
+    padding: 1rem;
+    width: 300px;
+
+    header {
+        h1 {
+            text-align: center;
+            border-bottom: 1px solid rgb(162, 62, 62);
+            margin: 0;
+        }
+        section.info {
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+            div {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                span {
+                    background: #444;
+                    color: #f2eded;
+                    border-radius: 50%;
+                    height: 30px;
+                    width: 30px;
+                    justify-content: center;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+    section.list {
+        article {
+            display: flex;
+            gap: 3rem;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(80, 65, 148);
+            border-radius: 0.9rem;
+            margin-bottom: 0.4rem;
+            padding-inline: 1rem;
+            &.checked {
+                background-color:rgb(80, 65, 148) !important;
+                p {
+                    text-decoration: line-through;
+                }
+            }
+            input {
+                accent-color: rgb(19, 218, 49);
+                zoom: 1.4;
+            }
+            button {
+                background-color: rgb(233, 66, 100);
+                border-radius: 50%;
+                cursor: pointer;
+                color: white;
+                border: none;
+                height: 20px;
+                width: 20px;
+                transition: transform 0.4s ease-in;
+                &:hover {
+                    transform: scale(1.3)
+                }
+            }
+        }
+        article:nth-child(even) {
+            background-color: #506c75;
+        }
+    }
+    footer {
+        display: flex;
+        input {
+            width: 320px;
+            padding: 0.6rem;
+            border: 1px solid #444;
+            border-radius: 0.4rem 0 0 0.4rem;
+            outline: 0.9rem;
+            border-color: rgb(47, 255, 210);
+        }
+        button {
+            background-color: rgb(47, 255, 210);
+            border-radius: 0 0.4rem 0.4rem 0;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: white;
+            width: 50px;
+            cursor: pointer;
+        }
+    }
+
+.}
