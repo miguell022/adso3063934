@@ -6,6 +6,19 @@ body {
     justify-content: center;
     min-height: 100dvh;
     color: rgb(254, 255, 255);
+    
+}
+button#eliminar{
+    background-color: rgb(236, 3, 3);
+    border-radius: 0 0.4rem 0.4rem 0;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+    width: 70px;
+    cursor: pointer;
 }
 body.jQuery {
     background-color: #000000;
@@ -107,6 +120,8 @@ main {
             width: 50px;
             cursor: pointer;
         }
-    }
+       
+        
 
+    }
 }
