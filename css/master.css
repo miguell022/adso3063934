@@ -19,7 +19,7 @@ html {
     margin: 0;
     padding: 0;
     font-weight: normal;
-    text-align: center;
+
   }
   
   ol, ul {
@@ -36,7 +36,7 @@ html {
 /*- - - - - - - - - - - -*/
 body {
     font-family: Roboto, sans-serif;
-    color: rgb(0, 0, 0);
+    color: rgb(253, 245, 245);
 }
 
 
@@ -110,6 +110,10 @@ main {
             
             
         }
+    }
+    p{
+        text-align: justify;
+        font-size: 1rem;
     }
     section.section {
         margin-top: 1rem;
@@ -196,7 +200,7 @@ background-size: cover;
 nav.nav {
     a {
         svg {
-            fill: #7ACB16;
+            fill: #f7f7f7;
         }
     }
 }
