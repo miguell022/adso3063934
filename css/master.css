@@ -9,6 +9,7 @@
 html {
     box-sizing: border-box;
     font-size: 16px;
+    scroll-behavior: smooth;
   }
   
   *, *:before, *:after {
@@ -109,6 +110,8 @@ main {
             position: center;
             
             
+            
+            
         }
     }
     p{
@@ -125,6 +128,7 @@ main {
         h3 {
             font-size: 1.8rem;
             border-bottom: 2px dotted #fff6;
+            
         }
         p.example {
             color: rgb(0, 228, 8);
