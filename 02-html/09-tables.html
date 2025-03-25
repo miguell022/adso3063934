@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09-Tables</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/master.css">
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 100%;
+            th, td{
+                border: 1px solid rgba(203, 203, 203, 0.6);
+                padding: 0.6rem;
+            }
+            th{
+                background-color: #0009;
+            }
+            tr:nth-child(even){
+                background-color: #6666;
+            }
+            tfoot td{
+                text-align: center;
+                background-color: #0009;
+            }
+        }
+    </style>
+</head>
+
+<body class="html">
+    <nav class="nav">
+        <a href="./index.html"></a>
+    </nav>
+    <main>
+        <header class="header">
+            <h2>09 - Creates tables for data display.</h2>
+        </header>
+        <section class="section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>FullName</th>
+                        <th>Age</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Saitama</td>
+                        <td>25</td>
+                        <td>City Z</td>
+                    </tr>
+                    <tr>
+                        <td>Itadori</td>
+                        <td>15</td>
+                        <td>Tokyo</td>
+                    </tr>
+                    <tr>
+                        <td>Denji</td>
+                        <td>17</td>
+                        <td>Kioto</td>
+                    </tr>
+                    <tr>
+                        <td>Eren Jeager</td>
+                        <td>19</td>
+                        <td>Maria Wall</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Protas Anime</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>

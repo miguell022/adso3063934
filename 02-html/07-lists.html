@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07-Lists</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/master.css">
+    <style>
+        ol,
+        ul {
+            list-style: upper-roman;
+            padding-left: 1rem;
+
+            ol {
+                list-style: lower-latin;
+            }
+        }
+
+        ul {
+            padding-left: 1rem;
+            list-style: square;
+            ul{
+                list-style: disc;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="html">
+    <nav class="nav">
+        <a href="./index.html"></a>
+    </nav>
+    <main>
+        <header class="header">
+            <h2>07 - Creates ordered and unordered lists.</h2>
+            <p>Inserts external CSS stylesheets.</p>
+        </header>
+        <section class="section">
+            <h3>Orden list</h3>
+            <ol type="I">
+                <li>Java</li>
+                <li>
+                    Python
+                    <ol type="a">
+                        <li>Flask</li>
+                        <li>Django</li>
+
+                    </ol>
+                </li>
+                <li>Ruby</li>
+                <li>C Sharp</li>
+            </ol>
+            <h3>unordered list</h3>
+            <ul>
+                <li>Solo Leveling</li>
+                <li>Sakamoto Days</li>
+                <li>Blue Box</li>
+                <li>
+                    Frieren
+                    <ul>
+                        <li>Kimmel</li>
+                        <li>Heiter</li>
+                        <li>Eisen</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>
