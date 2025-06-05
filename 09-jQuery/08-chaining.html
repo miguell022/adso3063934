@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>08-Chaining</title>
-     <link rel="shortcut icon" href="jquery.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="jquery.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/master.css">
+    <style>
+        article.area {
+            background: url(images/aldea-oculta-de-la-hoja.jpg) no-repeat center center;
+            height: 350px;
+            width: 350px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.4rem;
+            margin: 2rem auto;
+
+            img.character {
+                position: absolute;
+                transition: all 0.2s ease-in;
+                top: 0;
+                left: 0;
+                width: 150px;
+                
+                height: auto;
+            }
+        }
+        button.btn {
+            display: flex;
+            cursor: pointer;
+            background-color: #fff9;
+            border: none;
+            margin: 1rem auto;
+            border-radius: 0.4rem;
+            padding: 0.6rem 1.2rem;
+            transition: transform 0.2s ease-in;
+
+            &:hover {
+                transform: scale(1.05)
+            }
+        }
+    </style>
 </head>
+
 <body class="jquery">
     <nav class="nav">
         <a href="index.html">
@@ -21,8 +58,24 @@
             <h1>08 - Chaining</h1>
             <h2>Chain multiple jQuery methods for concise code.</h2>
         </header>
- 
+        <section class="section">
+            <button class="btn">Animate</button>
+            <article class="area">
+                <img class="character" src="images/images-removebg-preview.png" alt="">
+            </article>
+        </section>
     </main>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $('.btn').click(function () {
+               $('.character').animate({'left': '200px'}, 1900)
+                              .animate({'top': '180px'}, 1900)
+                              .animate({'left': '10px'}, 1900)
+                              .animate({'top': '10px'}, 1900)
+            })
+        })
+    </script>
 </body>
 
 </html>

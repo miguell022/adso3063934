@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>07-CallBack</title>
-     <link rel="shortcut icon" href="jquery.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="jquery.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/master.css">
+    <style>
+        button.btn {
+            display: flex;
+            cursor: pointer;
+            background-color: #fff9;
+            border: none;
+            margin: 1rem auto;
+            border-radius: 0.4rem;
+            padding: 0.6rem 1.2rem;
+            transition: transform 0.2s ease-in;
+
+            &:hover {
+                transform: scale(1.05)
+            }
+        }
+
+        figure.figure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            gap: 1rem;
+            width: 180px;
+
+            figcaption {
+                background-color: #6669;
+                border-radius: 0.4rem;
+                padding: 0.4rem 0.8rem;
+                color: black;
+            }
+        }
+    </style>
 </head>
+
 <body class="jquery">
     <nav class="nav">
         <a href="index.html">
@@ -21,8 +55,28 @@
             <h1>07 - CallBack</h1>
             <h2>Use callback functions to execute code after an action.</h2>
         </header>
- 
+        <section class="section">
+            <button class="btn">Animate</button>
+            <figure class="figure">
+                <img src="images/Cangrejo.png" alt="">
+                <figcaption>Akagami no hanks</figcaption>
+            </figure>
+        </section>
     </main>
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $('.btn').click(function () {
+            $(this).css({ 'opacity': '0.5', 'pointer-events': 'none' })
+            $('figcaption').text('Animation Started')
+            $('figure').animate({ left: '100px' }, 2500, function () {
+                $('figure').animate({ left: '0px' }, 2500, function () {
+                    $('figcaption').text('Animation Ended')
+                    $('.btn').css({ 'opacity': '1', 'pointer-events': 'auto' })
+                })
+            })
+        })
+    </script>
 </body>
 
 </html>
