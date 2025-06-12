@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10-Add remove</title>
-     <link rel="shortcut icon" href="jquery.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="jquery.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/master.css">
+    <style>
+        section {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+
+            div {
+                background-color: #0006;
+                border-radius: 0.4rem;
+                min-height: 190px;
+                width: 120px;
+
+                h4 {
+                    background-color: #fff9;
+                    text-align: center;
+                }
+
+                label {
+                    border-bottom: 2px dotted #fff9;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.4rem;
+                    zoom: 1.6;
+                    justify-content: center;
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    </style>
+
+
 </head>
+
 <body class="jquery">
     <nav class="nav">
         <a href="index.html">
@@ -18,11 +54,36 @@
     </nav>
     <main>
         <header class="header">
-            <h1>10 - Add remove</h1>
-            <h2> Add or remove elements from the DOM.</h2>
+            <h2>10- Add-remove</h2>
+            <p>Add or remove elements from the DOM.</p>
         </header>
- 
+        <section class="section">
+            <div class="Fruits">
+                <h4>Fruits</h4>
+                <label>
+                    <input type="checkbox" name="fruit" value="🍎">
+                    🍎
+                </label>
+                <label>
+                    <input type="checkbox" name="fruit" value="🍊">
+                    🍊
+                </label>
+                <label>
+                    <input type="checkbox" name="fruit" value="🍐">
+                    🍐
+                </label>
+                <label>
+                    <input type="checkbox" name="fruit" value="🍒">
+                    🍒
+                </label>
+            </div>
+        </section>
     </main>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+
+    </script>
+
 </body>
 
 </html>

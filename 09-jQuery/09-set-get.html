@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>09-Set get</title>
-     <link rel="shortcut icon" href="jquery.ico" type="image/x-icon">
+    <title>09-Set y Get</title>
+    <link rel="shortcut icon" href="jquery.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/master.css">
+
+    <style>
+        section {
+            textarea.text-area {
+                border-radius: 0.4rem;
+                width: 100%;
+                resize: none;
+                min-height: 120px;
+            }
+
+            div.actions {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.4rem;
+
+                button {
+                    border: none;
+                    border-radius: 0.4rem;
+                    background-color: #6669;
+                    cursor: pointer;
+                    padding: 0.8rem;
+                    transition: transform 0.4s ease-in;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+    </style>
 </head>
+
 <body class="jquery">
     <nav class="nav">
         <a href="index.html">
@@ -18,11 +50,55 @@
     </nav>
     <main>
         <header class="header">
-            <h1>09 - Set get</h1>
+            <h1>09-set-get</h1>
             <h2>Set or get values and attributes of elements.</h2>
         </header>
- 
+        <section class="section">
+            <textarea class="text-area" rows="10"></textarea>
+            <div class="actions">
+                <button class="set-html">Set HTML</button>
+                <button class="get-html">Get HTML</button>
+                <button class="set-text">Set Text</button>
+                <button class="get-text">Get Text</button>
+                <button class="set-attr">Set Attribute</button>
+                <button class="get-attr">Get Attribute</button>
+                <button class="set-value">Set Value</button>
+                <button class="get-value">Get Value</button>
+            </div>
+        </section>
     </main>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Set 
+            $('section').on('click', '.set-html', function () {
+                $('.text-area').html(`<ul><li>Apple</li></ul>`)
+            })
+
+            $('section').on('click', '.set-text', function () {
+                $('.text-area').text('Lorem ipsum dolor sit amet.')
+            })
+
+            $('section').on('click', '.set-attr', function () {
+                $('.text-area').attr('rows', '20')
+            })
+
+            // Get 
+            $('section').on('click', '.get-html', function () {
+                alert($('.actions').html())
+            })
+
+            $('section').on('click', '.get-text', function () {
+                alert($('header h2').text())
+            })
+
+            $('section').on('click', '.get-attr', function () {
+                alert($('.text-area').attr('rows'))
+            })
+
+        })
+    </script>
+
 </body>
 
 </html>
