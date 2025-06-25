@@ -1,0 +1,268 @@
+[
+    {
+        "id": 1,
+        "nombre": "Ope Ope no Mi",
+        "tipo": "Paramecia",
+        "descripcion": "La Ope Ope no Mi es una fruta del diablo que le otorga a su consumidor la habilidad de crear un 'espacio' o 'habitación' donde puede manipular todo a su alrededor a voluntad. Dentro de este espacio, el usuario puede cortar, intercambiar, mover y reordenar objetos y personas, y dar la vida eterna a cambio de la vida del usuario.",
+        "usuario_actual": "Trafalgar Law",
+        "primera_aparicion": "Capítulo 498",
+        "imagen": "https://ih1.redbubble.net/image.4217912563.7521/st,small,507x507-pad,600x600,f8f8f8.jpg"
+    },
+    {
+        "nombre": "Gura Gura no Mi",
+        "tipo": "Paramecia",
+        "descripcion": "Considerada la fruta más poderosa del tipo Paramecia. Permite crear terremotos y tsunamis, generando ondas sísmicas capaces de devastar islas enteras. Se le conoce como el 'poder para destruir almundo'.",
+        "usuario_actual": "Marshall D. Teach (Barbanegra)",
+        "primera_aparicion": "Capítulo 340",
+        "imagen": "https://i.pinimg.com/736x/f8/67/06/f867069a4f6fa867879673556e4c72e4.jpg"
+    },
+    {
+        "nombre": "Nikyu Nikyu no Mi",
+        "tipo": "Paramecia",
+        "descripcion": "Otorga garras/pads en las manos que pueden repeler cualquier cosa (ataques, personas, dolores, incluso intangibles). También permite almacenar y descargar energía, y proteger de ataques incluyendo dolor y heridas",
+        "usuario_actual": "Bartholomew Kuma",
+        "primera_aparicion": "Capítulo 344",
+        "imagen": "https://i.pinimg.com/736x/1d/fc/33/1dfc337cfd46beed05553e4fb3fd98b4.jpg"
+    },
+    {
+        "nombre": "Zushi Zushi no Mi",
+        "tipo": "Paramecia",
+        "descripcion": "Permite controlar la gravedad, manipulando objetos/personas con gravedad aumentada o reducida, y crear efectos como invocar meteoritos o movimientos gravitatorios masivos.",
+        "usuario_actual": "Fujitora (Issho)",
+        "primera_aparicion": "Capítulo 739",
+        "imagen": "https://www.mimja.net/wp-content/uploads/2023/08/Zushi-Zushi-no-Mi-Gravity-Gravity-Fruit-Legendary.png"
+    },
+    {
+        "nombre": "Jiki Jiki no Mi",
+        "tipo": "Paramecia",
+        "descripcion": "Permite generar y controlar campos magnéticos, atrayendo o repeliendo objetos metálicos y personas. También puede despertar el poder para controlar aves metálicas y generar magnetismo masivo",
+        "usuario_actual": "Eustass Kid",
+        "primera_aparicion": "Capítulo 803",
+        "imagen": "https://ih1.redbubble.net/image.3521751642.3878/st,small,507x507-pad,600x600,f8f8f8.jpg"
+    },
+    {
+        "nombre": "Ito Ito no Mi",
+        "tipo": "Paramecia",
+        "descripcion": "Permite generar cuerdas sumamente resistentes desde el cuerpo, usadas para manipular personas como marionetas, hacer plataformas, vuelos suspendidos, etc.",
+        "usuario_actual": "Donquixote Doflamingo",
+        "primera_aparicion": "Capítulo 729",
+        "imagen": "https://ih1.redbubble.net/image.1665161227.2240/st,small,507x507-pad,600x600,f8f8f8.jpg"
+    },
+    {
+        "nombre": "Hobi Hobi no Mi",
+        "tipo": "Paramecia",
+        "descripcion": "Permite convertir personas en juguetes, borrándoles la memoria de manera permanente además de inhibir su envejecimiento, útil en control mental masivo.",
+        "usuario_actual": "Sugar",
+        "primera_aparicion": "Capítulo 700",
+        "imagen": "data:image/jpeg;base64,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"
+    },
+    {
+        "nombre": "Soru Soru no Mi",
+        "tipo": "Paramecia",
+        "descripcion": "Da la capacidad de manipular almas: absorberlas, transferirlas, controlar a través del miedo, e infundir vida en objetos inanimados. Permite crear “homies” con objetos o elementos (Zeus, Prometheus…)",
+        "usuario_actual": "Big Mom (Charlotte Linlin)",
+        "primera_aparicion": "Capítulo 653",
+        "imagen": "https://pm1.aminoapps.com/6670/ba764b85f6d9548d6e6ebc1634a54a0909ea8041_00.jpg"
+    },
+    {
+        "nombre": "Doku Doku no Mi",
+        "tipo": "Paramecia",
+        "descripcion": "Permite al usuario excretar y controlar venenos extremadamente corrosivos y mortales. El usuario es inmune a todas sus toxinas y puede variarlas (nebulosas, rociadores, acumulativas). ",
+        "usuario_actual": "Magellan",
+        "primera_aparicion": "Capítulo 230",
+        "imagen": "https://pm1.aminoapps.com/6785/3672f27bbf570a80bd87de6a21e08efc6335343bv2_hq.jpg"
+    },
+    {
+        "nombre": "Kage Kage no Mi",
+        "tipo": "Paramecia",
+        "descripcion": "Permite manipular sombras: extraer, controlar, implantarlas en otros, e incluso revivir cadáveres (zombies) con las sombras robadas.",
+        "usuario_actual": "Gecko Moria",
+        "primera_aparicion": "Capítulo 303",
+        "imagen": "https://ih1.redbubble.net/image.3559784844.6402/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.webp"
+    },
+    {
+        "nombre": "Mochi Mochi no Mi",
+        "tipo": "Paramecia",
+        "descripcion": "La Mochi Mochi no Mi otorga al usuario la habilidad de crear, controlar y transformarse en mochi, una masa pegajosa similar al arroz. Como Paramecia especial, permite una transformación casi intangible, similar a una Logia, y ataques contundentes y envolventes.",
+        "usuario_actual": "Charlotte Katakuri",
+        "primera_aparicion": "Capítulo 860",
+        "imagen": "https://ih1.redbubble.net/image.3559757851.5754/st,small,507x507-pad,600x600,f8f8f8.jpg"
+    },
+    {
+        "nombre": "Hana Hana no Mi",
+        "tipo": "Paramecia",
+        "descripcion": "La Hana Hana no Mi permite al usuario hacer brotar partes de su cuerpo (brazos, piernas, ojos...) desde cualquier superficie a la vista. Esto le otorga gran capacidad tanto para atacar, como para defender o espiar. Nico Robin ha demostrado brotar centenares de brazos e incluso clonarse a sí misma tras el salto temporal",
+        "usuario_actual": "Nico Robin",
+        "primera_aparicion": "Capítulo 114",
+        "imagen": "https://i.pinimg.com/736x/db/a6/45/dba6457200ca668db9186087529ed192.jpg"
+    },
+    
+    {
+        "nombre": "Mera Mera no Mi",
+        "tipo": "Logia",
+        "descripcion": "La Mera Mera no Mi permite al usuario transformar su cuerpo en fuego vivo, generarlo y controlarlo a voluntad. Puede lanzar llamaradas devastadoras y volverse intangible, ya que la mayoría de los ataques físicos no le afectan. Ha sido usada por Ace y luego heredada por Sabo; es famosa por su poderosa presencia en el ataque logia .",
+        "usuario_actual": "Sabo",
+        "primera_aparicion": "Capítulo 154",
+        "imagen": "https://ih1.redbubble.net/image.1327418937.8350/st,small,507x507-pad,600x600,f8f8f8.jpg"
+    },
+    {
+        "nombre": "Yami Yami no Mi",
+        "tipo": "Logia",
+        "descripcion": "La Yami Yami no Mi da al usuario la capacidad de convertirse y manejar la oscuridad. Puede crear agujeros negros, absorber poderes e incluso anular habilidades de otros usuarios de frutas del diablo. Su uso conlleva una enorme tensión para el portador, pero ofrece un poder disruptivo extraordinario",
+        "usuario_actual": "Marshall D. Teach (Barbanegra)",
+        "primera_aparicion": "Capítulo 442 ",
+        "imagen": "https://ih1.redbubble.net/image.1680236805.9311/st,small,507x507-pad,600x600,f8f8f8.jpg"
+    },
+    {
+        "nombre": "Goro Goro no Mi",
+        "tipo": "Logia",
+        "descripcion": "Permite al usuario transformarse en rayo, controlarlo y crear tormentas eléctricas. Con este poder, Enel puede atacar a la velocidad de la luz, generar arcos eléctricos y moverse prácticamente instantáneamente.",
+        "usuario_actual": "Enel",
+        "primera_aparicion": "Capítulo 166",
+        "imagen": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhMSExMWFRUVGBcVGBgYFRUVFxUaGBUWFhgXFRgaHyggGBolGxUXITEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGhAQGy0lICYrLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBEQACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABAUBAgMGB//EAD8QAAIBAgQCBwQHBwQDAQAAAAECAAMRBBIhMQVBBhMiUWFxgTKRobEjQlJicsHRFENTgpLh8BYz0vFjssIV/8QAGgEBAAMBAQEAAAAAAAAAAAAAAAECAwQFBv/EADIRAQACAgEDAgIJBAIDAAAAAAABAgMRBBIhMQVBE1EUIjJhcYGhsdEVQlKRweEj8PH/2gAMAwEAAhEDEQA/APuMCtx/GUpuKQV6tUjNkTLdV2zOzsqLexsC1zY2BsbCImVHjePYz9qw/V4Vv2fLU68NUwnWZiB1WT6fa4N43C3Rb5LfDcfQuqVKb0SxAUuaTKxJsFzU3YKTcWzWvewuZG4RNZjzC3koICAgICAgICAgICAgICAgICAgICAgICAgeO6c9OlwTJhqNJsTjawvSoqDsSQHc8l0Og10Ow1AVD8N4j+ys+LCHE1QG61KfXrhmD1DleiLFk6tlp3TPY3JBAzGJiJ8r0yWp9mdPOheI5ldf2NkTqw4WvhM9cm4aph3NMCmq6G1QX33kdFfk0+k5f8AKXoOC8PxVSiylqb1C6MtdBkoUUpujqi1MoOIbsjtqmXQi4taTqIUtkvftMu/RTp3WXELw7ilLqcWTlp1VH0OJ7ipGgJ9xP2T2ZLN9DgICAgICAgICAgICAgICAgICAgICAgICB8/6V8NehxXC8RpC/WUq2FqA3IDCjUq0Se4Fkynbl3yJ8L46xa8RPiZhsekGLaxastNer6zMuHKprR64Baru+bshr9j6u0w67fP9Hs/Q8Fe1azM71qbd/Ou8REa7/egVq9Mtlq41nYuScppoWUVlU6Uk0+jYN7V99NJXq9ps1jDMR1UwxEa94me+t+8/ONeNIWJGFNCqbVqgCC71UrVchyurA5wRmB6s6FR2twNJWenpny6Mccj4tY+rHfxWaxvx8vn3+f4JzYA8QxfBi3+3hcOuMqH/wAjZFpLf8dJj5IZ0453WJ+58/zMfw+Rkp8rT+76ZLuYgICAgICAgICAgICAgICAgICAgICAgIHDGYSnVXJUUOpINiLi6kMp8wQCD4QPk/B+B1eqqUqmFquyPVCE0VYMuULTyvV0RQyk9m1wd5w0xzqYmPd9dyuXSclclMkRExXfee0++4r5nXz29RTwGMLZqeFSlr9asqHIKiuqnqw1hYutthcd031b2h5M5OPrV8k2/CJnvrXvMfcxU6I4qrSalVq0AGABOSrVYfRU6RIOZBc9Urag6k7yJxWtGplNfUMGLLGSlbbj74iPMz8p+evPh6Lo3wNMJRWmpzMAAz2sz2vlv5A2E1pXorFXncvkfSM1sutbneltLucgICAgICAgICAgICAgICAgICAgICAgICAtAQEBAQEBAQEBAQEBAQEBAQEDjiMXTT23VfMgSlsla+ZNs4fEo4ujBh3ggya3raNxKInbrLJICAgICAgICAgICAgICAgICAgIGruALkgDvJtImYjyFNwwBBBB1BBuD5GImJ7wNpIQECFjeKUqXtNr9kan+3rMcmemPzKJmIec4h0jqNonYHhqx9eXpPPycy9u1ezOb/JQV8XuTqeZOpM5JnfeWcy69GuKMuKQDZzkYd99B7jYzp4tprkj700t3fSp7DoICAgICAgICAgICAgIFfjsVXQkrRFRfuvZ/cRY+hmN7ZI8V3+aJmVaOltIHK9OojdxAB9xsZhPNrE6tWYV60hOk+HPNh/L+hlo5uI64dP9RYf7R/pb9JP0zF809cNW6SUPvH+X9ZH03EdcK7H9KtLU1y+LWJ9ANJhk50z2pCs3+Sj4eauOr5CzdWvaqNflyUdxO3vmOKt89/rT2UiZtL6HTQKAoFgBYDkANhPXiNN0fEcQpJ7TqPC9z7hrKWy0r5lG4VeK6TIPYUt4nsj9Zy351Y+zG1ZvCjx3Har7tYdy6D15zjvyslvfSk2lUVMXOdXaDXxkIcMNSrV2y0kZz4DQfiOw9TNMeO151WCKzL3HRXoj1DCtWYNUHsqvspfnf6zfDznp4ON0T1W8taU15eunW0ICAgICAgICAgICAgICBxxGFSoLOisO5gD85WaxPlGlPieiWGbYNTP3HI+DXHwmFuJit7I6IVeI6FP+7xB8nS/xUj5TC3Aj+2VfhqTifBcVQF3yEE2BV/yIBnJm498feVJrMK8UyfaMwVScLV6u+Rit98rFb+djrLVvNfEpjs71OJsfadj5sT85M5LT5lO0Wpj5ntCNU4j4wNOuJ75OpjyhpTR6jBKYLsdgNT/YeMtWk2nUJiNvXcF6CjR8S1z/AA1PZH4m3PkLeZno4uFEd7tIp83ssLhkpqERQqjYKAB8J3VrERqGjtJCAgICAgICAgICAgICAgICAgaVVJBAOUkaGwNvGx0kTG4HncV0VNQ5mxNQnxVT/wBTjtwotO5tKk12j/6HXniKnuT9JX6BT5ydENx0IoDU1ax9UH/zH0DHHmZT0Qqa2FRaeVRp46k+ZnzU3mbdno1xViNaXfBejWFNGm7UVZmUElizanwJtPpeJgxzhraY7zDhvWItMJuMpph1HUYYM50ASmoA8WI2nRf6kfUruVZ7eFB/pnFYlzUxDimDuBZn8hbsr8ZyRxMmS3VklTomfL1HCeEUcOuWklr7sdWb8R/Lad2PFXHGqwvERCfNEkBAQEBAQEBAQEBAQEBAQEBAQEBAQEDjjD9G/wCFvlMeROsVp+6f2Wr5h4nFUgRYD4T4mLPS09P0ZrBsOg5pdCO623wIn1vp2WMnHr93ZwZq6vK1neyIELHcUpUgczXI5Df17px8jnYcH2p7/KGlMVreGnDsXUq9opkp/VvfM3j4COLny5vrWr019vmXrFe0SsJ2MyAgICAgICAgICAgICAgICAgaU6gbUG+pHqDYiVreLRuJJjTeWELiuFLp2TZl1Gtr+E4udx7Zsf1J1aO8NMd4rPfwqMHxp10cZht3MP19Z43H9Wy456csb/eP5dF8ETG6rn9pWpSZlNxlb002PdPc+Pjz4LWpO41P7ObpmtoiXlCBb3T4mvh6LPD8e9FyVAKtoVOnr4T0eFzrceZ1G4n2Z5McXWr9JQNMgvyGa9/IAXM9CfXIntWnf8AH/pj9F+co9bEYxgSEezHQWAt4W9oDzmN8nqV4+zMRP4f/dLRGGJ8p/DeBqtnqdt9/ur+Ecz4mehw/S6Yvr5O9v0j8P5Y5M027R2hcz1WJAQEBAQEBAQEBAQEBAQEDhWxaLuwHhufcJhk5OLH9q0LRS0+IRKnGaY2DH0A+ZnHb1XDHjctIwWlIwOPSqDlOo3B0I/tOrj8rHnjdJ/JS9Jr5VSYnqMQ6t/t1De/2Sdj5Hb0E8zHn+jcu+K32bTuPz/902mvXjiY8wvgZ7jmZgee6Q4OxFQbNo3nyPr+U+b9Z43RaM1fftP4+0uvj3/tlU06zrmCm2YZT4gzx8efJi30T57S6LVi3l2AtK1jQ44hJaYHbgeMp0mYulydmFiQO7Xb0no+ncrDgmZvHefdlmpa/henjtAbsR/KZ7X9V4v+X6S5/gX+SyRrgEc9Z6ETuNsW0kICAgICAgICAgICAgICAgV+M4PSqEkgqTzVivw2PunJl4ODLO7V7/d2aVy2r4lW1+jH2K7j8QVx8LTiyej45+zaY/VpHIn3hX18BiKJzZS1vr07kjzG/wCU87JweTx7dVO/3x/DWMtL9paVsd13tG5tbYD3++cWfkXzW3k8x2aVrFfCdwfjHV2p1T2dlc/V8G8PGer6f6lrWPNP4T/LHLh33q9KzgC/IC/pPfm0RXqnw5NeysxuPoPTYZwbjQa3vuNPOeXy+bxcuC1eqJ3H5/c3pjvW0TpQLT1BnytYdsy7GbQq4VQOciYiPKUdxISk8Cos2IUiwyam9tvAd/jynf6ZjvfkRNddvP4Ms9oij2d59ZtwK/E8aoppmzHuXX47TjzeoYMfbe5+5pXFayTgcUKiBwCAb7+BtN+PmjNSLxGtq2r0zpImypAQEBAQEBAQEBAQEBAQEBAreJ8HSr2gAr/aA3/F3/OcHL4GPkRvxb5/z82uPLNfwecq0TqrCzDQz5TJjtS00v5h2xaJjcOmExVWkMqtdfskXA8u6b4ednw16Int8p7q2xVtO2EWca7cy41Y8ufyiZ12GMgH6yYgRWfMdPZHxMjq2lgEqQymxGxH+azTHktjtFqzqUTETGpcsViqtQ/SVGYd1wF9w0mubl5cv27T/wAK1x1r4htgqRqutNdL7n7K8zK8bHOfJFI/P8E3tFa7eubiVGkoRTmyiwC62tpqdp9Jfn8fBXpid69ocUYr2navPHKjutOmoux87DmT4CcdPU8ubJFMVYj9Wk4a1jdpehE91zMwEBAQEBAQEBAQEBAQEBAQPPdIlAdTzI18bbT5v1utYvWY8zDr40zqYVwa88SZl0ugEtCGjG5sOW8iZ76IcmOU+Bkb7pR8XiL2UbHeVtbfaExAlTYAWA8prVEt0tf/ADxiZ0I9Z1vlGp5nulYvudJ06U8qg+O/jLfZ7I8uVbF8hK9cJ09N0SwYWmahHacnXwB0A9Z9R6RgiuL4nvP7OLkW3bS+nrOcgICAgICAgICAgICAgIFBiOLVqdRlZQ4B29k2OxB2M8PL6ll4+WaZI3Ht7dnTXDW1dxKTQ6QUT7WZD4qT8VvOnH6tx7R3nX4x/Ck4LwiccxVKoq5GuQe47He9/Sed6tycGaleidzEtcFLVmdqeidZ4VZ7upLJvNY7qNUEmsJca1PMTf3fnKWpvvKYlwNAA++VikR4Ny318PdNI2OdRNDbfeJqbRkpWNx8YikR3gmduuW+kmY2bczTUd7HkJjXHESnb2qYqnh6SCowUhQLbkm3IDUz7WuXHxsNYyTEah53TN7TpU4vpOT/ALa2H2m39FH5+6ebm9Yme2KPzn+G1eP/AJLbgTVDTzVCSWNxe2g5bd+/qJ6XB+LOLqyz3ljk11ahYzsZkBAQEBAQEBAQEBAQKvjmBLpmX21vb7w5rPN9S4nx8e6/ajx/DXFk6Z7+HnVAJnyUx3d++zqy6RrsCLbSI1A3AmlfCGmawvECHQrXdj4Re3sQ3J3JlI7ykJlkNCbyRoUHLSXiBgkxOxxswYMDYg3HgeRlNWraLQntMaRi5LEsSTzJNzKTa1rbtO5TrUdlnwmgruDUNkXU/e7lH+fOd/Crjm+8s6iP1ZZJnWoemxPHEUdkX89B+s9jN6tjr2xxv9Ic1cFp8q9OPVnJFNS1vspe3mTtOWnqHLyz/wCOv6NJxUr5lNoYzF86Fx5op/8AadmPNzv7scT+cR/yztXF7SuEJIBIse7e09SJmY7sG0kICAgICAgICAgIHl+LYPJU09l9R4HmPz9Z8r6rxfh5eqvi37u3DfqjUoVStaeVadN3IYnw+Ujq2nSRTqZvASeraEfGVdJeqFPg8V26o17Krr4sW/IRan1YvPvv9FkhMaGoh+RPy/6kTW1JmJ8julYFQw1v+kVjflDKvJqNtzLoYYW/SRFu6dNGbnykzKHJaa3u0xt5WZbGMTZR+glqRudQiVnw3hoqtl61r2uSKYyj3tf4CetxuDizT0xad/h2YXy2rHhf8J4U9Fj9KGQ7rktr33zHWevxOFbjzOr7j5ac+TJF/butp6DIgICAgICAgICAgcGxtMGxdQR94TCeTiidTaP9rRS0+zm/EqI/eL6G/wApS3NwR/fCYx2n2VHFOJK9gPZGtzzP6TxPUebGfVKeIdOLHNe8vPY6sDe08XLG4dNXDAVb3BlIjU6TK1o6A+c019Xsqi11zSa+Bwq4ZQhVRYki57zLTHY2jYrDBUWmm23qYmZ6uqRt1HVU0pj6vzJ1+cmbzaZtIyz2I8fnK1mBLoLfWTOpHV6SjUn9ZGogRDVBJCjTxiJ2Ob1QN4lLQV177E92/wDeTTe+yJe36NLal/tGnrub3fT2jm19/pPrfT9/C706f+fvcGX7Xna3ncyICAgICAgICAgICBRcX6NpVJdHNNzuRqrea9/iJwcj0/HlnqjtLWmWa9lSOi2KH76mR/MPhacM+k39rR/pr9Ij5K3i+ArYexqMpU7EHU9/ZOs83l8PLg1uY7tseSLqzhjOzEm9jtcW0nLeta6iPzarTDYZQxMxmvc2nGsNpp19tSrpzK++ViNDlUW3zkzI1YS3kca4zHykJYVL6R7CVSp275GgejfcyJgRmVQbA6+UtWY8QOdTD5yAdNQPeQJvix7vEKzOofQcHw6lSH0dNV8QoBPmdzPr8eHHjjVIiHnzabeZSpqqQEBAQEBAQEBAQEBAQEDyXSPhj5mrM6kEgC97ga2HcJ856nxLxM5rW337Q68GSPsxDzGMxBQ9lg3kD+V549K9Uul3wbs/+GV/u0lMAtJmEJNMafGWiOyJZddLyZjtscurlNTA5mmNf85CQlhFF5OjaWF0lohDQrc+UiYHP9nQc7WiJ6RwpEF1AN+2ov6idWCeq1fxhW3iX0SfYvOICAgICAgICAgICAgICBFx+K6tc2UsL2Njt4zm5OecFOvp3Hvr2XpXqnSp4tjaVaiyhirixAIsbjfwOl55nL5vG5GCYi3f2ifLbHjvS29PH1i6GzWPce//ADunhTWsuqHSjW1lYrESlMpm+sId0PKIkbk6S0CNXrhRAimqSNpVLFFiusjuO4xq8yflJ2hsuMTvkjBRG1zCVtXYkYLDAVKZuMoZSfQ3nXxL1rkr1do2pfc1nT3KtfUbT7CJiY3Dz2ZIQEBAQEBAQEBAQEBAQMMoIsdQZExExqR5ji3DzSuygmn7ynn3r4z5r1D02cc/Exx2/b/p2Ys2+0qZ1Dix1nmN3BMEL6HSVmUp6UwNPWIjaGC0kaYiqFUXkQIQ7RvawkzA6mByrbSdCO+shLmaesgd0AEvCF90TwQdnZhdVFgDtc6/AD4z1/TONXJu143Dnz312h66lTCgACwHKe/SkUjprHZyzO28sggICAgICAgICAgICAgIC0DyvSPh4pstRAArGzAaAHkfWeB6pxYrMZKx293VgvvtKrRuc8SY7ulEfHkkhRfxk6HWnm3PwMqNMSMzW5DeTEDKm3pJgYZpbaHF2kJZoIGMreRtWwxFzaVrv3SjC+w1JIAA5kmwAm9KTadQiZ0+i8GwPU0lTnux72O/6ek+t42GMOOK/wC3n3t1W2nToUICAgICAgICAgICAgICAgIHPEUVdSrC4IsRK3pF4mtvCYnXeHn8V0WuCEqkX07Qv8RaeRk9IrPeltfi3jkT7whHovWUWU0yPNh+U5b+kZvaYaRyKtW4JiR+7B8nX8zMp9K5Ee0f7T8ejl/+Jif4J/rp/wDKV/pnJ/x/WE/Gp82jcHxP8E/1J/yj+ncj/H9Y/k+LT5tTwXE/wT/Un/KP6fyf8f1j+T4tPmweAYo/uve6frLR6byJ9v1hHxqC9FMUd8i/zn8gZePSc8+df7R8eqdQ6JVtmrAD7uZvnab09Htv61o/0ieRHtC44X0dpUWD6u42LcuVwBz8dZ6PH4GLDPVHefnLC+W1uy4nazICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgUvEcZiFaoqLoEOQ5C12yGxv4NYW53gVdHieNyDMr5usII6vZQ9Nd1Rr9ku2w5b7EJGFx+NNWmCvYKqxJpsov1a3QtuDmJObLYbd4gduNY7GIilKSg5tcuet2bG97IMutoFhhatRkXNcMBdyVtrvYDTf007jsHnMHxXiBoVM9J+tDJktTVc+hzaNfQlfAjNygTaXE8UDSupykUwxZDe5dw/sA20UbgW017wu61R8tQ2C5T2SAapZcqkkoACDfMLC+wN9bAIYxGIAQEDOwJ0U2W76ZzcqtktfU3N7CBhsViB17ZQQl8gGZi1rHsqFBbQkbnUc4GcVjq2amFQojh7sVZmUhqYU2UEAkFzZrba7EQJPEK1VUqlFFwoNM3LFm1upW2n1dbm9ztaB5qnxPiXVI3Vds5gwNPX2aZXQaXuX5209wXdKtiCxYkBFQEjq2JLFCSqDQsAcpv4ld72DD46uKJKp1lXNZV6p6IOl9c5NgN7k2O25gTRWrXH0a5Le0XIb2b6pl79LZoEX9vrCkX6skjKB2Wu9z2uxa4A01NiddBpcOtHGVCafYPbRGYFWUU73LXc6MeWUC9xrodAsYCAgICAgICAgICBqNoCBmBgwMwMd3+d0DMDB5wMwNRAzA2gYgIGBA2gYgBAzAQEBAQEBAQEBAQP/9k="
+    },
+    {
+        "nombre": "Magu Magu no Mi",
+        "tipo": "Logia",
+        "descripcion": " Esta fruta permite al usuario convertirse en magma y controlarlo a voluntad. Akainu (Sakazuki) utiliza poderes devastadores que pueden derretir rocas, crear erupciones y lanzar puñetazos ardientes que arrasan con su entorno.",
+        "usuario_actual": "Akainu (Sakazuki)",
+        "primera_aparicion": "Capítulo 556",
+        "imagen": "https://i.redd.it/ubmezbhv9b271.jpg"
+    },
+    {
+        "nombre": "Hie Hie no Mi",
+        "tipo": "Logia",
+        "descripcion": "Permite convertir el cuerpo en hielo, crear y controlar grandes cantidades de este elemento. Kuzan (antes Aokiji) puede congelar océanos, derrotar enemigos rápidamente y crear estructuras de hielo gigantes.",
+        "usuario_actual": "Kuzan (Aokiji)",
+        "primera_aparicion": "Capítulo 415",
+        "imagen": "https://i.redd.it/z1l021amyh271.jpg"
+    },
+    {
+        "nombre": "Pika Pika no Mi",
+        "tipo": "Logia",
+        "descripcion": "La Pika Pika no Mi, también conocida como la Fruta Brillante Brillante, es una fruta del diablo de tipo Logia que otorga a su usuario la habilidad de crear, controlar y transformarse en luz. Esto convierte al usuario en un 'Hombre de Luz'. Además de la transformación y manipulación, la fruta permite al usuario moverse a la velocidad de la luz y transportarse mediante la reflexión de la luz.",
+        "usuario_actual": "Kizaru (Borsalino)",
+        "primera_aparicion": "Capítulo 531",
+        "imagen": "data:image/jpeg;base64,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"
+    },
+    {
+        "nombre": "Moku Moku no Mi",
+        "tipo": "Logia",
+        "descripcion": "Esta fruta permite al usuario convertirse en humo, generarlo y manipularlo. Smoker puede deslizarse, asfixiar al enemigo con humo denso y atacar sin ser alcanzado físicamente.",
+        "usuario_actual": "Smoker",
+        "primera_aparicion": "Capítulo 234",
+        "imagen": "https://res.cloudinary.com/teepublic/image/private/s--AhsaK4N4--/t_Resized%20Artwork/c_fit,g_north_west,h_1054,w_1054/co_ffffff,e_outline:53/co_ffffff,e_outline:inner_fill:53/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_auto:good:420,w_630/v1704205275/production/designs/55910561_0.jpg"
+    },
+    {
+        "nombre": "Suna Suna no Mi",
+        "tipo": "Logia",
+        "descripcion": "fruta del diablo de tipo Logia que permite al usuario crear, controlar y transformarse en arena a voluntad, absorber agua y deshidratar a los enemigos, convirtiendo al usuario en un Humano de Arena",
+        "usuario_actual": "Crocodile",
+        "primera_aparicion": "Capítulo 155",
+        "imagen": "https://ih1.redbubble.net/image.4850201355.8010/st,small,507x507-pad,600x600,f8f8f8.jpg"
+    },
+    {
+        "nombre": "Gasu Gasu no Mi",
+        "tipo": "Logia",
+        "descripcion": "La Gasu Gasu no Mi permite al usuario convertirse en gas y controlarlo a voluntad. Puede manipular gases venenosos, explosivos e incluso quitar el oxígeno de un área. Le otorga intangibilidad y versatilidad en combate.",
+        "usuario_actual": "Caesar Clown",
+        "primera_aparicion": "Capítulo 659",
+        "imagen": "https://preview.redd.it/if-theres-a-gas-gas-fruit-does-that-the-other-states-of-v0-vmef81lq0lzd1.png?auto=webp&s=874d1d3d4caa10b9e071db1907702edccd171675"
+    },
+    {
+        "nombre": "Ushi Ushi no Mi, Modelo: Bison",
+        "tipo": "Zoan",
+        "descripcion": "Esta fruta Zoan permite al usuario transformarse en un bisonte o una forma híbrida humano-bisonte, aumentando considerablemente su fuerza física y resistencia.",
+        "usuario_actual": "Dalton",
+        "primera_aparicion": "Capítulo 130 ",
+        "imagen": "https://ih1.redbubble.net/image.4850945349.8570/st,small,507x507-pad,600x600,f8f8f8.jpg"
+    },
+    {
+        "nombre": "Uma Uma no Mi",
+        "tipo": "Zoan",
+        "descripcion": "Permite al usuario transformarse en un caballo completo o en una forma híbrida caballo-humano. Mejora su velocidad y capacidad de transporte.",
+        "usuario_actual": "Pierre",
+        "primera_aparicion": "Capítulo 170",
+        "imagen": "https://preview.redd.it/made-a-fan-fruit-zoan-type-the-yuni-yuni-no-mi-also-known-v0-7eir7pek374a1.jpg?width=640&crop=smart&auto=webp&s=d226411e5d03cd7fb18a39faaf475b78e69db9e0"
+    },
+    {
+        "nombre": "Inu Inu no Mi, Modelo: Dachshund",
+        "tipo": "Zoan",
+        "descripcion": "Permite a su consumidor transformarse en un perro salchicha completo o en una forma híbrida entre humano y perro. Usado incluso por objetos inanimados.",
+        "usuario_actual": "Lassoo (la bazuca de Mr. 4)",
+        "primera_aparicion": "Capítulo 186",
+        "imagen": "https://devilfruit.io/assets/images/fruits/inu_inu_no_mi_model_tanuki.png"
+    },
+    {
+        "nombre": "Hebi Hebi no Mi, Modelo: Anaconda",
+        "tipo": "Zoan",
+        "descripcion": "Permite al usuario transformarse en una anaconda completa o en una forma híbrida humano-serpiente. Aumenta la fuerza de constricción, la agilidad y la capacidad de ataque con el cuerpo.",
+        "usuario_actual": "Boa Marigold",
+        "primera_aparicion": "Capítulo 516 ",
+        "imagen": "data:image/jpeg;base64,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"
+    },
+    {
+        "nombre": "Neko Neko no Mi, Modelo: Leopard",
+        "tipo": "Zoan",
+        "descripcion": "Confiere la capacidad de transformarse en un leopardo o una forma híbrida humano-leopardo. Otorga fuerza brutal, velocidad y agilidad felina. Muy útil para el combate cuerpo a cuerpo.",
+        "usuario_actual": "Rob Lucci (CP9)",
+        "primera_aparicion": "Capítulo 400 ",
+        "imagen": "https://ih1.redbubble.net/image.4851305579.8811/st,small,507x507-pad,600x600,f8f8f8.jpg"
+    },
+    {
+        "nombre": "Hito Hito Nomi",
+        "tipo": "Zoan",
+        "descripcion": "La fruta Hito Hito no Mi, del tipo Zoan, permite a su consumidor transformarse en humano, o en una forma h\u00edbrida humano-animal, adem\u00e1s de otorgar la capacidad de hablar y entender el lenguaje humano incluso en su forma animal.",
+        "usuario_actual": "Toni Toni Chopper",
+        "primera_aparicion": "Capítulo 134",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb7tIX-ZXAhtIJy7JNNgtSlijt7gPFplLEUQ&s"
+    },
+    {
+        "nombre": "Hito Hito no mi modelo nika",
+        "tipo": "Zoan Mitologica",
+        "descripcion": "La Gomu Gomu no Mi, conocida en el mundo de One Piece, es una fruta del diablo de tipo Zoan M\u00edtica que otorga al consumidor la habilidad de convertir su cuerpo en goma, haci\u00e9ndolo \"hombre de goma\". Esta fruta, originalmente llamada Hito Hito no Mi, Modelo: Nika, le permite al usuario estirar, doblar, rebotar e inflar su cuerpo, adem\u00e1s de hacerlo casi inmune a ataques f\u00edsicos, balas y ca\u00f1ones, que rebotan en su piel",
+        "usuario_actual": "Luffy sombrero de Paja",
+        "primera_aparicion": "Capítulo 1",
+        "imagen": "https://ih1.redbubble.net/image.4217459914.6610/st,small,507x507-pad,600x600,f8f8f8.jpg"
+    },
+    {
+        "nombre": "Tori Tori no Mi, Modelo: Phoenix",
+        "tipo": "Zoan Mitologica",
+        "descripcion": "La Tori Tori no Mi, Modelo Phoenix permite al usuario convertirse en un fénix, con la capacidad de renacer de sus cenizas y sanar gravemente dañados con fuego azul. Marco usa esta fruta para su técnica: resurrección instantánea y vuelos de largo alcance .",
+        "usuario_actual": "Marco",
+        "primera_aparicion": "Capítulo 434",
+        "imagen": "https://ih1.redbubble.net/image.5537774982.4152/st,small,507x507-pad,600x600,f8f8f8.u5.jpg"
+    },
+    {
+        "nombre": "Uo Uo no Mi, Modelo: Seiryu",
+        "tipo": "Zoan Mitologica",
+        "descripcion": "Otorga la habilidad de transformarse en un dragón azul oriental. Permite volar, lanzar fuego, controlar nubes y crear tornados. Es una de las frutas más poderosas.",
+        "usuario_actual": "Kaido",
+        "primera_aparicion": "Capítulo 921",
+        "imagen": "https://ih1.redbubble.net/image.4979118285.7705/raf,750x1000,075,t,fafafa:ca443f4786.jpg"
+    },
+    {
+        "nombre": "Hito Hito no Mi, Modelo: Daibutsu",
+        "tipo": "Zoan Mitologica",
+        "descripcion": "Permite transformarse en un gigantesco Buda dorado. Aumenta considerablemente el tamaño, fuerza y resistencia del usuario.",
+        "usuario_actual": "Sengoku",
+        "primera_aparicion": "Capítulo 573",
+        "imagen": "https://anime-figures-shop.co.uk/cdn/shop/files/hito-no-mi-buddha-model-figure-one-piece-555.webp?v=1741905312"
+    },
+    {
+        "nombre": "Inu Inu no Mi, Modelo: Okuchi no Makami",
+        "tipo": "Zoan Mitologica",
+        "descripcion": "Otorga la capacidad de transformarse en un lobo mitológico. El usuario puede generar llamas gélidas y moverse con gran agilidad.",
+        "usuario_actual": "Yamato",
+        "primera_aparicion": "Capítulo 999",
+        "imagen": "https://res.cloudinary.com/teepublic/image/private/s--3XMW5ytV--/t_Resized%20Artwork/c_fit,g_north_west,h_1054,w_1054/co_ffffff,e_outline:53/co_ffffff,e_outline:inner_fill:53/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_auto:good:420,w_630/v1704205250/production/designs/55910444_0.jpg"
+    },
+    {
+        "nombre": "Hebi Hebi no Mi, Modelo: Yamata no Orochi",
+        "tipo": "Zoan Mitologica",
+        "descripcion": "La Hebi Hebi no Mi, Modelo: Yamata no Orochi es una fruta del diablo de tipo Zoan Mitológica que permite al usuario transformarse en el legendario dragón de ocho cabezas Yamata no Orochi. Esta forma le otorga múltiples cabezas independientes con gran fuerza, durabilidad y la habilidad de resistir ataques que normalmente serían letales, permitiéndole sobrevivir en situaciones críticas.",
+        "usuario_actual": "Kurozumi Orochi",
+        "primera_aparicion": "Capítulo 929",
+        "imagen": "https://ih1.redbubble.net/image.4850209805.8243/st,medium,507x507-pad,600x600,f8f8f8.webp"
+    }
+]

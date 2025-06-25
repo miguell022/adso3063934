@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akuma no Mi API - One Piece Devil Fruits Database</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍎</text></svg>">
+</head>
+
+<body>
+  <header>
+    <h1> 🍎 Akuma no Mi API</h1>
+    <p>Base de datos completa de frutas del diablo de One Piece</p>
+    <div class="api-info">
+      <span class="api-version">API v1.0</span>
+      <span class="api-status">🟢 ONLINE</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card">
+        <div id="total-frutas" class="stat-number">0</div>
+        <div>Total Frutas</div>
+      </div>
+      <div class="stat-card">
+        <div id="total-paramecia" class="stat-number">0</div>
+        <div>Paramecia</div>
+      </div>
+      <div class="stat-card">
+        <div id="total-logia" class="stat-number">0</div>
+        <div>Logia</div>
+      </div>
+      <div class="stat-card">
+        <div id="total-zoan" class="stat-number">0</div>
+        <div>Zoan</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Documentación de la API -->
+    <section id="api-docs" class="api-docs"></section>
+
+    <!-- Controles de la API -->
+    <section class="api-controls">
+      <h2>🧪 Probar API</h2>
+      <div class="control-buttons">
+        <button id="btn-todas" class="btn-api" onclick="obtenerTodasLasFrutas()">📋 Todas las frutas</button>
+        <button id="btn-random" class="btn-api" onclick="obtenerFrutaAleatoria()">🎲 Fruta aleatoria</button>
+        <button id="btn-estadisticas" class="btn-api" onclick="obtenerEstadisticas()">📊 Estadísticas</button>
+      </div>
+    </section>
+
+    <!-- Filtros tradicionales -->
+    <section class="filtros">
+      <input type="text" id="buscador" placeholder="🔍 Buscar fruta del diablo...">
+      <select id="filtroTipo">
+        <option value=""> Todos los tipos</option>
+        <option value="Paramecia">💪 Paramecia</option>
+        <option value="Logia">🔥 Logia</option>
+        <option value="Zoan">🐾 Zoan</option>
+        <option value="Zoan Mitologica">✨ Zoan Mitológica</option>
+      </select>
+    </section>
+
+    <!-- Resultados -->
+    <section id="frutas-container" class="grid"></section>
+
+    <!-- Respuesta de la API -->
+    <section id="api-response" class="api-response"></section>
+  </main>
+
+  <footer class="api-footer">
+    <p>🏴‍☠️ Akuma no Mi API © 2024 | Datos de One Piece by Eiichiro Oda</p>
+    <p>🔧 Desarrollado como proyecto educativo | 📧 Contacto: tu-email@ejemplo.com</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
