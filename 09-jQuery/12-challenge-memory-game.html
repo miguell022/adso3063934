@@ -173,9 +173,19 @@
             height: 92%;
             object-fit: cover;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.95);
             padding: 6px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            /* ✅ AGREGADA: Ajuste automático de tamaño */
+            object-position: center;
+            min-width: 100px;
+            min-height: 100px;
+        }
+
+        /* ✅ AGREGAR: Ajustes específicos para imágenes pequeñas */
+        .card-back img[alt="mario.png"],
+        .card-back img[alt="Peach.png"] {
+            transform: scale(1.3);
+            object-fit: contain;
         }
 
         .reset {
