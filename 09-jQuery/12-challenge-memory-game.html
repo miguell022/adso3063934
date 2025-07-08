@@ -309,7 +309,7 @@
             </div>
         </section>
     </main>
-    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
     <script>
         $(document).ready(function () {
             // 🎮 Array con los nombres exactos de tus imágenes
@@ -335,68 +335,12 @@
 
             // 🎯 Función para mostrar preview 
             function showPreview() {
-                // Voltear todas las cartas
                 $('.card').addClass('flipped');
                 lockBoard = true;
-
-                // Después de 5 segundos, voltear todas las cartas
                 setTimeout(() => {
                     $('.card').removeClass('flipped');
                     lockBoard = false;
-                }, 3000); // 5 segundos de preview
-            }
-
-            // 🎮 Función para inicializar el juego
-            function initGame() {
-                // Crear parejas (12 cartas total)
-                cards = [...characters, ...characters];
-                cards = shuffleArray(cards);
-
-                // Agregar estadísticas si no existen
-                if ($('.game-stats').length === 0) {
-                    $('.game').prepend(`
-                        <div class="game-stats">
-                            <div><i class="fas fa-stopwatch"></i> Tiempo: <span id="timer">0</span>s</div>
-                            <div><i class="fas fa-hand-pointer"></i> Movimientos: <span id="moves">0</span></div>
-                            <div><i class="fas fa-star"></i> Pares: <span id="matches">0</span>/6</div>
-                        </div>
-                    `);
-                }
-
-                // Crear mensaje de victoria si no existe
-                if ($('.victory-message').length === 0) {
-                    $('body').append('<div class="victory-message" id="victoryMessage"></div>');
-                }
-
-                // Limpiar tablero
-                $('.cards').empty();
-
-                // Crear cartas dinámicamente con jQuery
-                cards.forEach((character, index) => {
-                    const card = $(`
-                        <div class="card" data-character="${character}" data-index="${index}">
-                            <div class="card-front">
-                                <img src="images/Super_Mario__Fondo.png" alt="Card Back" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
-                            <div class="card-back">
-                                <img src="images/${character}" alt="${character}">
-                            </div>
-                        </div>
-                    `);
-                    $('.cards').append(card);
-                });
-
-                // Resetear estadísticas
-                resetStats();
-
-                // Event listeners con jQuery
-                $('.card').on('click', handleCardClick);
-                $('.reset').on('click', initGame);
-
-                // ✅ Mostrar preview al inicio
-                setTimeout(() => {
-                    showPreview(); // ← Cambiar aquí
-                }, 800);
+                }, 3000);
             }
 
             // 🔄 Función para mezclar el array
@@ -414,13 +358,11 @@
                 if (lockBoard) return;
                 if ($(this).hasClass('flipped') || $(this).hasClass('matched')) return;
 
-                // Iniciar timer en el primer clic
                 if (!gameStarted) {
                     startTimer();
                     gameStarted = true;
                 }
 
-                // Voltear carta usando jQuery
                 $(this).addClass('flipped');
 
                 if (!firstCard) {
@@ -430,11 +372,8 @@
 
                 secondCard = $(this);
                 lockBoard = true;
-
-                // Incrementar movimientos
                 moves++;
                 $('#moves').text(moves);
-
                 checkForMatch();
             }
 
@@ -447,7 +386,6 @@
                         disableCards();
                         matches++;
                         $('#matches').text(matches);
-
                         if (matches === 6) {
                             gameWon();
                         }
@@ -481,18 +419,17 @@
             // 🎉 Función cuando se gana el juego
             function gameWon() {
                 clearInterval(gameTimer);
-
                 $('#victoryMessage').html(`
-                    <h2>🎉 ¡Felicidades!</h2>
-                    <p>¡Has encontrado todos los pares de Mario Bros!</p>
-                    <p><i class="fas fa-stopwatch"></i> Tiempo: ${timer} segundos</p>
-                    <p><i class="fas fa-hand-pointer"></i> Movimientos: ${moves}</p>
-                    <button onclick="$('.victory-message').hide(); initGame();" 
-                            style="margin-top: 1rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #4ecdc4, #44a08d); 
-                                   color: white; border: none; border-radius: 10px; cursor: pointer; font-size: 1.1rem; font-weight: bold;">
-                        <i class="fas fa-play"></i> Jugar de nuevo
-                    </button>
-                `).show();
+            <h2>🎉 ¡Felicidades!</h2>
+            <p>¡Has encontrado todos los pares de Mario Bros!</p>
+            <p><i class="fas fa-stopwatch"></i> Tiempo: ${timer} segundos</p>
+            <p><i class="fas fa-hand-pointer"></i> Movimientos: ${moves}</p>
+            <button onclick="$('.victory-message').hide(); initGame();" 
+                    style="margin-top: 1rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #4ecdc4, #44a08d); 
+                           color: white; border: none; border-radius: 10px; cursor: pointer; font-size: 1.1rem; font-weight: bold;">
+                <i class="fas fa-play"></i> Jugar de nuevo
+            </button>
+        `).show();
             }
 
             // ⏰ Iniciar cronómetro
@@ -509,20 +446,69 @@
                 moves = 0;
                 timer = 0;
                 gameStarted = false;
-
                 $('#moves').text(moves);
                 $('#timer').text(timer);
                 $('#matches').text(matches);
                 $('.victory-message').hide();
-
                 clearInterval(gameTimer);
-
                 firstCard = null;
                 secondCard = null;
                 lockBoard = false;
             }
 
-            // 🎮 Iniciar el juego al cargar la página
+            // 🎮 Función para inicializar el juego
+            function initGame() {
+                console.log('Iniciando juego...'); // Para debug
+
+                cards = [...characters, ...characters];
+                cards = shuffleArray(cards);
+
+                // Agregar estadísticas
+                if ($('.game-stats').length === 0) {
+                    $('.game').prepend(`
+                <div class="game-stats">
+                    <div><i class="fas fa-stopwatch"></i> Tiempo: <span id="timer">0</span>s</div>
+                    <div><i class="fas fa-hand-pointer"></i> Movimientos: <span id="moves">0</span></div>
+                    <div><i class="fas fa-star"></i> Pares: <span id="matches">0</span>/6</div>
+                </div>
+            `);
+                }
+
+                // Crear mensaje de victoria
+                if ($('.victory-message').length === 0) {
+                    $('body').append('<div class="victory-message" id="victoryMessage"></div>');
+                }
+
+                // Limpiar tablero
+                $('.cards').empty();
+
+                // ✅ CREAR CARTAS - ESTA ES LA PARTE IMPORTANTE
+                cards.forEach((character, index) => {
+                    const card = $(`
+                <div class="card" data-character="${character}" data-index="${index}">
+                    <div class="card-front">
+                        <img src="images/Super_Mario__Fondo.png" alt="Card Back">
+                    </div>
+                    <div class="card-back">
+                        <img src="images/${character}" alt="${character}">
+                    </div>
+                </div>
+            `);
+                    $('.cards').append(card);
+                });
+
+                resetStats();
+                $('.card').on('click', handleCardClick);
+                $('.reset').on('click', initGame);
+
+                setTimeout(() => {
+                    showPreview();
+                }, 800);
+
+                console.log('Cartas creadas:', $('.card').length); // Para debug
+            }
+
+            // 🚀 INICIAR EL JUEGO
             initGame();
         });
     </script>
