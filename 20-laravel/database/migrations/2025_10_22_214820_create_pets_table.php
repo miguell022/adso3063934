@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('image')->default('no-image.png');
             $table->string('kind');
-            $table->integer('weight');
+            $table->double('weight');
             $table->integer('age');
             $table->string('breed');
             $table->string('location');
@@ -24,8 +24,6 @@ return new class extends Migration
             $table->boolean('active')->default(1);
             $table->boolean('status')->default(0);
             $table->timestamps();
-
-
         });
     }
 
