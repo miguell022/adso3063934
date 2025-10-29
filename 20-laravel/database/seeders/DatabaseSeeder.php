@@ -21,8 +21,8 @@ class DatabaseSeeder extends Seeder
             PetSeeder::class,
             AdoptionSeeder::class
         ]);
-        User::factory(1000)->create();
-        Pet::factory(500)->create();
+        User::factory(50)->create();
+        Pet::factory(50)->create();
 
         // User::factory()->create([
         //     'name' => 'Test User',
