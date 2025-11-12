@@ -27,7 +27,7 @@ class User extends Authenticatable
         'email',
         'password',
         'active',
-        'role'
+        'role',
     ];
 
     /**
@@ -53,11 +53,12 @@ class User extends Authenticatable
         ];
     }
 
-    //Relationships:
-    // A user can have many adoptions
+    // relationships 
+    // user hasmany adoptions 
+
     public function adoptions(){
+    
         return $this->hasMany(Adoption::class);
+        
     }
 }
-
-    
