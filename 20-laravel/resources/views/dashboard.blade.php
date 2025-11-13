@@ -15,6 +15,7 @@
         </div>
     </div>
 </x-app-layout> --}}
+@extends('layouts.dashboard')
 <h1>Dashboard</h1>
 <h2>{{ Auth::user()->fullname }}</h2>
 <h3>You're logged in!</h3>
