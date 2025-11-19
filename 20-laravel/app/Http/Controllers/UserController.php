@@ -17,4 +17,9 @@ class UserController extends Controller
         // Enviar los usuarios a la vista 'users.index'
         return view('users.index', compact('users'));
     }
+
+    public function create()
+    {
+        return view('users.create');
+    }
 }
