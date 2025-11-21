@@ -173,12 +173,19 @@
 @endsection
 
 @section('js')
-<script>
-    $(document).ready(function(){
-        const modal_message = document.getElementById('modal_message');
-        @if (session('success'))
-            modal_message.showModal();
-        @endif
-    });
-</script>
-@endsection
+    <script>
+        // Use vanilla JS so the modal opens even if jQuery isn't loaded.
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal_message = document.getElementById('modal_message');
+            @if (session('success') || session('message'))
+                if (modal_message && typeof modal_message.showModal === 'function') {
+                    try {
+                        modal_message.showModal();
+                    } catch (e) {
+                        // Some browsers or polyfills may not support <dialog>.fallback: toggle class
+                        modal_message.classList.add('open');
+                    }
+                }
+            @endif
+        });
+    </script>
