@@ -43,14 +43,19 @@
             <span class="hidden md:inline">Export Excel</span>
         </a>
 
-        <a href="{{ url('import/users/excel') }}"
-            class="flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-blue-400 bg-white text-blue-600 shadow-sm hover:bg-blue-600 hover:text-white hover:shadow-md transition">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 3v10m0 0l-4-4m4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
-            <span class="hidden md:inline">Import Excel</span>
-        </a>
+        <form class=" flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-blue-400 bg-white text-blue-600 shadow-sm hover:bg-blue-600 hover:text-white hover:shadow-md transition join-item" action="{{ url('import/users') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <input type="file" name="file" id="file" class="hidden"
+                accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+            <button type="button" class="btn btn-outline text-white hover:bg-[#fff6] hover:text-white btn-import">
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-6" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                        d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-42.34-77.66a8,8,0,0,1-11.32,11.32L136,139.31V184a8,8,0,0,1-16,0V139.31l-10.34,10.35a8,8,0,0,1-11.32-11.32l24-24a8,8,0,0,1,11.32,0Z">
+                    </path>
+                </svg>
+                <span class="hidden md:inline">Import Excel</span>
+            </button>
+        </form>
     </div>
 
     {{-- Search --}}
@@ -61,7 +66,7 @@
                 <path d="m21 21-4.3-4.3"></path>
             </g>
         </svg>
-        <input type="search" placeholder="Search..." name="qsearch" />
+        <input id="qsearch" type="search" placeholder="Search..." name="qsearch" />
     </label>
 
     @if (session('success'))
@@ -72,6 +77,16 @@
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span>{{ session('success') }}</span>
+        </div>
+    @endif
+    @if (session('error'))
+        <div role="alert" class="alert alert-error">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 14l2-2 2 2m-2-2v6M12 8v.01" />
+            </svg>
+            <span>{{ session('error') }}</span>
         </div>
     @endif
 
@@ -91,7 +106,7 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="datalist">
                 @foreach ($users as $user)
                     <tr @if ($user->id % 2 == 0) class="bg-[#0006]" @endif>
                         <th class="hidden md:table-cell">{{ $user->id }}</th>
@@ -174,18 +189,79 @@
 
 @section('js')
     <script>
-        // Use vanilla JS so the modal opens even if jQuery isn't loaded.
-        document.addEventListener('DOMContentLoaded', function () {
+        $(document).ready(function() {
+            //Modal
             const modal_message = document.getElementById('modal_message');
-            @if (session('success') || session('message'))
-                if (modal_message && typeof modal_message.showModal === 'function') {
-                    try {
-                        modal_message.showModal();
-                    } catch (e) {
-                        // Some browsers or polyfills may not support <dialog>.fallback: toggle class
-                        modal_message.classList.add('open');
-                    }
-                }
+            @if (session('success'))
+                modal_message.showModal();
             @endif
-        });
+            //Delete
+            $('table').on('click', '.btn-delete', function() {
+                $fullname = $(this).data('fullname')
+                $('.fullname').text($fullname)
+                $frm = $(this).next()
+                modal_delete.showModal()
+                // if (confirm('Are you sure? ')) {
+                //     alert($fullname + ' was delete')
+                //     $(this).next().submit();
+                // }
+            })
+            $('.btn-confirm').click(function(e) {
+                e.preventDefault()
+                $frm.submit()
+            })
+
+            // Search
+            function debounce(func, wait) {
+                let timeout
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout)
+                        func(...args)
+                    };
+                    clearTimeout(timeout)
+                    timeout = setTimeout(later, wait)
+                }
+            }
+            const search = debounce(function(query) {
+
+                $token = $('input[name=_token]').val()
+
+                $.post("search/users", {
+                        'q': query,
+                        '_token': $token
+                    },
+                    function(data) {
+                        $('.datalist').html(data).hide().fadeIn(1000)
+                    }
+                )
+            }, 500)
+            $('body').on('input', '#qsearch', function(event) {
+                event.preventDefault()
+                const query = $(this).val()
+
+                $('.datalist').html(`<tr>
+                                        <td colspan="7" class="text-center py-18">
+                                            <span class="loading loading-spinner text-warning"></span>
+                                        </td>
+                                    </tr>`)
+
+                if (query != '') {
+                    search(query)
+                } else {
+                    setTimeout(() => {
+                        window.location.replace('users')
+                    }, 500)
+                }
+            })
+        })
+        //import
+        $('.btn-import').click(function(e) {
+            $('#file').click()
+        })
+        $('#file').change(function(e) {
+            $(this).parent().submit()
+        })
     </script>
+
+@endsection

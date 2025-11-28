@@ -17,7 +17,16 @@ Route::middleware('auth')->group(function () {
         // 'pets'=> PetController::class,
         // 'adoptions'=> AdoptionController::class,
     ]);
+    // Search users via POST (Ajax)
+    Route::post('search/users', [UserController::class, 'search'])->name('users.search');
 });
+
+// export
+Route::get('export/users/pdf', [UserController::class, 'pdf']);
+Route::get('export/users/excel', [UserController::class, 'excel']);
+
+// import
+Route::post('import/users', [UserController::class,'import']);
 
 Route::get('hello', function () {
     return "<h1>Hello folks, Have a nice day 😍</h1";

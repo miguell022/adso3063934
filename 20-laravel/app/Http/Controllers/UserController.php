@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\UsersExport;
+use App\Imports\UsersImport;
 
 class UserController extends Controller
 {
@@ -92,7 +96,7 @@ class UserController extends Controller
             // 'photo'     => ['required', 'image'],
             'phone'     => ['required'],
             'email'     => ['required', 'lowercase', 'email', 'unique:' . User::class . ',email,' . $user->id],
-            
+
         ]);
 
         if ($validation) {
@@ -125,8 +129,48 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        if($user->delete()){
+        if ($user->delete()) {
             return redirect('users')->with('message', 'The user:  ' . $user->fullname . '  was successfully deleted!');
+        }
+    }
+
+    public function search(Request $request)
+    {
+        $users = User::names($request->q)->orderBy('id', 'desc')->paginate(20);
+        return view('users.search')->with('users', $users);
+    }
+
+    //export pdf
+    public function pdf()
+    {
+        $users = User::all();
+        $pdf = PDF::loadView('users.pdf', compact('users'));
+        return $pdf->download('allusers.pdf');
+    }
+
+    //Export Excel
+    public function excel()
+    {
+        return Excel::download(new UsersExport, 'allusers.xlsx');
+    }
+
+    //Import Excel
+    public function import(Request $request){
+        $file = $request->file('file');
+        try {
+            Excel::import(new UsersImport, $file);
+            return redirect()->back()->with('success', 'Users imported successful!');
+        } catch (\Maatwebsite\Excel\Validators\ValidationException $e) {
+            // Excel validation failures
+            $failures = $e->failures();
+            $messages = [];
+            foreach ($failures as $failure) {
+                $messages[] = "Row {$failure->row()} : " . implode(', ', $failure->errors());
+            }
+            $msg = implode('\n', $messages);
+            return redirect()->back()->with('error', 'Import failed with validation errors: ' . $msg);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Import failed: ' . $e->getMessage());
         }
     }
 }
