@@ -26,10 +26,40 @@ class Pet extends Model
         'status',
     ];
 
-    // relationships 
-    // pet hasOne adoption 
+    /**
+     * Default attribute values for new models.
+     */
+    protected $attributes = [
+        'image' => 'no-image.png',
+        'active' => 1,
+        'status' => 1, // default Available
+    ];
 
+    /**
+     * Casts for attribute types.
+     */
+    protected $casts = [
+        'active' => 'boolean',
+        'status' => 'integer',
+        'weight' => 'float',
+        'age' => 'integer',
+    ];
+
+    // relationships 
     public function adoption(){
         return $this->hasOne(Adoption::class); 
+    }
+
+    // Scope for search by name, kind, breed, or location
+    public function scopeNames($query, $q)
+    {
+        if (trim($q)) {
+            $query->where('name', 'LIKE', "%$q%")
+                  ->orWhere('kind', 'LIKE', "%$q%")
+                  ->orWhere('breed', 'LIKE', "%$q%")
+                  ->orWhere('location', 'LIKE', "%$q%");
+        }
+
+        return $query;
     }
 }
