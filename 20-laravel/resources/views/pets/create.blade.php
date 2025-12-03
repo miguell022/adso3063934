@@ -141,17 +141,6 @@
                     <small class="badge badge-error w-full -mt-1 text-xs py-4">{{ $message }}</small>
                 @enderror
 
-                {{-- Status --}}
-                <label class="label text-gray-700">Status</label>
-                <select name="status" class="select bg-white outline-0">
-                    <option value="">Select...</option>
-                    <option value="1" @if (old('status', '1') === '1') selected @endif>Available</option>
-                    <option value="0" @if (old('status') === '0') selected @endif>Adopted</option>
-                </select>
-                @error('status')
-                    <small class="badge badge-error w-full -mt-1 text-xs py-4">{{ $message }}</small>
-                @enderror
-
                 <button class="btn btn-success mt-4 w-full">Create Pet</button>
             </div>
         </form>
@@ -171,3 +160,4 @@
         })
     </script>
 @endsection
+

@@ -172,7 +172,7 @@
         </table>
     </div>
 
-    <button class="btn" onclick="modal_message.showModal()">open modal</button>
+    <button class="btn hidden" onclick="modal_message.showModal()">open modal</button>
     <dialog id="modal_message" class="modal">
         <div class="modal-box bg-black text-white">
             <h3 class="text-lg font-bold">Congratulations!</h3>

@@ -15,7 +15,7 @@ class PetController extends Controller
      */
     public function index()
     {
-        $pets = Pet::paginate(10);
+        $pets = Pet::orderBy('id', 'DESC')->paginate(10);
         return view('pets.index', compact('pets'));
     }
 
@@ -42,7 +42,7 @@ class PetController extends Controller
             'description' => 'nullable|string|max:500',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'active' => 'nullable|boolean',
-            'status' => 'nullable|string|max:50',
+            
         ]);
 
         if ($request->hasFile('image')) {
@@ -53,16 +53,8 @@ class PetController extends Controller
 
         $validated['active'] = $request->has('active') ? 1 : 0;
 
-        // Map status input to integer 0/1. Accept numeric values or labels.
-        $statusInput = $request->input('status', '');
-        if (is_numeric($statusInput)) {
-            $validated['status'] = (int) $statusInput;
-        } elseif ($statusInput === 'Adopted') {
-            $validated['status'] = 0;
-        } else {
-            // Default to 1 (Available)
-            $validated['status'] = 1;
-        }
+        // All new pets start as available
+        $validated['status'] = 1;
 
         Pet::create($validated);
 
@@ -100,7 +92,7 @@ class PetController extends Controller
             'description' => 'nullable|string|max:500',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'active' => 'nullable|boolean',
-            'status' => 'nullable|string|max:50',
+            
         ]);
 
         if ($request->hasFile('image')) {
@@ -111,15 +103,8 @@ class PetController extends Controller
 
         $validated['active'] = $request->has('active') ? 1 : 0;
 
-        // Map status for update as well (accept numeric or label)
-        $statusInput = $request->input('status', '');
-        if (is_numeric($statusInput)) {
-            $validated['status'] = (int) $statusInput;
-        } elseif ($statusInput === 'Adopted') {
-            $validated['status'] = 0;
-        } else {
-            $validated['status'] = 1;
-        }
+        // Status is managed only by adoption module, preserve current value
+        $validated['status'] = $pet->status;
 
         $pet->update($validated);
 
@@ -163,3 +148,7 @@ class PetController extends Controller
         return Excel::download(new PetsExport, 'allpets.xlsx');
     }
 }
+
+
+
+

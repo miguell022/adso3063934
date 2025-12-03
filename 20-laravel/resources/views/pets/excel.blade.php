@@ -26,6 +26,7 @@
                 <th>Description</th>
                 <th>Active</th>
                 <th>Status</th>
+                <th>Image</th>
             </tr>
         </thead>
         <tbody>
@@ -41,6 +42,9 @@
                 <td>{{ $pet->description }}</td>
                 <td>{{ $pet->active ? 'Active' : 'Inactive' }}</td>
                 <td>{{ $pet->status == 1 ? 'Available' : 'Adopted' }}</td>
+                <td>
+                    <img src="{{ public_path().'/images/'.$pet->image }}" width="50px">
+                </td>
             </tr>
             @endforeach
         </tbody>

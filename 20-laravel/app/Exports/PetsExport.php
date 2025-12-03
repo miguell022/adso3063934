@@ -3,49 +3,45 @@
 namespace App\Exports;
 
 use App\Models\Pet;
-use Maatwebsite\Excel\Concerns\FromCollection;
-use Maatwebsite\Excel\Concerns\WithHeadings;
-use Maatwebsite\Excel\Concerns\WithMapping;
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Concerns\WithColumnWidths;
+use Maatwebsite\Excel\Concerns\WithStyles;
+use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
-class PetsExport implements FromCollection, WithHeadings, WithMapping
+class PetsExport implements FromView, WithColumnWidths, WithStyles
 {
-    /**
-     * Return a collection of models to export
-     *
-     * @return \Illuminate\Support\Collection
-     */
-    public function collection()
+    
+    public function view(): View
     {
-        return Pet::all();
+        return view('pets.excel', [
+            'pets' => Pet::all()
+        ]);
     }
 
-    /**
-     * Map a single model to an array row
-     */
-    public function map($pet): array
+    public function columnWidths(): array
     {
         return [
-            $pet->id,
-            $pet->name,
-            $pet->kind,
-            $pet->breed,
-            $pet->age,
-            $pet->weight,
-            $pet->location,
-            $pet->description,
-            $pet->active ? 'Active' : 'Inactive',
-            $pet->status == 1 ? 'Available' : 'Adopted',
-            $pet->image,
+            'A' => 5,   // ID
+            'B' => 20,  // Name
+            'C' => 12,  // Kind
+            'D' => 20,  // Breed
+            'E' => 8,   // Age
+            'F' => 10,  // Weight
+            'G' => 25,  // Location
+            'H' => 35,  // Description
+            'I' => 12,  // Active
+            'J' => 12,  // Status
+            'K' => 15,  // Image
         ];
     }
 
-    /**
-     * Headings for the spreadsheet
-     */
-    public function headings(): array
+    public function styles(Worksheet $sheet)
     {
         return [
-            'ID', 'Name', 'Kind', 'Breed', 'Age', 'Weight', 'Location', 'Description', 'Active', 'Status', 'Image'
+            1 => ['font' => ['bold' => true, 'size' => 14]],
         ];
     }
 }
+
+?>
