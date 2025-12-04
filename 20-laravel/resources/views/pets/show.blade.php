@@ -89,6 +89,17 @@
                         {{ $pet->description ?? 'No description' }}</span>
                 </li>
                 <li class="list-row">
+                    <span class="text-[#fff9] font-semibold">Active:</span> <span class="text-[#fff9]">
+                        <span>
+                            @if ($pet->active == 1)
+                                <div class="badge badge-outline badge-success">Active</div>
+                            @else
+                                <div class="badge badge-outline badge-error">Inactive</div>
+                            @endif
+                        </span>
+                </li>
+                </li>
+                <li class="list-row">
                     <span class="text-[#fff9] font-semibold">Status:</span> <span class="text-[#fff9]">
                         <span>
                             @if ($pet->status == 1)

@@ -41,10 +41,8 @@
                 <td>{{ $pet->location }}</td>
                 <td>{{ $pet->description }}</td>
                 <td>{{ $pet->active ? 'Active' : 'Inactive' }}</td>
-                <td>{{ $pet->status == 1 ? 'Available' : 'Adopted' }}</td>
-                <td>
-                    <img src="{{ public_path().'/images/'.$pet->image }}" width="50px">
-                </td>
+                <td>{{ $pet->status ? 'Available' : 'Adopted' }}</td>
+                <td><img src="{{ public_path('images/'.$pet->image) }}" width="50" height="50" /></td>
             </tr>
             @endforeach
         </tbody>

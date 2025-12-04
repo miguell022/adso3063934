@@ -3,7 +3,8 @@
 @section('title', 'Edit Pet:Larapets🐶')
 
 @section('content')
-    <h1 class="text-4xl flex gap-2 items-center justify-center pb-4 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-md border-2 border-gray-300 mb-6"  >
+    <h1
+        class="text-4xl flex gap-2 items-center justify-center pb-4 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-md border-2 border-gray-300 mb-6">
         <svg xmlns="http://www.w3.org/2000/svg" class="size-12" fill="#000" viewBox="0 0 256 256">
             <path
                 d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM51.31,160,136,75.31,152.69,92,68,176.68ZM48,179.31,76.69,208H48Zm48,25.38L79.31,188,164,103.31,180.69,120Zm96-96L147.31,64l24-24L216,84.68Z">
@@ -12,7 +13,7 @@
         Edit Pet
     </h1>
 
-     <div class="breadcrumbs text-sm bg-white/80 backdrop-blur-sm rounded-lg px-3 py-2 text-gray-800 mb-6">
+    <div class="breadcrumbs text-sm bg-white/80 backdrop-blur-sm rounded-lg px-3 py-2 text-gray-800 mb-6">
         <ul>
             <li>
                 <a href="{{ url('dashboard') }}">
@@ -52,7 +53,7 @@
         class="bg-[#0004] text-white rounded-lg md:w-[720px] w-[360px] p-8 flex flex-col gap-4 items-center justify-center">
 
         <div class="card w-full ">
-            <form method="POST" action="{{ url('pets/'.$pet->id) }}" class="flex flex-col gap-4 card-body"
+            <form method="POST" action="{{ url('pets/' . $pet->id) }}" class="flex flex-col gap-4 card-body"
                 enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
@@ -61,7 +62,7 @@
                         <div
                             class="avatar flex flex-col items-center justify-center gap-2 cursor-pointer hover:scale-110 transition ease-in">
                             <div id="upload" class="mask mask-squircle w-48">
-                                <img id="preview" src="{{ asset('images/'.$pet->image) }}" />
+                                <img id="preview" src="{{ asset('images/' . $pet->image) }}" />
                             </div>
                             <small class="pb-0 border-white border-b flex gap-1 items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="#fff" viewBox="0 0 256 256">
@@ -91,10 +92,10 @@
                         <label class="label">Kind</label>
                         <select name="kind" class="select bg-[#0009] w-full outline-0">
                             <option value="">Select...</option>
-                            <option value="Dog" @if(old('kind', $pet->kind) == 'Dog') selected @endif>Dog</option>
-                            <option value="Cat" @if(old('kind', $pet->kind) == 'Cat') selected @endif>Cat</option>
-                            <option value="Pig" @if(old('kind', $pet->kind) == 'Pig') selected @endif>Pig</option>
-                            <option value="Bird" @if(old('kind', $pet->kind) == 'Bird') selected @endif>Bird</option>
+                            <option value="Dog" @if (old('kind', $pet->kind) == 'Dog') selected @endif>Dog</option>
+                            <option value="Cat" @if (old('kind', $pet->kind) == 'Cat') selected @endif>Cat</option>
+                            <option value="Pig" @if (old('kind', $pet->kind) == 'Pig') selected @endif>Pig</option>
+                            <option value="Bird" @if (old('kind', $pet->kind) == 'Bird') selected @endif>Bird</option>
                         </select>
                         @error('kind')
                             <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
@@ -121,8 +122,8 @@
 
                         {{-- Age --}}
                         <label class="label">Age (years)</label>
-                        <input type="number" class="input bg-[#0006] w-full mt-1 outline-0" name="age"
-                            placeholder="3" value="{{ old('age', $pet->age) }}" />
+                        <input type="number" class="input bg-[#0006] w-full mt-1 outline-0" name="age" placeholder="3"
+                            value="{{ old('age', $pet->age) }}" />
                         @error('age')
                             <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                         @enderror
@@ -137,19 +138,23 @@
 
                         {{-- Description --}}
                         <label class="label">Description</label>
-                        <textarea name="description" class="textarea bg-[#0006] w-full mt-1 outline-0" rows="3" placeholder="Short description">{{ old('description', $pet->description) }}</textarea>
+                        <textarea name="description" class="textarea bg-[#0006] w-full mt-1 outline-0" rows="3"
+                            placeholder="Short description">{{ old('description', $pet->description) }}</textarea>
                         @error('description')
                             <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                         @enderror
 
                         {{-- Active --}}
                         <label class="label">Active</label>
-                        <input type="checkbox" name="active" value="1" @if(old('active', $pet->active)) checked @endif />
+                        <select name="active" class="select bg-[#0009] w-full outline-0">
+                            <option value="1" @if (old('active', $pet->active) == 1) selected @endif>Active</option>
+                            <option value="0" @if (old('active', $pet->active) == 0) selected @endif>Inactive</option>
+                        </select>
                         @error('active')
                             <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                         @enderror
 
-                        </div>
+                    </div>
                 </div>
 
                 <!-- Botón debajo de las dos columnas -->
@@ -162,18 +167,15 @@
 @endsection
 
 @section('js')
-            <script>
-        $(document).ready(function () {
-            $('#upload').click(function (e) {
-                e.preventDefault()
-                $('#image').click()
-            })
-            $('#image').change(function (e) {
-                e.preventDefault()
-                $('#preview').attr('src', window.URL.createObjectURL($(this).prop('files')[0]))
-            })
+<script>
+    $(document).ready(function() {
+        $('#upload').click(function(e) {
+            e.preventDefault()
+            $('#image').click()
         })
-    </script>@endsection
-
-
-
+        $('#image').change(function(e) {
+            e.preventDefault()
+            $('#preview').attr('src', window.URL.createObjectURL($(this).prop('files')[0]))
+        })
+    })
+</script>@endsection
