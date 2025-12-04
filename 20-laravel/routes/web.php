@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PetController;
+use App\Http\Controllers\AdoptionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,6 +19,14 @@ Route::middleware('auth')->group(function () {
         'pets' => PetController::class,
         // 'adoptions'=> AdoptionController::class,
     ]);
+
+    // adoptions
+    Route::get('adoptions', [AdoptionController::class, 'index']);
+    Route::get('adoptions/{id}', [AdoptionController::class, 'show']);
+    Route::post('search/adoptions', [AdoptionController::class, 'search']);
+    Route::get('export/adoptions/pdf', [AdoptionController::class, 'pdf']);
+    Route::get('export/adoptions/excel', [AdoptionController::class, 'excel']);
+
     // Search users via POST (Ajax)
     Route::post('search/users', [UserController::class, 'search'])->name('users.search');
     // Search pets via POST (Ajax)
@@ -32,7 +41,7 @@ Route::get('export/pets/pdf', [PetController::class, 'pdf']);
 Route::get('export/pets/excel', [PetController::class, 'excel']);
 
 // import
-Route::post('import/users', [UserController::class,'import']);
+Route::post('import/users', [UserController::class, 'import']);
 
 Route::get('hello', function () {
     return "<h1>Hello folks, Have a nice day 😍</h1";

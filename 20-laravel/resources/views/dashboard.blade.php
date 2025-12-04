@@ -211,7 +211,7 @@
                     </li>
                 </ul>
                 <div class="card-actions justify-end">
-                    <a class="btn btn-outline hover:bg-[#red] hover:text-white mt-3" href="{{ url('users') }}">
+                    <a class="btn btn-outline hover:bg-[#red] hover:text-white mt-3" href="{{ url('adoptions') }}">
                         Enter
                         <svg xmlns="http://www.w3.org/2000/svg" class="size-6" fill="#000" viewBox="0 0 256 256">
                             <path
