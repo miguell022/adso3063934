@@ -26,6 +26,33 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @yield('js')
+
+    <dialog id="modal_message" class="modal">
+        <div class="modal-box bg-red-50">
+            <h3 class="text-lg font-bold text-red-700">
+                Sorry!
+            </h3>
+            <div role="alert" class="alert alert-error">
+                <form method="dialog">
+                    <button class="btn">Cancel</button>
+                </form>
+            </div>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+        </form>
+    </dialog>
+
+    @section('js')
+        <script>
+            $(document).ready(function() {
+                const modal_message = document.getElementById('modal-message');
+                @if(session('error'))
+                    modal_message.showModal();
+                @endif
+            })
+        </script>
+    @endsection
 </body>
 
 </html>
