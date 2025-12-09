@@ -4,6 +4,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PetController;
 use App\Http\Controllers\AdoptionController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomerController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -104,6 +105,18 @@ Route::middleware('auth')->group(function () {
         $pet = App\Models\Pet::find(request()->id);
         return view('view-pet')->with('pet', $pet);
     });
+
+    // Customer
+    Route::get('myprofile/', [CustomerController::class, 'myprofile']);
+    Route::put('myprofile/{id}', [CustomerController::class, 'updatemyprofile']);
+
+    Route::get('myadoptions/', [CustomerController::class, 'myadoptions']);
+    Route::get('myadoptions/{id}', [CustomerController::class, 'showadoption']);
+
+    Route::get('makeadoption/', [CustomerController::class, 'listpets']);
+    Route::get('makeadoption/{id}', [CustomerController::class, 'confirmadoption']);
+    Route::post('makeadoption/{id}', [CustomerController::class, 'makeadoption']);
+    Route::post('search/makeadoption', [CustomerController::class, 'search']);
 });
 
 require __DIR__ . '/auth.php';

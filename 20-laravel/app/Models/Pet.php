@@ -46,8 +46,9 @@ class Pet extends Model
     ];
 
     // relationships 
-    public function adoption(){
-        return $this->hasOne(Adoption::class); 
+    public function adoption()
+    {
+        return $this->hasOne(Adoption::class);
     }
 
     // Scope for search by name, kind, breed, or location
@@ -55,9 +56,27 @@ class Pet extends Model
     {
         if (trim($q)) {
             $query->where('name', 'LIKE', "%$q%")
-                  ->orWhere('kind', 'LIKE', "%$q%")
-                  ->orWhere('breed', 'LIKE', "%$q%")
-                  ->orWhere('location', 'LIKE', "%$q%");
+                ->orWhere('kind', 'LIKE', "%$q%")
+                ->orWhere('breed', 'LIKE', "%$q%")
+                ->orWhere('location', 'LIKE', "%$q%");
+        }
+
+        return $query;
+    }
+
+    //Scope kinds
+    public function scopekinds($query, $q)
+    {
+        if (trim($q)) {
+            $query->where('status', 1) // Only available pets
+                ->where(function($query) use ($q) {
+                    $query->where('name', 'LIKE', "%$q%")
+                        ->orWhere('kind', 'LIKE', "%$q%")
+                        ->orWhere('breed', 'LIKE', "%$q%")
+                        ->orWhere('location', 'LIKE', "%$q%");
+                });
+        } else {
+            $query->where('status', 1); // Show all available pets if no search term
         }
 
         return $query;
