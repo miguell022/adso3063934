@@ -113,7 +113,8 @@
                         <td>
                             <div class="avatar">
                                 <div class="mask mask-squircle w-20">
-                                    <img src="{{ asset('images/' . $user->photo) }}" />
+                                    <img src="{{ asset('images/' . ($user->photo ?? 'no-photo.png')) }}" 
+                                         onerror="this.src='{{ asset('images/no-photo.png') }}'" />
                                 </div>
                             </div>
                         </td>

@@ -74,11 +74,30 @@ class CustomerController extends Controller
         return view('customer.makeadoption')->with('pets', $pets);
     }
     public function confirmadoption(Request $request) {
-
+        $pet = Pet::findOrFail($request->id);
+        return view('customer.confirmadoption')->with('pet', $pet);
     }
     public function makeadoption(Request $request)
     {
-        return "Make adoptions";
+        // Buscar la mascota
+        $pet = Pet::findOrFail($request->id);
+        
+        // Verificar si la mascota ya fue adoptada
+        if ($pet->status == 0) {
+            return redirect('makeadoption')->with('error', 'This pet has already been adopted.');
+        }
+        
+        // Crear el registro de adopción
+        $adoption = new Adoption();
+        $adoption->user_id = Auth::user()->id;
+        $adoption->pet_id = $pet->id;
+        $adoption->save();
+        
+        // Actualizar el status de la mascota a adoptada
+        $pet->status = 0;
+        $pet->save();
+        
+        return redirect('makeadoption')->with('success', 'Congratulations! You have successfully adopted ' . $pet->name . '! 🎉');
     }
     public function search(Request $request) {
         $pets = pet::kinds($request->qsearch)->orderby('id','DESC')->paginate(10);
