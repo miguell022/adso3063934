@@ -23,8 +23,8 @@ class ComposerStaticInit19b21fff8d5a641822e8695dec1c544a
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        'ef65a1626449d89d0811cf9befce46f0' => __DIR__ . '/..' . '/illuminate/events/functions.php',
         '06a34129a50df3d9257ee706cf3c875b' => __DIR__ . '/..' . '/illuminate/filesystem/functions.php',
+        'ef65a1626449d89d0811cf9befce46f0' => __DIR__ . '/..' . '/illuminate/events/functions.php',
         '47e1160838b5e5a10346ac4084b58c23' => __DIR__ . '/..' . '/laravel/prompts/src/helpers.php',
         '35a6ad97d21e794e7e22a17d806652e4' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Functions.php',
     );
@@ -87,12 +87,15 @@ class ComposerStaticInit19b21fff8d5a641822e8695dec1c544a
         ),
         'C' => 
         array (
+            'Composer\\Pcre\\' => 14,
+            'Composer\\ClassMapGenerator\\' => 27,
             'Carbon\\Doctrine\\' => 16,
             'Carbon\\' => 7,
         ),
         'B' => 
         array (
             'Brick\\Math\\' => 11,
+            'Barryvdh\\LaravelIdeHelper\\' => 26,
         ),
     );
 
@@ -237,6 +240,14 @@ class ComposerStaticInit19b21fff8d5a641822e8695dec1c544a
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/src',
         ),
+        'Composer\\Pcre\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/pcre/src',
+        ),
+        'Composer\\ClassMapGenerator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/class-map-generator/src',
+        ),
         'Carbon\\Doctrine\\' => 
         array (
             0 => __DIR__ . '/..' . '/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine',
@@ -248,6 +259,20 @@ class ComposerStaticInit19b21fff8d5a641822e8695dec1c544a
         'Brick\\Math\\' => 
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
+        ),
+        'Barryvdh\\LaravelIdeHelper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/barryvdh/laravel-ide-helper/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'B' => 
+        array (
+            'Barryvdh' => 
+            array (
+                0 => __DIR__ . '/..' . '/barryvdh/reflection-docblock/src',
+            ),
         ),
     );
 
@@ -275,6 +300,7 @@ class ComposerStaticInit19b21fff8d5a641822e8695dec1c544a
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit19b21fff8d5a641822e8695dec1c544a::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit19b21fff8d5a641822e8695dec1c544a::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit19b21fff8d5a641822e8695dec1c544a::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit19b21fff8d5a641822e8695dec1c544a::$classMap;
 
         }, null, ClassLoader::class);

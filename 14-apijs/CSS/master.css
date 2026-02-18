@@ -184,6 +184,8 @@ body {
                     /* Asegura que la imagen, data y acciones estén alineados horizontalmente */
                     img {
                         flex-shrink: 0;
+                        width: 30px;
+                        height: 30px;
                     }
 
                     .data {
@@ -273,6 +275,7 @@ body {
                 .info-row {
                     width: 100%;
                     display: flex;
+                    margin-left: 12px;
                     justify-content: space-between;
                     border-bottom: 1px solid #d8e6ea;
                     padding: 0.2rem 0;
@@ -417,4 +420,15 @@ main.animateView {
         opacity: 0;
         transform: scale(0.6);
     }
+}
+
+/* Botón Cancel rojo */
+a.btnCancel {
+    background: #e53935 !important;
+    border: 1px solid #e53935 !important;
+    color: #fff !important;
+}
+a.btnCancel:hover {
+    background: #b71c1c !important;
+    border: 1px solid #b71c1c !important;
 }

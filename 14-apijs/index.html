@@ -53,8 +53,9 @@
             </svg>
             Pet List
         </h2>
-        <section class="list">
-            
+        <section class="list" id="petList">
+            <!-- Pet items will be dynamically added here -->
+
         </section>
     </main>
 
@@ -77,7 +78,7 @@
             </label>
             <label for="weight">
                 Weight
-                <input type="text" name="weight" placeholder="Enter weight">
+                <input type="number" name="weight" placeholder="Enter weight">
             </label>
             <label for="age">
                 Age
@@ -97,7 +98,7 @@
             </label>
 
             <div class="actions">
-                <button type="button">Add</button>
+                <button type="submit">Add</button>
                 <a href="javascript:;" class="btnCancel">Cancel</a>
             </div>
         </form>
@@ -113,45 +114,33 @@
         </header>
 
         <section class="data">
-            <img src="imgs/pet03.png" class="pet-img" alt="Pet03">
-
+            <img src="" class="pet-img" alt="Pet">
             <div class="info-row">
                 <span>Name:</span>
-                <p>Firulais</p>
+                <p></p>
             </div>
-
             <div class="info-row">
                 <span>Kind:</span>
-                <p>Dog</p>
+                <p></p>
             </div>
-
             <div class="info-row">
                 <span>Age:</span>
-                <p>4 years</p>
+                <p></p>
             </div>
-
             <div class="info-row">
                 <span>Weight:</span>
-                <p>12.4 Kls</p>
+                <p></p>
             </div>
-
             <div class="info-row">
                 <span>Breed:</span>
-                <p>German Shepherd</p>
+                <p></p>
             </div>
-
             <div class="info-row">
                 <span>Location:</span>
-                <p>Manizales</p>
+                <p></p>
             </div>
-
             <h3 class="desc-title">Description:</h3>
-            <p class="description">
-                This dog has a curious and slightly worried expression. It has short, light brown fur, big round eyes
-                that look up attentively, and floppy ears that hang to the sides. Its nose is dark and shiny, and its
-                head is tilted a little, giving it a sweet, innocent, and almost funny look. Overall, the dog looks
-                friendly, gentle, and very expressive, as if it’s reacting to a sound or waiting for attention.
-            </p>
+            <p class="description"></p>
         </section>
     </main>
 
@@ -194,7 +183,7 @@
             </label>
 
             <div class="actions">
-                <button type="button">Edit</button>
+                <button type="submit">Edit</button>
                 <a href="javascript:;" class="btnCancel">Cancel</a>
             </div>
         </form>
