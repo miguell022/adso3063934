@@ -44,7 +44,7 @@ class PetController extends Controller
             ]);
             $pet = Pet::create($request->all());
             return response()->json([
-                'mesagge' => 'Pet was Successfully added! 🐶',
+                'message' => 'Pet was Successfully added! 🐶',
                 'data' => $pet
 
             ], 201);

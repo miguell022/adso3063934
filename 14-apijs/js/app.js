@@ -214,14 +214,14 @@ async function editPet(id) {
 // Función para eliminar una mascota
 async function deletePet(id) {
     Swal.fire({
-        title: '¿Estás seguro?',
-        text: "¡No podrás revertir esto!",
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Sí, eliminar',
-        cancelButtonText: 'Cancelar'
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'Cancel'
     }).then(async (result) => {
         if (result.isConfirmed) {
             const token = localStorage.getItem("authToken");
@@ -235,7 +235,7 @@ async function deletePet(id) {
                 });
                 const data = await response.json();
                 if (response.ok) {
-                    Swal.fire('¡Eliminado!', 'La mascota ha sido eliminada.', 'success');
+                    Swal.fire('¡Eliminado!', data.message || 'La mascota ha sido eliminada.', 'success');
                     getPets();
                 } else {
                     Swal.fire('Error', data.message || 'Error al eliminar la mascota', 'error');
@@ -271,7 +271,7 @@ async function addPet(e) {
         });
         const data = await response.json();
         if (response.ok) {
-            Swal.fire('¡Mascota agregada!', 'La mascota fue registrada correctamente.', 'success');
+            Swal.fire('Éxito', data.message || 'La mascota fue registrada correctamente.', 'success');
             addPetForm.reset();
             getPets();
             document.getElementById('add').style.display = 'none';
@@ -309,7 +309,7 @@ async function submitEditPet(e) {
         });
         const data = await response.json();
         if (response.ok) {
-            Swal.fire("¡Mascota editada!", "Los cambios fueron guardados.", "success");
+            Swal.fire("Éxito", data.message || "Los cambios fueron guardados.", "success");
             getPets();
             mainEdit.style.display = "none";
             document.getElementById("dashboard").style.display = "block";
