@@ -1,0 +1,82 @@
+.pokemon-card {
+    background-color: #2b2b2b;
+    border: 2px solid;
+    border-radius: 0.8rem;
+    padding: 1rem;
+    position: relative;
+    margin: 0.8rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 240px;
+    cursor: pointer;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.pokemon-image {
+    height: 120px;
+    object-fit: cover;
+    width: 120px;
+    transition: transform 0.3s ease;
+}
+
+.pokemon-card:hover .pokemon-image {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.pokemon-type {
+    color: #ccc;
+    font-style: italic;
+    margin: 0.4rem 0;
+}
+
+.pokemon-power {
+    font-weight: bold;
+    color: #ddd;
+    margin: 0.4rem 0;
+}
+
+.legendary-badge {
+    display: inline-block;
+    background-color: gold;
+    color: #333;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.2rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    transform: rotate(5deg);
+    animation: pulse 2s infinite;
+}
+
+.shiny-badge {
+    display: inline-block;
+    background-color: #00e5ff;
+    color: #333;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.2rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    position: absolute;
+    top: 240px;
+    right: 65px;
+    transform: rotate(5deg);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: rotate(5deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(5deg) scale(1.05);
+    }
+}
