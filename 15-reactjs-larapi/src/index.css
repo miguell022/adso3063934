@@ -307,8 +307,8 @@ body {
       }
     }
 
-    #add,
-    #edit {
+    &#add,
+    &#edit {
 
       /* form */
       form {
@@ -439,6 +439,8 @@ a.btnCancel:hover {
 }
 
 .btnBack {
+  position: absolute;
+  left: 0.6rem;
   background: none;
   border: none;
   padding: 0;

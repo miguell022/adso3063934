@@ -6,16 +6,28 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 function Dashboard() {
+  // Estado para guardar la lista de mascotas
   const [pets, setPets] = useState([]);
+
+  // Estado para guardar mensajes de error
   const [error, setError] = useState('');
+
+  // Hook para navegar entre rutas
   const navigate = useNavigate();
+
+  // Función para ir a la vista de agregar mascota
   const handleAddPet = () => navigate('/add');
+
+  // Función para cerrar sesión y volver al inicio
   const handleLogout = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem('token'); // Elimina el token de autenticación
     navigate('/');
   };
+
+  // Función para eliminar una mascota
   const handleDelete = async (id) => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token'); // Obtiene el token
+    // Muestra confirmación con SweetAlert
     const confirm = await Swal.fire({
       title: '¿Eliminar mascota?',
       text: 'Esta acción no se puede deshacer',
@@ -32,17 +44,17 @@ function Dashboard() {
             Accept: 'application/json'
           }
         });
-        Swal.fire('Eliminado', 'La mascota fue eliminada', 'success');
-        // Actualiza la lista de mascotas
+        Swal.fire('Eliminado', 'La mascota fue eliminada', 'success'); // Muestra alerta de éxito
+        // Actualiza la lista de mascotas quitando la eliminada
         setPets(pets.filter(pet => pet.id !== id));
       } catch (err) {
-        Swal.fire('Error', err.response?.data?.message || 'No se pudo eliminar', 'error');
+        Swal.fire('Error', err.response?.data?.message || 'No se pudo eliminar', 'error'); // Muestra alerta de error
       }
     }
   };
 
+  // useEffect: carga la lista de mascotas al montar el componente
   useEffect(() => {
-    // Obtener el token guardado
     const token = localStorage.getItem('token');
     axios.get('http://127.0.0.1:8000/api/pets/list', {
       headers: {
@@ -50,17 +62,33 @@ function Dashboard() {
         Accept: 'application/json'
       }
     })
-      .then(res => {
-        setPets(res.data.pets || []);
+      .then(response => {
+        setPets(response.data.pets || []); // Guarda la lista en el estado
         setError('');
       })
       .catch(err => {
+        // Detecta si el error es de autenticación (token inválido o alterado)
+        const apiMessage = err.response?.data?.message || "Error";
+        if (apiMessage === "Unauthenticated." || err.response?.status === 401) {
+          // Elimina el token y cierra la sesión
+          localStorage.removeItem("token");
+          // Muestra alerta y redirige al login
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: apiMessage,
+            confirmButtonColor: "#6c63ff"
+          }).then(() => {
+            window.location.href = "/login";
+          });
+          return;
+        }
         setError('No se pudo cargar la lista de mascotas');
         Swal.fire({
           icon: 'error',
           title: 'Error',
-          text: 'No se pudo cargar la lista de mascotas'
-        });
+          text: err.response?.data?.message || 'No se pudo cargar la lista de mascotas'
+        }); // Muestra alerta de error
       });
   }, []);
 

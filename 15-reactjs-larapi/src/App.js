@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard';
 import AddPet from './components/AddPet';
 import ShowPet from './components/ShowPet';
 import EditPet from './components/EditPet';
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -15,10 +16,41 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/add" element={<AddPet />} />
-        <Route path="/show/:id" element={<ShowPet />} />
-        <Route path="/edit/:id" element={<EditPet />} />
+        <Route path="/login" element={<Login />} />
+        {/* Protege la ruta dashboard con PrivateRoute */}
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
+        {/* Protege las rutas de mascotas también si lo deseas */}
+        <Route
+          path="/add"
+          element={
+            <PrivateRoute>
+              <AddPet />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/show/:id"
+          element={
+            <PrivateRoute>
+              <ShowPet />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/edit/:id"
+          element={
+            <PrivateRoute>
+              <EditPet />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

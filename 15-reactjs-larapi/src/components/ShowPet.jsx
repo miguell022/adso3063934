@@ -1,37 +1,57 @@
 // Componente para mostrar los detalles de una mascota.
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
 function ShowPet() {
+  // Obtiene el id de la mascota desde la URL
   const { id } = useParams();
-  const [pet, setPet] = useState(null);
+
+  // Estado para guardar los datos de la mascota
+  const [pet, setPet] = useState({});
+
+  // Hook para navegar entre rutas
   const navigate = useNavigate();
 
+  // useEffect: carga los datos de la mascota al montar el componente o cuando cambia el id
   useEffect(() => {
     const token = localStorage.getItem('token');
-    axios.get(`http://127.0.0.1:8000/api/pets/show/${id}`, {
+    axios.get(`http://127.0.0.1:8000/api/pets/show/${id}`, { 
       headers: {
         Authorization: `Bearer ${token}`,
         Accept: 'application/json'
       }
     })
-      .then(res => setPet(res.data.pet))
-      .catch(() => {
-        Swal.fire('Error', 'No se pudo cargar la mascota', 'error');
+      .then(res => setPet(res.data.pet)) // Si la petición es exitosa, guarda los datos en el estado
+      .catch((err) => {
+        const apiMessage = err.response?.data?.message || 'No se pudo cargar la mascota';
+        // Manejo de token inválido o alterado
+        if (apiMessage === "Unauthenticated." || err.response?.status === 401) {
+          localStorage.removeItem("token");
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: apiMessage,
+            confirmButtonColor: "#6c63ff"
+          }).then(() => {
+            window.location.href = "/login";
+          });
+          return;
+        }
+        Swal.fire('Error', apiMessage, 'error');
         navigate('/dashboard');
       });
   }, [id, navigate]);
 
-  if (!pet) return <div>Cargando...</div>;
 
   return (
     <main id="showPet">
       <header>
-        <button className="btnBack" onClick={() => navigate('/dashboard')}>
+        <Link to="/dashboard" className="btnBack">
           <img src="/imgs/btn-back.png" alt="back" />
-        </button>
+        </Link>
         <img src="/imgs/title-show.png" alt="show" />
       </header>
       <section id='show'>

@@ -1,10 +1,12 @@
 // Componente para agregar una nueva mascota.
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
 function AddPet() {
+  // Estado para guardar los datos del formulario de la nueva mascota
   const [form, setForm] = useState({
     name: '',
     image: 'no-image.png',
@@ -15,15 +17,19 @@ function AddPet() {
     location: '',
     description: ''
   });
+
+  // Hook para navegar entre rutas
   const navigate = useNavigate();
 
+  // handleChange: actualiza el estado form cuando se modifica un input
   const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // handleSubmit: envía los datos del formulario a la API para registrar la mascota
   const handleSubmit = async e => {
-    e.preventDefault();
-    const token = localStorage.getItem('token');
+    e.preventDefault(); // Previene el comportamiento por defecto del formulario
+    const token = localStorage.getItem('token'); // Obtiene el token de autenticación
     try {
       await axios.post('http://127.0.0.1:8000/api/pets/store', form, {
         headers: {
@@ -31,17 +37,34 @@ function AddPet() {
           Accept: 'application/json'
         }
       });
+
       Swal.fire({
         icon: 'success',
         title: 'Mascota agregada',
         text: 'La mascota fue registrada correctamente'
       });
+
       navigate('/dashboard');
     } catch (err) {
+      const apiMessage = err.response?.data?.message || 'No se pudo agregar la mascota';
+      // Detecta si el error es de autenticación (token inválido o alterado)
+      if (apiMessage === "Unauthenticated." || err.response?.status === 401) {
+        localStorage.removeItem("token"); // Elimina el token
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: apiMessage,
+          confirmButtonColor: "#6c63ff"
+        }).then(() => {
+          window.location.href = "/login"; // Redirige al login
+        });
+        return;
+      }
+      // Otros errores
       Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: err.response?.data?.message || 'No se pudo agregar la mascota'
+        icon: "error",
+        title: "Error",
+        text: apiMessage
       });
     }
   };
@@ -49,9 +72,9 @@ function AddPet() {
   return (
     <main id="add">
       <header>
-        <a href="javascript:;" class="btnBack">
+        <Link to="/dashboard" className="btnBack">
           <img src="imgs/btn-back.png" alt="back" />
-        </a>
+        </Link>
         <img src="imgs/title-add.png" alt="add" />
       </header>
       <form onSubmit={handleSubmit}>
@@ -85,7 +108,7 @@ function AddPet() {
         </label>
         <div className="actions">
           <button type="submit">Add</button>
-          <a href="#" className="btnCancel">Cancel</a>
+          <Link to="/dashboard" className="btnCancel">Cancel</Link>
         </div>
       </form>
     </main>

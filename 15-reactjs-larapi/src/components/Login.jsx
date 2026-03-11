@@ -1,6 +1,4 @@
-// Componente para el formulario de inicio de sesión.
 // Permite al usuario autenticarse y guarda el token en localStorage.
-
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
@@ -20,6 +18,11 @@ function Login() {
         try {
             const res = await axios.post('http://127.0.0.1:8000/api/login', { email, password });
             localStorage.setItem('token', res.data.token);
+            Swal.fire({
+                icon: 'success',
+                title: 'Login exitoso',
+                text: res.data.message || '¡Bienvenido!'
+            });
             navigate('/dashboard');
         } catch (err) {
             // Si la API responde con un mensaje, úsalo
@@ -41,7 +44,7 @@ function Login() {
         <main id="login">
             <header>
                 <img src="/imgs/title-login.png" alt="Login" />
-            </header>    
+            </header>
             <form id="loginForm" onSubmit={handleSubmit}>
                 <label htmlFor="email">
                     @Email
@@ -71,7 +74,7 @@ function Login() {
                     </svg>
                     Login
                 </button>
-                
+
             </form>
         </main>
     );
