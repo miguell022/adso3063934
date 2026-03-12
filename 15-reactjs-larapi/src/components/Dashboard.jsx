@@ -19,9 +19,34 @@ function Dashboard() {
   const handleAddPet = () => navigate('/add');
 
   // Función para cerrar sesión y volver al inicio
-  const handleLogout = () => {
-    localStorage.removeItem('token'); // Elimina el token de autenticación
-    navigate('/');
+  const handleLogout = async () => {
+    const token = localStorage.getItem('token');
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/api/logout', {}, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: 'application/json'
+        }
+      });
+      const apiMessage = response.data?.message || response.data?.error || 'Sesión cerrada';
+      Swal.fire({
+        icon: 'info',
+        title: 'LogOut',
+        text: apiMessage,
+        confirmButtonColor: '#6c63ff'
+      }).then(() => {
+        localStorage.removeItem('token');
+        navigate('/');
+      });
+    } catch (err) {
+      const apiMessage = err.response?.data?.message || err.response?.data?.error || 'No se pudo cerrar sesión';
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: apiMessage,
+        confirmButtonColor: '#6c63ff'
+      });
+    }
   };
 
   // Función para eliminar una mascota
@@ -38,17 +63,20 @@ function Dashboard() {
     });
     if (confirm.isConfirmed) {
       try {
-        await axios.delete(`http://127.0.0.1:8000/api/pets/delete/${id}`, {
+        const response = await axios.delete(`http://127.0.0.1:8000/api/pets/delete/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
             Accept: 'application/json'
           }
         });
-        Swal.fire('Eliminado', 'La mascota fue eliminada', 'success'); // Muestra alerta de éxito
+
+        const apiMessage = response.data?.message || response.data?.error || 'La mascota fue eliminada';
+        Swal.fire('Eliminado', apiMessage, 'success'); // Muestra alerta de éxito
         // Actualiza la lista de mascotas quitando la eliminada
         setPets(pets.filter(pet => pet.id !== id));
       } catch (err) {
-        Swal.fire('Error', err.response?.data?.message || 'No se pudo eliminar', 'error'); // Muestra alerta de error
+        const apiMessage = err.response?.data?.message || err.response?.data?.error || 'No se pudo eliminar';
+        Swal.fire('Error', apiMessage, 'error'); // Muestra alerta de error
       }
     }
   };

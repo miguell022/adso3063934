@@ -26,7 +26,7 @@ function ShowPet() {
     })
       .then(res => setPet(res.data.pet)) // Si la petición es exitosa, guarda los datos en el estado
       .catch((err) => {
-        const apiMessage = err.response?.data?.message || 'No se pudo cargar la mascota';
+        const apiMessage = err.response?.data?.message || err.response?.data?.error || 'No se pudo cargar la mascota';
         // Manejo de token inválido o alterado
         if (apiMessage === "Unauthenticated." || err.response?.status === 401) {
           localStorage.removeItem("token");

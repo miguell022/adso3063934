@@ -225,10 +225,22 @@ body {
             display: flex;
             gap: 0.2rem;
 
-            .btnShow,
-            .btnEdit,
+            .btnShow{
+              width: 17px;
+              height: 20px;
+              border: none;
+              cursor: pointer;
+              display: inline-block;
+            }
+            .btnEdit{
+              width: 15px;
+              height: 20px;
+              border: none;
+              cursor: pointer;
+              display: inline-block;
+            }
             .btnDelete {
-              width: 20px;
+              width: 15px;
               height: 20px;
               border: none;
               cursor: pointer;

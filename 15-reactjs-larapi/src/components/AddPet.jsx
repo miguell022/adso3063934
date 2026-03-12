@@ -31,17 +31,18 @@ function AddPet() {
     e.preventDefault(); // Previene el comportamiento por defecto del formulario
     const token = localStorage.getItem('token'); // Obtiene el token de autenticación
     try {
-      await axios.post('http://127.0.0.1:8000/api/pets/store', form, {
+      const response = await axios.post('http://127.0.0.1:8000/api/pets/store', form, {
         headers: {
           Authorization: `Bearer ${token}`,
           Accept: 'application/json'
         }
       });
 
+      const successMessage = response.data?.message || 'La mascota fue registrada correctamente';
       Swal.fire({
         icon: 'success',
         title: 'Mascota agregada',
-        text: 'La mascota fue registrada correctamente'
+        text: successMessage
       });
 
       navigate('/dashboard');

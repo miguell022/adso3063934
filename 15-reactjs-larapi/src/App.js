@@ -26,7 +26,7 @@ function App() {
             </PrivateRoute>
           }
         />
-        {/* Protege las rutas de mascotas también si lo deseas */}
+        {/* Protege las rutas de mascotas también */}
         <Route
           path="/add"
           element={
