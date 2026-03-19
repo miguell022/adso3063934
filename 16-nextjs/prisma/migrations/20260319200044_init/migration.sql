@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "Game" ALTER COLUMN "releaseDate" SET DATA TYPE TIMESTAMP(0);
+
+-- AlterTable
+ALTER TABLE "console" ALTER COLUMN "releaseDate" SET DATA TYPE TIMESTAMP(0);
