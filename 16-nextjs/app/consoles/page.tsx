@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function Page() {
-  redirect("/games/1");
+  redirect("/consoles/1");
 }
