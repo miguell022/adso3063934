@@ -23,8 +23,17 @@ type GamesPerYear = {
   total: number;
 };
 
-// Paleta simple para repartir colores entre las porciones del grafico circular.
-const COLORS = ["#22c55e", "#06b6d4", "#3b82f6", "#8b5cf6", "#f59e0b", "#ef4444"];
+// Colores fijos por consola para que no cambien aunque el orden del arreglo varie.
+const CONSOLE_COLORS: Record<string, string> = {
+  "PlayStation 5": "#0651d4",
+  "Xbox Series X": "#22c528",
+  "Nintendo Switch OLED Model": "#e41818",
+  "Nintendo Switch 2": "#c3085f",
+  "Steam Deck OLED": "#676767",
+};  
+
+// Color por defecto por si aparece una consola nueva no contemplada.
+const FALLBACK_COLOR = "#ef4444";
 
 export default function DashboardCharts({
   gamesPerConsole,
@@ -45,7 +54,6 @@ export default function DashboardCharts({
         <div className="h-80">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
-              {/* Grafica circular: muestra cuantos juegos tiene cada consola. */}
               <Pie
                 data={gamesPerConsole}
                 dataKey="total"
@@ -54,8 +62,11 @@ export default function DashboardCharts({
                 outerRadius={100}
                 paddingAngle={3}
               >
-                {gamesPerConsole.map((entry, index) => (
-                  <Cell key={entry.console} fill={COLORS[index % COLORS.length]} />
+                {gamesPerConsole.map((entry) => (
+                  <Cell
+                    key={entry.console}
+                    fill={CONSOLE_COLORS[entry.console] || FALLBACK_COLOR}
+                  />
                 ))}
               </Pie>
               <Tooltip
@@ -80,7 +91,6 @@ export default function DashboardCharts({
         </div>
         <div className="h-80">
           <ResponsiveContainer width="100%" height="100%">
-            {/* Grafica de barras: compara cuantos juegos hay en cada año. */}
             <BarChart data={gamesPerYear}>
               <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
               <XAxis dataKey="year" stroke="#94a3b8" />

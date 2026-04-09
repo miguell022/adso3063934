@@ -33,6 +33,13 @@ export default async function ShowConsolePage({
     return <div className="p-8 text-center text-red-500">Consola no encontrada</div>;
   }
 
+  const consoleImageSrc =
+    !consoleItem.image || consoleItem.image === "no-image.png"
+      ? "/img/no-image.png"
+      : consoleItem.image.startsWith("/img/")
+        ? consoleItem.image
+        : `/img/consoles/${consoleItem.image}`;
+
   return (
     <SideBar currentPath="/consoles">
       <div className="flex justify-center items-center min-h-[70vh]">
@@ -41,11 +48,7 @@ export default async function ShowConsolePage({
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="relative w-40 h-40 flex-shrink-0">
               <Image
-                src={
-                  consoleItem.image === "no-image.png"
-                    ? "/img/no-image.png"
-                    : `/img/consoles/${consoleItem.image}`
-                }
+                src={consoleImageSrc}
                 alt={consoleItem.name}
                 fill
                 sizes="160px"

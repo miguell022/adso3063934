@@ -544,14 +544,28 @@ async function main() {
         },
     ]
 
-    for (const game of gamesData) {
-        if (!game.console_id) continue
+    let created = 0;
 
-        // Usamos prisma.Games porque así lo llamaste en el schema
-        await prisma.games.create({
-            data: game,
-        })
+    for (const game of gamesData) {
+        if (!game.console_id) {
+            console.log("Skipped, no console_id:", game.title);
+            continue;
+        }
+
+        try {
+            await prisma.games.create({
+                data: game,
+            });
+            created++;
+            console.log("Created:", game.title);
+        } catch (error) {
+            console.error("Failed:", game.title);
+            console.error(error);
+        }
     }
+
+    console.log(`🕹️ ${created} games seeded`);
+
 
     console.log('🕹️ 10 games seeded')
     console.log('✅ Seed completed successfully')

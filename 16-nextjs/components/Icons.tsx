@@ -1,6 +1,7 @@
 "use client";
 import { Eye, PencilSimple, Trash, IconProps } from "@phosphor-icons/react";
 
+// Wrappers pequeños para reutilizar los mismos iconos del CRUD en toda la app.
 export function ViewIcon(props: IconProps) {
   return <Eye size={20} {...props} />;
 }

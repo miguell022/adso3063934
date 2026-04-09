@@ -5,15 +5,17 @@ import path from "path";
 export async function POST(req: NextRequest) {
   const formData = await req.formData();
   const file = formData.get("file") as File;
+  const folderValue = String(formData.get("folder") || "games");
+  const folder = folderValue === "consoles" ? "consoles" : "games";
   if (!file) {
     return NextResponse.json({ error: "No file uploaded" }, { status: 400 });
   }
   const arrayBuffer = await file.arrayBuffer();
   const buffer = Buffer.from(arrayBuffer);
   const fileName = `${Date.now()}-${file.name}`;
-  const uploadDir = path.join(process.cwd(), "public", "img", "games");
+  const uploadDir = path.join(process.cwd(), "public", "img", folder);
   await fs.mkdir(uploadDir, { recursive: true });
   const filePath = path.join(uploadDir, fileName);
   await fs.writeFile(filePath, buffer);
-  return NextResponse.json({ url: `/img/games/${fileName}` });
+  return NextResponse.json({ url: `/img/${folder}/${fileName}`, fileName });
 }

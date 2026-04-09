@@ -27,6 +27,7 @@ export default async function EditConsolePage({
 
   const { id } = await params;
   const consoleId = Number(id);
+
   if (!Number.isInteger(consoleId) || consoleId <= 0) {
     notFound();
   }
@@ -37,7 +38,6 @@ export default async function EditConsolePage({
 
   if (!consoleItem) {
     notFound();
-    return null;
   }
 
   async function updateConsole(formData: FormData) {
@@ -46,8 +46,8 @@ export default async function EditConsolePage({
     const name = formData.get("name") as string;
     const manufacturer = formData.get("manufacturer") as string;
     const releaseDate = formData.get("releaseDate") as string;
-    const image = (formData.get("image") as string) || "no-image.png";
     const description = formData.get("description") as string;
+    const image = (formData.get("image") as string) || consoleItem.image;
 
     await prisma.console.update({
       where: { id: consoleId },

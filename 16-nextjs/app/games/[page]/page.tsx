@@ -11,7 +11,7 @@ import Paginator from "@/components/paginator";
 export default async function GamesPage({ params }: { params: Promise<{ page: string }> }) {
   const { page: pageParam } = await params;
   const page = Number(pageParam) > 0 ? Number(pageParam) : 1;
-  const pageSize = 5;
+  const pageSize = 10;
   const skip = (page - 1) * pageSize;
 
   // Verifica usuario autenticado

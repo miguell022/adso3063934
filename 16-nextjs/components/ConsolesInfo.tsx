@@ -21,18 +21,22 @@ type ConsoleItem = {
 export default function ConsolesInfo({ consoles }: { consoles: ConsoleItem[] }) {
   const router = useRouter();
   const [consolesList, setConsolesList] = useState(consoles);
-  const [search, setSearch] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [deletingId, setDeletingId] = useState<number | null>(null);
+
+  const getConsoleImageSrc = (image: string) => {
+    if (!image || image === "no-image.png") {
+      return "/img/no-image.png";
+    }
+
+    // Soporta tanto nombres simples guardados en BD como rutas completas.
+    return image.startsWith("/img/") ? image : `/img/consoles/${image}`;
+  };
 
   // Sincroniza la tabla local cuando el servidor refresca la lista.
   useEffect(() => {
     setConsolesList(consoles);
   }, [consoles]);
-
-  const filteredConsoles = consolesList.filter((consoleItem) =>
-    consoleItem.name.toLowerCase().includes(search.toLowerCase())
-  );
 
   async function handleDelete(id: number, name: string) {
     // Confirmacion antes de llamar al endpoint DELETE.
@@ -97,28 +101,15 @@ export default function ConsolesInfo({ consoles }: { consoles: ConsoleItem[] }) 
 
   return (
     <>
-      <div className="flex items-center justify-between mb-6 mt-10">
-        <h1 className="text-4xl font-bold">Consoles</h1>
-        <div className="flex-1 flex justify-center">
-          <form onSubmit={(e) => e.preventDefault()} className="flex">
-            <input
-              type="text"
-              name="search"
-              placeholder="Buscar consola..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="input input-bordered w-72"
-            />
-            <button type="submit"></button>
-          </form>
-        </div>
-        <Link href="/consoles/add" className="btn btn-success">
+      <div className="mb-6 mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <h1 className="text-3xl font-bold sm:text-4xl">Consoles</h1>
+        <Link href="/consoles/add" className="btn btn-success w-full sm:w-auto">
           Add Console
         </Link>
       </div>
 
       <div className="overflow-x-auto mt-8">
-        <table className="table w-full">
+        <table className="table w-full min-w-[760px]">
           <thead>
             <tr>
               <th>img</th>
@@ -131,16 +122,12 @@ export default function ConsolesInfo({ consoles }: { consoles: ConsoleItem[] }) 
             </tr>
           </thead>
           <tbody>
-            {filteredConsoles.map((consoleItem) => (
+            {consolesList.map((consoleItem) => (
               <tr key={consoleItem.id} className="hover">
                 <td>
                   <div className="relative w-16 h-16">
                     <Image
-                      src={
-                        consoleItem.image === "no-image.png"
-                          ? "/img/no-image.png"
-                          : `/img/consoles/${consoleItem.image}`
-                      }
+                      src={getConsoleImageSrc(consoleItem.image)}
                       alt={consoleItem.name}
                       fill
                       sizes="64px"
@@ -154,23 +141,23 @@ export default function ConsolesInfo({ consoles }: { consoles: ConsoleItem[] }) 
                 <td>{new Date(consoleItem.releaseDate).toLocaleDateString()}</td>
                 <td>{consoleItem._count?.games ?? 0}</td>
                 <td className="align-middle text-center">
-                  <div className="flex items-center justify-center gap-2 h-10">
+                  <div className="flex h-10 items-center justify-center gap-1 sm:gap-2">
                     <button
-                      className="p-2 hover:bg-base-300 rounded"
+                      className="rounded p-2 hover:bg-base-300"
                       title="Ver"
                       onClick={() => router.push(`/consoles/show/${consoleItem.id}`)}
                     >
                       <ViewIcon size={24} />
                     </button>
                     <button
-                      className="p-2 hover:bg-base-300 rounded"
+                      className="rounded p-2 hover:bg-base-300"
                       title="Editar"
                       onClick={() => router.push(`/consoles/edit/${consoleItem.id}`)}
                     >
                       <EditIcon size={24} />
                     </button>
                     <button
-                      className="p-2 hover:bg-base-300 rounded disabled:opacity-50"
+                      className="rounded p-2 hover:bg-base-300 disabled:opacity-50"
                       title="Eliminar"
                       // Reemplaza la navegacion vieja a una pagina de delete.
                       onClick={() => handleDelete(consoleItem.id, consoleItem.name)}
@@ -186,7 +173,7 @@ export default function ConsolesInfo({ consoles }: { consoles: ConsoleItem[] }) 
         </table>
       </div>
 
-      {filteredConsoles.length === 0 && (
+      {consolesList.length === 0 && (
         <p className="text-center text-gray-500 mt-8">No consoles found</p>
       )}
       {error && <p className="text-center text-red-500 mt-4">{error}</p>}

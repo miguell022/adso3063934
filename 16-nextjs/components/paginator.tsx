@@ -11,7 +11,8 @@ export default function Paginator({ currentPage, totalPages, baseUrl = "", clean
   if (totalPages <= 1) return null;
 
   return (
-    <div className="flex justify-center gap-2 mt-4">
+    // Genera un boton por pagina usando rutas limpias o query params segun la configuracion.
+    <div className="mt-4 flex flex-wrap justify-center gap-2">
       {Array.from({ length: totalPages }, (_, i) => {
         const page = i + 1;
         const href = cleanUrl

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { SquaresFourIcon, JoystickIcon, PlusIcon, GearIcon, ComputerTowerIcon, ListIcon, GameControllerIcon } from "@phosphor-icons/react";
 
 export default function SideBar({ currentPath = "/dashboard",children,}: { currentPath: string, children: React.ReactNode }) {
+    // Define las opciones principales de navegacion lateral.
     const navigation = [
         { name: "Dashboard", href: "/dashboard", icon: SquaresFourIcon },
         { name: "Games", href: "/games", icon: JoystickIcon },
@@ -12,9 +13,10 @@ export default function SideBar({ currentPath = "/dashboard",children,}: { curre
         { name: "Settings", href: "/settings", icon: GearIcon },
     ];
     return (
-        <div className="drawer lg:drawer-open">
+        <div className="drawer lg:drawer-open min-h-screen">
             <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content">
+            <div className="drawer-content min-h-screen overflow-y-auto">
+                {/* Barra superior con toggle del menu y acceso al perfil de usuario. */}
                 <nav className="navbar w-full bg-base-300 fixed top-0 left-0 z-30">
                     <label htmlFor="my-drawer-4" aria-label="open sidebar" className="btn btn-square btn-ghost">
                         <ListIcon size={28} />
@@ -27,13 +29,14 @@ export default function SideBar({ currentPath = "/dashboard",children,}: { curre
                         <UserButton showUserInfo={false} />
                     </div>
                 </nav>
-                {/* children */}
-                <div className="p-4 pt-16">{children}</div>
+                {/* Aqui se renderiza el contenido de cada pagina dentro del layout. */}
+                <div className="p-4 pt-16 pb-8">{children}</div>
             </div>
 
             <div className="drawer-side is-drawer-close:overflow-visible">
                 <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
                 <div className="flex min-h-full flex-col items-start bg-base-200 is-drawer-close:w-14 is-drawer-open:w-64">
+                    {/* Menu lateral con resaltado de la ruta actual. */}
                     <div className="menu w-full grow space-y-2 pt-16">
                         {navigation.map((item, key) => {
                             const IconComponent = item.icon;

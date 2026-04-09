@@ -12,6 +12,7 @@ export default function HomeInfo() {
     >
       <div className="hero-overlay"></div>
       <div className="hero-content text-neutral-content text-center pt-0 md:pt-28">
+        {/* Landing principal con logo, descripcion y accesos de autenticacion. */}
         <div className="max-w-md ">
           <Image
             src="/img/logo.png"
@@ -26,6 +27,7 @@ export default function HomeInfo() {
             Stack Auth to provide secure authentication, fast performance, and scalable
             data management.
           </p>
+          {/* Los accesos usan las rutas handler de Stack Auth. */}
           <Link href="handler/sign-in" className="btn btn-outline btn-success me-4 px-10 mt-8">
             <FingerprintIcon width={20} height={20} />
             sign in

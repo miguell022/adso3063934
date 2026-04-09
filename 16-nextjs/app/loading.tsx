@@ -1,6 +1,11 @@
 export default function Loading() {
-
-  // Stack uses React Suspense, which will render this page while user data is being fetched.
-  // See: https://nextjs.org/docs/app/api-reference/file-conventions/loading
-  return <></>;
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-base-100">
+      <div className="flex flex-col items-center gap-4">
+        <span className="loading loading-infinity loading-xl"></span>
+        <p className="text-sm text-base-content/70">Loading section...</p>
+      </div>
+    </div>
+  );
 }
+
