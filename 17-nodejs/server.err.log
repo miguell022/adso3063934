@@ -1,0 +1,4 @@
+Could not create users table: SQLITE_IOERR: disk I/O error
+Could not create blacklisted_tokens table: SQLITE_IOERR: disk I/O error
+Could not create console_generations table: SQLITE_IOERR: disk I/O error
+Could not create gta_games table: SQLITE_IOERR: disk I/O error
