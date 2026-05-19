@@ -3,6 +3,7 @@
 /*- - - - - - - - - - - -*/
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
 /*- - - - - - - - - - - -*/
 /* R E S E T */
 /*- - - - - - - - - - - -*/
@@ -10,29 +11,41 @@ html {
     box-sizing: border-box;
     font-size: 16px;
     scroll-behavior: smooth;
-  }
-  
-  *, *:before, *:after {
+}
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
-  }
-  
-  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
     margin: 0;
     padding: 0;
     font-weight: normal;
 
-  }
-  
-  ol, ul {
+}
+
+ol,
+ul {
     list-style: none;
-  }
-  
-  img {
+}
+
+img {
     max-width: 100%;
     height: auto;
-  }
+}
 
-  /*- - - - - - - - - - - -*/
+/*- - - - - - - - - - - -*/
 /* G E N E R A L */
 /*- - - - - - - - - - - -*/
 body {
@@ -45,6 +58,7 @@ nav.nav {
     position: fixed;
     top: 20px;
     left: 20px;
+
     a:is(:link, :visited) {
         border-radius: 50%;
         border: 2xp solid red;
@@ -55,20 +69,23 @@ nav.nav {
         justify-content: center;
         transition: all 0.4s ease-in;
         width: 40px;
+
         svg {
             width: 24px;
             transition: all 0.4s 0.2s ease-in;
             fill: white;
         }
+
         &:hover {
             background-color: #fffc;
+
             svg {
                 transform: scale(1.2);
             }
-            
+
 
         }
-    }    
+    }
 }
 
 main {
@@ -83,41 +100,50 @@ main {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
         h1 {
             font-size: 3.6rem;
             font-weight: 500;
         }
+
         h2 {
             font-size: 1.6rem;
             font-weight: 200;
         }
+
         figure {
-            border-radius: 100px;
+            border-radius: 50%;
             border: 6px solid #fff9;
             height: 200px;
             width: 200px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             img {
-                border-radius: 100%;
-                height: 188px;
-                width: 188px;
+                height: 100%;
+                width: 100%;
                 object-fit: cover;
-                
             }
         }
+
         h3.h3 {
             font-size: 1.6rem;
             font-weight: 300;
-            position: center;
-            
-            
-            
-            
+            text-align: center;
+
+
+
+
         }
     }
-    p{
+
+    p {
         text-align: justify;
         font-size: 1rem;
     }
+
     section.section {
         margin-top: 1rem;
         border-radius: 6px;
@@ -125,16 +151,19 @@ main {
         min-height: 30dvh;
         width: 400px;
         background-color: #0009;
+
         h3 {
             font-size: 1.8rem;
             border-bottom: 2px dotted #fff6;
-            
+
         }
+
         p.example {
             color: rgb(0, 228, 8);
             margin-top: 0.4rem;
             font-size: 1.6rem;
         }
+
         xmp {
             background-color: #0006;
             border-radius: 6px;
@@ -143,11 +172,16 @@ main {
             padding: 10px 10px 20px;
         }
     }
+
     menu.menu {
+        padding: 0;
+        margin: 1rem 0 0;
         display: flex;
         flex-direction: column;
+        align-items: center;
         justify-content: center;
         gap: 0.6rem;
+
         a:is(:link, :visited) {
             background-color: rgba(15, 14, 14, 0.6);
             border-radius: 25px;
@@ -156,8 +190,9 @@ main {
             align-items: center;
             gap: 0.6rem;
             text-decoration: none;
-            width: 220px;
-            transition:  all 0.2s ease-in;
+            width: 275px;
+            transition: all 0.2s ease-in;
+
             span {
                 background-color: rgba(6, 6, 6, 0.6);
                 border-radius: 50%;
@@ -166,24 +201,26 @@ main {
                 justify-content: center;
                 align-items: center;
                 height: 40px;
-                transition:  all 0.6s ease-in;
+                transition: all 0.6s ease-in;
                 width: 40px;
             }
+
             &:hover {
                 background-color: #fffc;
+
                 span {
                     border-radius: 50px;
                     width: 60px;
 
                 }
             }
-            
-            
+
+
         }
     }
 }
 
- /*- - - - - - - - - - - -*/
+/*- - - - - - - - - - - -*/
 /* M A I N M E N U*/
 /*- - - - - - - - - - - -*/
 body.main-menu {
@@ -192,30 +229,33 @@ body.main-menu {
     background-attachment: fixed;
     background-size: cover;
 }
+
 /*- - - - - - - - - - - - -*/
 /* E M M E T*/
 /*- - - - - - - - - - - - -*/
 body.emmet {
     background-color: #7ACB16;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%2367a818' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%2354851a' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%2342621c' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%232f3f1e' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%231C1C20' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
-background-attachment: fixed;
-background-size: cover;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%2367a818' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%2354851a' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%2342621c' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%232f3f1e' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%231C1C20' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
 
-nav.nav {
-    a {
-        svg {
-            fill: #f7f7f7;
+    nav.nav {
+        a {
+            svg {
+                fill: #f7f7f7;
+            }
         }
     }
-}
-menu.menu {
-    a:is(:link, :visited) {
-        color: #6fbf07;
-        span {
-            background-color: #79c911;
+
+    menu.menu {
+        a:is(:link, :visited) {
+            color: #6fbf07;
+
+            span {
+                background-color: #79c911;
+            }
         }
     }
-}
 
 
 }
@@ -225,25 +265,27 @@ menu.menu {
 /*- - - - - - - - - - - - -*/
 body.html {
     background-color: #E43B11;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23d82f0e' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23cd230a' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23c11807' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23b60c03' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23A00' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
-background-attachment: fixed;
-background-size: cover;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23d82f0e' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23cd230a' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23c11807' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23b60c03' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23A00' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
 
-nav.nav {
-    a {
-        svg {
-            fill: #fcfefa;
+    nav.nav {
+        a {
+            svg {
+                fill: #fcfefa;
+            }
         }
     }
-}
-menu.menu {
-    a:is(:link, :visited) {
-        color: #f16900;
-        span {
-            background-color: #c97011;
+
+    menu.menu {
+        a:is(:link, :visited) {
+            color: #f16900;
+
+            span {
+                background-color: #c97011;
+            }
         }
     }
-}
 
 
 }
@@ -252,28 +294,58 @@ menu.menu {
 /* J Q U E R Y*/
 /*- - - - - - - - - - - - -*/
 body.jquery {
-   background-color: #000000;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23021624' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23032c48' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%2305416c' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23065790' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23086DB4' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
-background-attachment: fixed;
-background-size: cover;
+    background-color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23021624' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23032c48' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%2305416c' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23065790' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23086DB4' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
 
-nav.nav {
-    a {
-        svg {
-            fill: #fafbfe;
+    nav.nav {
+        a {
+            svg {
+                fill: #fafbfe;
+            }
         }
     }
-}
-menu.menu {
-    a:is(:link, :visited) {
-        color: #f1f1f1;
-        span {
-            background-color: #000000;
+
+    menu.menu {
+        a:is(:link, :visited) {
+            color: #f1f1f1;
+
+            span {
+                background-color: #000000;
+            }
         }
     }
-}
 
 
 }
-   
 
+/*- - - - - - - - - - - - -*/
+/* R E A C T - N A T I V E*/
+/*- - - - - - - - - - - - -*/
+body.react {
+    background-color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23021624' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23032c48' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%2305416c' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23065790' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23086DB4' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+
+    nav.nav {
+        a {
+            svg {
+                fill: #fafbfe;
+            }
+        }
+    }
+
+    menu.menu {
+        a:is(:link, :visited) {
+            color: #f1f1f1;
+
+            span {
+                background-color: #000000;
+            }
+        }
+    }
+
+
+}
