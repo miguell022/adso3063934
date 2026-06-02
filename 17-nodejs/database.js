@@ -12,7 +12,8 @@ db.serialize(() => {
     createTable(`CREATE TABLE IF NOT EXISTS users(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         username TEXT UNIQUE,
-        password TEXT
+        password TEXT,
+        image TEXT
     )`, 'users');
 
     // Tokens closed with logout
@@ -37,9 +38,29 @@ db.serialize(() => {
         release_year INTEGER,
         main_city TEXT,
         protagonist TEXT,
+        image TEXT,
         console_generation_id INTEGER,
         FOREIGN KEY (console_generation_id) REFERENCES console_generations(id)
     )`, 'gta_games');
+
+    // GTA Characters Table
+    createTable(`CREATE TABLE IF NOT EXISTS characters(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        description TEXT,
+        image TEXT,
+        gta_game_id INTEGER,
+        FOREIGN KEY (gta_game_id) REFERENCES gta_games(id)
+    )`, 'characters');
+    
+
 });
 
+
+
+
 module.exports = db;
+
+
+
+

@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="js/script.js" defer></script>
+    <title>Register | GTA Generations</title>
+</head>
+
+<body>
+    <div class="phone register-screen">
+
+        <!-- Mismo fondo del welcome y login -->
+        <div class="gta-bg" aria-hidden="true">
+            <img class="bg-logo logo-1" src="img/gtaIII.png" alt="">
+            <img class="bg-logo logo-2" src="img/gtaViceCity.png" alt="">
+            <img class="bg-logo logo-3" src="img/gtaSanAndreasLogo.png" alt="">
+            <img class="bg-logo logo-4" src="img/gtaV.png" alt="">
+            <img class="bg-logo logo-5" src="img/gtaIV.png" alt="">
+            <img class="bg-logo logo-6" src="img/GtaLibertyCity.png" alt="">
+            <img class="bg-logo logo-7" src="img/GtaOriginal.png" alt="">
+        </div>
+
+        <div class="logo-layer layer-fast" aria-hidden="true">
+            <img class="bg-logo logo-8" src="img/GtaChinaTown.png" alt="">
+            <img class="bg-logo logo-9" src="img/GtaViceCityStories.png" alt="">
+            <img class="bg-logo logo-10" src="img/GtaOnline.png" alt="">
+            <img class="bg-logo logo-11" src="img/GtaOriginal.png" alt="">
+            <img class="bg-logo logo-12" src="img/GtaVI.png" alt="">
+            <img class="bg-logo logo-13" src="img/GtaLibertyCity.png" alt="">
+            <img class="bg-logo logo-14" src="img/gtaSanAndreasLogo.png" alt="">
+        </div>
+
+        <header class="register-header">
+            <a id="backBtn" href="layout.html" aria-label="Volver al welcome">
+                <i class="ph ph-arrow-circle-left"></i>
+            </a>
+        </header>
+
+        <main class="register-content">
+            <i class="ph ph-user-circle register-avatar"></i>
+
+            <form id="registerForm" class="register-form">
+                <div class="register-heading">
+                    <span>Create Player</span>
+                    <i class="ph ph-identification-card"></i>
+                </div>
+                <div class="birth-date">
+                    <select id="day" name="day" aria-label="Día">
+                        <option value="">Day</option>
+                    </select>
+
+                    <select id="month" name="month" aria-label="Mes">
+                        <option value="">Month</option>
+                    </select>
+
+                    <select id="year" name="year" aria-label="Año">
+                        <option value="">Year</option>
+                    </select>
+                </div>
+
+                <label for="registerUsername">Username:</label>
+                <div class="input-group">
+                    <i class="ph ph-user"></i>
+                    <input id="registerUsername" name="username" type="text" required>
+                </div>
+
+                <label for="registerEmail">Email:</label>
+                <div class="input-group">
+                    <i class="ph ph-envelope-simple"></i>
+                    <input id="registerEmail" name="email" type="email" required>
+                </div>
+
+                <label for="registerPassword">Password:</label>
+                <div class="input-group">
+                    <i class="ph ph-lock-key"></i>
+                    <input id="registerPassword" name="password" type="password" required>
+                </div>
+
+                <label for="confirmPassword">Confirm Password:</label>
+                <div class="input-group">
+                    <i class="ph ph-lock-key"></i>
+                    <input id="confirmPassword" name="confirmPassword" type="password" required>
+                </div>
+
+                <button class="register-submit" type="submit">
+                    <i class="ph-fill ph-star"></i>
+                    Register
+                </button>
+            </form>
+        </main>
+
+        <footer>
+            <button id="loginBtn" type="button">Login</button>
+            <button id="registerBtn" class="active" type="button">Register</button>
+        </footer>
+    </div>
+</body>
+
+</html>
