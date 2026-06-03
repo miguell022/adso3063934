@@ -251,13 +251,15 @@ if (generationGamesList && generationGamesTitle && generationGamesSubtitle) {
   const generationLabels = {
     '2d': 'Juegos de la generación 2D',
     '3d': 'Juegos de la generación 3D',
-    hd: 'Juegos de la generación HD'
+    hd: 'Juegos de la generación HD',
+    modern: 'Juegos de la era moderna'
   };
 
   const generationDescriptions = {
     '2d': 'Conoce los juegos que iniciaron la historia de Grand Theft Auto.',
     '3d': 'Explora los juegos que llevaron GTA a mundos abiertos tridimensionales.',
-    hd: 'Recorre la etapa moderna de GTA con ciudades más detalladas e historias cinematográficas.'
+    hd: 'Recorre la etapa HD de GTA con ciudades más detalladas e historias cinematográficas.',
+    modern: 'Explora la nueva etapa de Grand Theft Auto y sus próximas entregas.'
   };
 
   const generationGames = [
@@ -316,6 +318,13 @@ if (generationGamesList && generationGamesTitle && generationGamesSubtitle) {
       year: 2013,
       image: 'img/GtaOnline.png',
       description: 'Expande el universo de GTA V con una experiencia multijugador persistente centrada en actividades, golpes y progresión.'
+    },
+    {
+      generation: 'modern',
+      title: 'Grand Theft Auto VI',
+      year: 2026,
+      image: 'img/GTA_VI_portada.webp',
+      description: 'La próxima entrega de la saga Grand Theft Auto, prometiendo una experiencia de mundo abierto aún más avanzada.'
     }
   ];
 
@@ -333,3 +342,89 @@ if (generationGamesList && generationGamesTitle && generationGamesSubtitle) {
     </article>
   `).join('');
 }
+
+
+
+// Generation create/edit forms
+const generationFormData = {
+  '2d': {
+    name: 'Generación 2D',
+    years: '1997 - 1999',
+    consoles: 'PC, PlayStation, Game Boy Color',
+    description: 'Los primeros pasos de una leyenda, vista cenital y acción arcade sin límites.',
+    image: 'img/Era2D.png'
+  },
+  '3d': {
+    name: 'Generación 3D',
+    years: '2001 - 2012',
+    consoles: 'PS2, Xbox, PC, PSP',
+    description: 'El salto a las tres dimensiones, mundos abiertos más grandes, historias profundas y libertad total.',
+    image: 'img/Era3D.png'
+  },
+  hd: {
+    name: 'Generación HD',
+    years: '2013 - 2020',
+    consoles: 'PS3, PS4, Xbox 360, Xbox One, PC',
+    description: 'El salto a la definición HD marcó ciudades más vivas, físicas cinematográficas y un nivel de detalle superior.',
+    image: 'img/EraHD.png'
+  },
+  modern: {
+    name: 'Era Moderna',
+    years: '2025 - Futuro',
+    consoles: 'PS5, Xbox Series X/S',
+    description: 'El futuro de la franquicia, nuevas ciudades, más detalle visual y una experiencia de mundo abierto más ambiciosa.',
+    image: 'img/EraModerna.png'
+  }
+};
+
+function connectGenerationPreview(fileInputId, previewTargetId) {
+  const fileInput = document.getElementById(fileInputId);
+  const previewTarget = document.getElementById(previewTargetId);
+
+  if (!fileInput || !previewTarget) return;
+
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    if (!file) return;
+
+    previewTarget.src = URL.createObjectURL(file);
+  });
+}
+
+const newGenerationForm = document.getElementById('newGenerationForm');
+
+if (newGenerationForm) {
+  newGenerationForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    window.location.href = 'generations.html';
+  });
+}
+
+const editGenerationForm = document.getElementById('editGenerationForm');
+const editGenerationTitle = document.getElementById('editGenerationTitle');
+const generationPreview = document.getElementById('generationPreview');
+const editGenerationName = document.getElementById('editGenerationName');
+const editGenerationYears = document.getElementById('editGenerationYears');
+const editGenerationConsoles = document.getElementById('editGenerationConsoles');
+const editGenerationDescription = document.getElementById('editGenerationDescription');
+
+if (editGenerationForm) {
+  const params = new URLSearchParams(window.location.search);
+  const selectedGeneration = params.get('generation') || '2d';
+  const generationData = generationFormData[selectedGeneration] || generationFormData['2d'];
+
+  editGenerationTitle.textContent = 'Editar generación';
+  generationPreview.src = generationData.image;
+  generationPreview.alt = generationData.name;
+  editGenerationName.value = generationData.name;
+  editGenerationYears.value = generationData.years;
+  editGenerationConsoles.value = generationData.consoles;
+  editGenerationDescription.value = generationData.description;
+
+  editGenerationForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    window.location.href = 'generations.html';
+  });
+}
+
+connectGenerationPreview('editGenerationImage', 'generationPreview');

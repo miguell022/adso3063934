@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="js/script.js" defer></script>
+    <title>Nueva generación | GTA Generations</title>
+</head>
+
+<body>
+    <div class="phone dashboard-screen generation-form-screen">
+        <div class="dashboard-bg" aria-hidden="true"></div>
+
+        <header class="generation-form-header">
+            <a id="backBtn" href="generations.html" aria-label="Volver a generaciones">
+                <i class="ph ph-arrow-circle-left"></i>
+            </a>
+        </header>
+
+        <main class="generation-form-content">
+            <h1 class="dashboard-title generation-form-title font-pricedown">Nueva generación</h1>
+
+            <form id="newGenerationForm" class="generation-form">
+                <label class="generation-image-picker" for="generationImage">
+                    <i class="ph ph-plus"></i>
+                    <input id="generationImage" type="file" accept="image/*">
+                </label>
+
+                <input id="generationName" type="text" placeholder="Nombre de la generación" autocomplete="off">
+                <input id="generationYears" type="text" placeholder="Año (ejm, 2001-2006)" autocomplete="off">
+                <input id="generationConsoles" type="text" placeholder="Consolas (ejm, ps3, ps4)" autocomplete="off">
+                <textarea id="generationDescription" placeholder="Descripción"></textarea>
+
+                <div class="generation-form-actions">
+                    <a class="generation-cancel-btn" href="generations.html">Cancelar</a>
+                    <button class="generation-save-btn" type="submit">Guardar</button>
+                </div>
+            </form>
+        </main>
+
+        <nav class="dashboard-nav" aria-label="Navegación principal">
+            <button class="nav-item" type="button" data-page="dashboard.html" aria-label="Dashboard">
+                <i class="ph ph-squares-four"></i>
+            </button>
+            <button class="nav-item active" type="button" data-page="generations.html" aria-label="Generaciones">
+                <i class="ph ph-tree-structure"></i>
+            </button>
+            <button class="nav-item" type="button" aria-label="Perfil">
+                <i class="ph ph-user-circle"></i>
+            </button>
+            <button class="nav-item" type="button" aria-label="Juegos">
+                <i class="ph ph-game-controller"></i>
+            </button>
+            <button class="nav-item" type="button" aria-label="Personajes">
+                <i class="ph ph-users"></i>
+            </button>
+        </nav>
+    </div>
+</body>
+
+</html>
