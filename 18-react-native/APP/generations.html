@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="js/script.js" defer></script>
+    <title>Generaciones | GTA Generations</title>
+</head>
+
+<body>
+    <div class="phone dashboard-screen generations-screen">
+        <div class="dashboard-bg" aria-hidden="true"></div>
+
+        <main class="generations-content">
+            <h1 class="dashboard-title generations-title font-pricedown">Generaciones</h1>
+
+            <section class="generations-intro">
+                <h2>Explora las eras de Grand Theft Auto</h2>
+                <p>Cada generación de consolas marcó una nueva etapa en la historia de GTA.</p>
+            </section>
+
+            <section class="generation-list" aria-label="Eras de GTA">
+                <article class="generation-card era-2d" data-generation="2d">
+                    <img src="img/Era2D.png" alt="Era 2D de Grand Theft Auto">
+                    <button class="generation-menu" type="button" aria-label="Opciones de Era 2D">
+                        <i class="ph ph-dots-three-vertical"></i>
+                    </button>
+                    <div class="generation-options">
+                        <button type="button" data-action="edit">Editar</button>
+                        <button type="button" data-action="delete">Eliminar</button>
+                    </div>
+                    <button class="generation-action" type="button" aria-label="Ver juegos de Era 2D">
+                        <i class="ph ph-caret-circle-right"></i>
+                    </button>
+                </article>
+
+                <article class="generation-card era-3d" data-generation="3d">
+                    <img src="img/Era3D.png" alt="Era 3D de Grand Theft Auto">
+                    <button class="generation-menu" type="button" aria-label="Opciones de Era 3D">
+                        <i class="ph ph-dots-three-vertical"></i>
+                    </button>
+                    <div class="generation-options">
+                        <button type="button" data-action="edit">Editar</button>
+                        <button type="button" data-action="delete">Eliminar</button>
+                    </div>
+                    <button class="generation-action" type="button" aria-label="Ver juegos de Era 3D">
+                        <i class="ph ph-caret-circle-right"></i>
+                    </button>
+                </article>
+
+                <article class="generation-card era-hd" data-generation="hd">
+                    <img src="img/EraHD.png" alt="Era HD de Grand Theft Auto">
+                    <button class="generation-menu" type="button" aria-label="Opciones de Era HD">
+                        <i class="ph ph-dots-three-vertical"></i>
+                    </button>
+                    <div class="generation-options">
+                        <button type="button" data-action="edit">Editar</button>
+                        <button type="button" data-action="delete">Eliminar</button>
+                    </div>
+                    <button class="generation-action" type="button" aria-label="Ver juegos de Era HD">
+                        <i class="ph ph-caret-circle-right"></i>
+                    </button>
+                </article>
+
+                <button class="add-generation" type="button" aria-label="Agregar generación">
+                    <i class="ph ph-plus-circle"></i>
+                </button>
+            </section>
+        </main>
+
+        <nav class="dashboard-nav" aria-label="Navegación principal">
+            <button class="nav-item" type="button" data-page="dashboard.html" aria-label="Dashboard">
+                <i class="ph ph-squares-four"></i>
+            </button>
+            <button class="nav-item active" type="button" data-page="generations.html" aria-label="Generaciones">
+                <i class="ph ph-tree-structure"></i>
+            </button>
+            <button class="nav-item" type="button" aria-label="Perfil">
+                <i class="ph ph-user-circle"></i>
+            </button>
+            <button class="nav-item" type="button" aria-label="Juegos">
+                <i class="ph ph-game-controller"></i>
+            </button>
+            <button class="nav-item" type="button" aria-label="Personajes">
+                <i class="ph ph-users"></i>
+            </button>
+        </nav>
+    </div>
+</body>
+
+</html>

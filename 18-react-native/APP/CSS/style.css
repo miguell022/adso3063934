@@ -845,16 +845,14 @@ footer button.active {
 /* Dashboard */
 .dashboard-screen {
   min-height: 630px;
-  border: 2px solid #008cff;
+  border: 2px solid #2d2d2d;
 }
 
 .dashboard-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.72)),
-    url("../img/FondoGeneral.png");
+  background:url("../img/FondoGeneral.png");
   background-size: cover;
   background-position: center;
   filter: contrast(1.08) brightness(0.72);
@@ -875,6 +873,22 @@ footer button.active {
   text-align: center;
   text-transform: uppercase;
   text-shadow: 0 2px 0 #000, 0 0 12px rgba(255, 208, 47, 0.25);
+}
+
+.games-title {
+  color: #000000;
+  -webkit-text-stroke: 1px #E7B11A;
+  text-shadow:
+    0 2px 0 #000,
+    0 0 12px rgba(255, 204, 26, 0.45);
+}
+
+.characters-title {
+  color: #050505;
+  -webkit-text-stroke: 1px #E7B11A;
+  text-shadow:
+    0 2px 0 #000,
+    0 0 10px rgba(230, 169, 0, 0.35);
 }
 
 .featured-games {
@@ -1024,4 +1038,344 @@ footer button.active {
 
 .nav-item:hover {
   background: rgba(20, 20, 20, 0.42);
+}
+
+/* Generations */
+.generations-screen {
+  border: 2px solid #2d2d2d;
+}
+
+.generations-content {
+  position: relative;
+  z-index: 1;
+  min-height: 572px;
+  padding: 28px 7px 10px;
+}
+
+.generations-title {
+  margin-bottom: 14px;
+  color: #050505;
+  -webkit-text-stroke: 1px #e7b11a;
+  font-size: 27px;
+  text-shadow:
+    0 2px 0 #000,
+    0 0 12px rgba(255, 204, 26, 0.45);
+}
+
+.generations-intro {
+  margin-bottom: 18px;
+  padding: 12px 10px;
+  border: 1px solid #e7b11a;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.72);
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.32);
+}
+
+.generations-intro h2 {
+  margin: 0 0 14px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.generations-intro p {
+  margin: 0;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.generation-list {
+  position: relative;
+  display: flex;
+  min-height: 405px;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 12px 42px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+}
+
+.generation-card {
+  position: relative;
+  height: 96px;
+  overflow: hidden;
+  border: 1px solid #ffd02f;
+  border-radius: 9px;
+  background: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.38);
+}
+
+.generation-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.era-3d {
+  border-color: #008cff;
+}
+
+.era-hd {
+  border-color: #ff167d;
+}
+
+.generation-action {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.generation-action i {
+  font-size: 23px;
+}
+
+.era-2d .generation-action {
+  color: #ffd02f;
+}
+
+.era-3d .generation-action {
+  color: #008cff;
+}
+
+.era-hd .generation-action {
+  color: #ff167d;
+}
+
+.generation-action:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.add-generation {
+  position: absolute;
+  right: 8px;
+  bottom: 9px;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 2px solid #ffd02f;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.62);
+  color: #ffd02f;
+  cursor: pointer;
+}
+
+.add-generation i {
+  font-size: 24px;
+}
+
+.add-generation:hover {
+  background: #ffd02f;
+  color: #111;
+}
+
+/* Generation add icon refinement */
+.add-generation {
+  border: 0;
+  background: transparent;
+  color: #ffd02f;
+}
+
+.add-generation i {
+  font-size: 36px;
+}
+
+.add-generation:hover {
+  background: transparent;
+  color: #fff;
+}
+
+/* Generation card actions */
+.generation-card {
+  cursor: pointer;
+}
+
+.generation-menu {
+  position: absolute;
+  top: 8px;
+  right: 7px;
+  z-index: 3;
+  display: grid;
+  width: 24px;
+  height: 34px;
+  place-items: center;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  cursor: pointer;
+}
+
+.generation-menu i {
+  font-size: 25px;
+}
+
+.generation-options {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 4;
+  display: none;
+  width: 82px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 208, 47, 0.75);
+  border-radius: 3px;
+  background: rgba(230, 230, 230, 0.9);
+}
+
+.generation-card.show-options .generation-options {
+  display: block;
+}
+
+.generation-options button {
+  display: block;
+  width: 100%;
+  height: 25px;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+  background: transparent;
+  color: #008cff;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.generation-options button:first-child {
+  color: #ff167d;
+}
+
+.generation-options button:last-child {
+  border-bottom: 0;
+}
+
+.generation-options button:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+/* Generation menu position tweak */
+.generation-menu {
+  top: 3px;
+}
+
+/* Generation games view */
+.generation-games-screen {
+  border: 2px solid #008cff;
+}
+
+.generation-games-header {
+  position: relative;
+  z-index: 3;
+  height: 58px;
+  padding-top: 20px;
+  padding-left: 18px;
+}
+
+.generation-games-content {
+  position: relative;
+  z-index: 1;
+  height: 516px;
+  padding: 0 7px 12px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ffd02f rgba(255, 255, 255, 0.12);
+}
+
+.generation-games-title {
+  margin: 0 0 10px;
+  color: #050505;
+  -webkit-text-stroke: 1px #e7b11a;
+  font-size: 22px;
+  text-align: center;
+}
+
+.generation-games-intro {
+  width: 252px;
+  margin: 0 auto 18px;
+  padding: 9px 12px;
+  border: 1px solid #ffd02f;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.generation-games-intro p {
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.generation-games-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 8px;
+}
+
+.generation-game-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 6px;
+  background: rgba(78, 78, 78, 0.76);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.34);
+}
+
+.generation-game-card h2 {
+  margin: 0 0 6px;
+  color: #ffd02f;
+  font-size: 15px;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.generation-game-card img {
+  width: 82px;
+  height: 112px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.45);
+}
+
+.generation-game-card strong {
+  margin-top: 5px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.generation-game-card p {
+  width: 100%;
+  margin: 7px 0 0;
+  padding: 7px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.86);
+  color: #111;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
 }
