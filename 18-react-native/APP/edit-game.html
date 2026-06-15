@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="js/script.js" defer></script>
+    <title>Editar juego | GTA Generations</title>
+</head>
+
+<body>
+    <div class="phone dashboard-screen game-detail-screen edit-game-screen">
+        <div class="dashboard-bg" aria-hidden="true"></div>
+
+        <header class="game-detail-header">
+            <a id="backBtn" href="games.html" aria-label="Volver a juegos">
+                <i class="ph ph-arrow-circle-left"></i>
+            </a>
+        </header>
+
+        <main class="game-detail-content">
+            <form id="editGameForm" class="edit-game-form">
+                <label class="edit-game-cover" for="editGameImage">
+                    <img id="editGamePreview" src="img/GTA1997.jpg" alt="Portada del juego">
+                    <span><i class="ph ph-pencil-simple"></i></span>
+                    <input id="editGameImage" type="file" accept="image/*">
+                </label>
+
+                <div class="edit-game-topline">
+                    <label class="edit-game-title-field">
+                        <input id="editGameTitle" type="text" value="Grand Theft Auto">
+                        <i class="ph ph-pencil-simple"></i>
+                    </label>
+                    <span id="editGameGeneration" class="game-generation-badge chip-2d">Era 2D</span>
+                </div>
+
+                <input id="editGameYear" class="edit-game-year" type="text" value="1997">
+
+                <section class="game-description-box editable-description">
+                    <h2 class="font-pricedown">Descripción <i class="ph ph-pencil-simple"></i></h2>
+                    <textarea id="editGameDescription"></textarea>
+                </section>
+
+                <section class="game-info-table edit-game-table" aria-label="Datos editables del juego"></section>
+
+                <button class="edit-game-save font-pricedown" type="submit">Guardar cambios</button>
+            </form>
+        </main>
+
+        <nav class="dashboard-nav" aria-label="Navegación principal">
+            <button class="nav-item" type="button" data-page="dashboard.html" aria-label="Dashboard">
+                <i class="ph ph-squares-four"></i>
+            </button>
+            <button class="nav-item" type="button" data-page="generations.html" aria-label="Generaciones">
+                <i class="ph ph-tree-structure"></i>
+            </button>
+            <button class="nav-item" type="button" data-page="profile.html" aria-label="Perfil">
+                <i class="ph ph-user-circle"></i>
+            </button>
+            <button class="nav-item active" type="button" data-page="games.html" aria-label="Juegos">
+                <i class="ph ph-game-controller"></i>
+            </button>
+            <button class="nav-item" type="button" aria-label="Personajes">
+                <i class="ph ph-users"></i>
+            </button>
+        </nav>
+    </div>
+</body>
+
+</html>

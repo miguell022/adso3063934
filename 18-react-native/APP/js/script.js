@@ -428,3 +428,418 @@ if (editGenerationForm) {
 }
 
 connectGenerationPreview('editGenerationImage', 'generationPreview');
+
+// Profile section
+const logoutBtn = document.getElementById('logoutBtn');
+const editProfileForm = document.getElementById('editProfileForm');
+const profileImage = document.getElementById('profileImage');
+const profilePreview = document.getElementById('profilePreview');
+const changePasswordForm = document.getElementById('changePasswordForm');
+
+if (logoutBtn) {
+  logoutBtn.addEventListener('click', () => {
+    window.location.href = 'login.html';
+  });
+}
+
+if (profileImage && profilePreview) {
+  profileImage.addEventListener('change', () => {
+    const file = profileImage.files[0];
+    if (!file) return;
+
+    profilePreview.src = URL.createObjectURL(file);
+  });
+}
+
+if (editProfileForm) {
+  editProfileForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    window.location.href = 'profile.html';
+  });
+}
+
+if (changePasswordForm) {
+  changePasswordForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    window.location.href = 'profile.html';
+  });
+}
+
+// Games section
+const gtaGamesData = [
+  {
+    id: 'gta-1997',
+    title: 'Grand Theft Auto',
+    year: '1997',
+    generation: '2d',
+    generationLabel: 'Era 2D',
+    image: 'img/GTA1997.jpg',
+    hero: 'img/gta_imagen_ancha.webp',
+    description: 'El jugador asume el rol de un criminal que escala en el hampa completando misiones para jefes de la mafia, robando vehículos y causando caos absoluto en tres ciudades: Liberty City, Vice City y San Andreas.',
+    genre: 'Acción/Aventura',
+    developer: 'Rockstar',
+    platforms: ['pc', 'ps1'],
+    platformsText: 'PS1',
+    city: 'Vice City',
+    characters: 'Son demasiados',
+    release: 'En el 97'
+  },
+  {
+    id: 'gta-london',
+    title: 'Grand Theft Auto London 1969',
+    year: '1999',
+    generation: '2d',
+    generationLabel: 'Era 2D',
+    image: 'img/Gta_London.jpg',
+    hero: 'img/Gta_London.jpg',
+    description: 'Primera expansión oficial del Grand Theft Auto original, ambientada en el Londres de finales de los 60.',
+    genre: 'Acción/Aventura',
+    developer: 'Rockstar',
+    platforms: ['pc', 'ps1'],
+    platformsText: 'PC / PS1',
+    city: 'London',
+    characters: 'Varios',
+    release: '1999'
+  },
+  {
+    id: 'gta-2',
+    title: 'Grand Theft Auto II',
+    year: '1999',
+    generation: '2d',
+    generationLabel: 'Era 2D',
+    image: 'img/GTA_2.webp',
+    hero: 'img/GTA_2.webp',
+    description: 'Ambientado en la metrópolis retrofuturista de Anywhere City, controla al criminal Claude Speed en misiones para bandas mafiosas mientras siembra el caos.',
+    genre: 'Acción/Aventura',
+    developer: 'Rockstar',
+    platforms: ['pc', 'ps1'],
+    platformsText: 'PC / PS1',
+    city: 'Anywhere City',
+    characters: 'Claude Speed',
+    release: '1999'
+  },
+  {
+    id: 'gta-iii',
+    title: 'Grand Theft Auto III',
+    year: '2001',
+    generation: '3d',
+    generationLabel: 'Era 3D',
+    image: 'img/gtaIII.png',
+    hero: 'img/gtaIII.png',
+    description: 'Claude llega a Liberty City en una entrega que marcó el salto de la saga a mundos abiertos tridimensionales.',
+    genre: 'Acción/Aventura',
+    developer: 'Rockstar',
+    platforms: ['pc', 'ps2', 'xbox'],
+    platformsText: 'PS2 / Xbox / PC',
+    city: 'Liberty City',
+    characters: 'Claude',
+    release: '2001'
+  },
+  {
+    id: 'gta-vc',
+    title: 'Grand Theft Auto Vice City',
+    year: '2002',
+    generation: '3d',
+    generationLabel: 'Era 3D',
+    image: 'img/GTAViceCity.webp',
+    hero: 'img/gtaViceCity.png',
+    description: 'Tommy Vercetti llega a Vice City para construir un imperio criminal entre neón, traiciones y negocios peligrosos.',
+    genre: 'Acción/Aventura',
+    developer: 'Rockstar',
+    platforms: ['pc', 'ps2', 'xbox'],
+    platformsText: 'PS2 / Xbox / PC',
+    city: 'Vice City',
+    characters: 'Tommy Vercetti',
+    release: '2002'
+  },
+  {
+    id: 'gta-sa',
+    title: 'Grand Theft Auto San Andreas',
+    year: '2004',
+    generation: '3d',
+    generationLabel: 'Era 3D',
+    image: 'img/gtaSanAndreas.jpg',
+    hero: 'img/gtaSanAndreas.jpg',
+    description: 'Carl Johnson vuelve a Los Santos y queda atrapado entre pandillas, corrupción y una historia familiar marcada por la calle.',
+    genre: 'Acción/Aventura',
+    developer: 'Rockstar',
+    platforms: ['pc', 'ps2', 'xbox'],
+    platformsText: 'PS2 / Xbox / PC',
+    city: 'Los Santos',
+    characters: 'CJ',
+    release: '2004'
+  },
+  {
+    id: 'gta-lcs',
+    title: 'Grand Theft Auto Liberty City Stories',
+    year: '2005',
+    generation: '3d',
+    generationLabel: 'Era 3D',
+    image: 'img/GtaLibertyCity.png',
+    hero: 'img/GtaLibertyCity.png',
+    description: 'Toni Cipriani regresa a Liberty City en una historia conectada con el universo 3D de la saga.',
+    genre: 'Acción/Aventura',
+    developer: 'Rockstar',
+    platforms: ['ps2'],
+    platformsText: 'PSP / PS2',
+    city: 'Liberty City',
+    characters: 'Toni Cipriani',
+    release: '2005'
+  },
+  {
+    id: 'gta-vcs',
+    title: 'Grand Theft Auto Vice City Stories',
+    year: '2006',
+    generation: '3d',
+    generationLabel: 'Era 3D',
+    image: 'img/GtaViceCityStories.png',
+    hero: 'img/GtaViceCityStories.png',
+    description: 'Victor Vance protagoniza una historia previa a Vice City, con negocios criminales y conflictos familiares.',
+    genre: 'Acción/Aventura',
+    developer: 'Rockstar',
+    platforms: ['ps2'],
+    platformsText: 'PSP / PS2',
+    city: 'Vice City',
+    characters: 'Victor Vance',
+    release: '2006'
+  },
+  {
+    id: 'gta-iv',
+    title: 'Grand Theft Auto IV',
+    year: '2008',
+    generation: 'hd',
+    generationLabel: 'Era HD',
+    image: 'img/GTA_IV_portada.webp',
+    hero: 'img/gtaIV.png',
+    description: 'Niko Bellic llega a Liberty City buscando una nueva vida, pero encuentra deudas, crimen y decisiones difíciles.',
+    genre: 'Acción/Aventura',
+    developer: 'Rockstar',
+    platforms: ['pc', 'ps3', 'xbox360'],
+    platformsText: 'PS3 / Xbox 360 / PC',
+    city: 'Liberty City',
+    characters: 'Niko Bellic',
+    release: '2008'
+  },
+  {
+    id: 'gta-v',
+    title: 'Grand Theft Auto V',
+    year: '2013',
+    generation: 'hd',
+    generationLabel: 'Era HD',
+    image: 'img/GTA_V.webp',
+    hero: 'img/gtaV.png',
+    description: 'Tres protagonistas cruzan sus vidas en Los Santos con golpes, persecuciones y un mundo abierto enorme.',
+    genre: 'Acción/Aventura',
+    developer: 'Rockstar',
+    platforms: ['pc', 'ps3', 'xbox360'],
+    platformsText: 'PS3 / Xbox 360 / PC',
+    city: 'Los Santos',
+    characters: 'Michael, Franklin y Trevor',
+    release: '2013'
+  },
+  {
+    id: 'gta-online',
+    title: 'Grand Theft Auto Online',
+    year: '2013',
+    generation: 'hd',
+    generationLabel: 'Era HD',
+    image: 'img/GtaOnline.png',
+    hero: 'img/GtaOnline.png',
+    description: 'Experiencia multijugador persistente basada en Los Santos, con golpes, actividades, negocios y progresión online.',
+    genre: 'Acción/Aventura Online',
+    developer: 'Rockstar',
+    platforms: ['pc', 'ps3', 'xbox360'],
+    platformsText: 'PS3 / Xbox 360 / PC',
+    city: 'Los Santos',
+    characters: 'Jugador Online',
+    release: '2013'
+  },
+  {
+    id: 'gta-vi',
+    title: 'Grand Theft Auto VI',
+    year: '2026',
+    generation: 'modern',
+    generationLabel: 'Moderna',
+    image: 'img/GTA_VI_portada.webp',
+    hero: 'img/GtaVI.png',
+    description: 'La próxima entrega principal de Grand Theft Auto, ambientada en Leonida y Vice City para abrir una nueva etapa de la saga.',
+    genre: 'Acción/Aventura',
+    developer: 'Rockstar',
+    platforms: ['ps5'],
+    platformsText: 'PS5 / Xbox Series X/S',
+    city: 'Vice City',
+    characters: 'Lucia y Jason',
+    release: '2026'
+  }
+];
+
+function getSelectedGame() {
+  const params = new URLSearchParams(window.location.search);
+  const gameId = params.get('game') || 'gta-1997';
+  return gtaGamesData.find((game) => game.id === gameId) || gtaGamesData[0];
+}
+
+function getGameInfoRows(game, editable = false) {
+  const rows = [
+    ['ph-globe', 'Género', game.genre],
+    ['ph-dev-to-logo', 'Desarrollador', game.developer],
+    ['ph-monitor', 'Plataformas', game.platformsText],
+    ['ph-crosshair', 'Ciudad principal', game.city],
+    ['ph-person-simple-run', 'Personajes', game.characters],
+    ['ph-calendar', 'Lanzamiento', game.release]
+  ];
+
+  return rows.map(([icon, label, value]) => `
+    <div class="game-info-row">
+      <i class="ph ${icon}"></i>
+      <strong>${label}</strong>
+      ${editable ? `<input type="text" value="${value}"> <i class="ph ph-pencil-simple"></i>` : `<span>${value}</span>`}
+    </div>
+  `).join('');
+}
+
+const gamesList = document.getElementById('gamesList');
+const gameSearch = document.getElementById('gameSearch');
+const gameChips = document.querySelectorAll('.game-chip');
+const openGameFilters = document.getElementById('openGameFilters');
+const closeGameFilters = document.getElementById('closeGameFilters');
+const gameFiltersPanel = document.getElementById('gameFiltersPanel');
+const applyGameFilters = document.getElementById('applyGameFilters');
+const clearGameFilters = document.getElementById('clearGameFilters');
+let activeGameGeneration = 'all';
+
+function renderGames() {
+  if (!gamesList) return;
+
+  const searchTerm = (gameSearch?.value || '').toLowerCase();
+  const selectedPlatforms = [...document.querySelectorAll('input[name="filterPlatform"]:checked')].map((input) => input.value);
+
+  const filteredGames = gtaGamesData.filter((game) => {
+    const matchesSearch = game.title.toLowerCase().includes(searchTerm);
+    const matchesGeneration = activeGameGeneration === 'all' || game.generation === activeGameGeneration;
+    const matchesPlatform = selectedPlatforms.length === 0 || selectedPlatforms.some((platform) => game.platforms.includes(platform));
+
+    return matchesSearch && matchesGeneration && matchesPlatform;
+  });
+
+  gamesList.innerHTML = filteredGames.map((game) => `
+    <article class="game-card game-card-${game.generation}" data-game="${game.id}">
+      <img src="${game.image}" alt="${game.title}">
+      <div>
+        <h2>${game.title}</h2>
+        <span class="game-card-year">${game.year}</span>
+        <p>${game.description}</p>
+      </div>
+      <span class="game-card-arrow"><i class="ph ph-caret-right"></i></span>
+    </article>
+  `).join('');
+
+  document.querySelectorAll('.game-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      window.location.href = `game-detail.html?game=${card.dataset.game}`;
+    });
+  });
+}
+
+if (gamesList) {
+  renderGames();
+
+  gameSearch?.addEventListener('input', renderGames);
+
+  gameChips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      activeGameGeneration = chip.dataset.generation;
+      gameChips.forEach((item) => item.classList.remove('active'));
+      chip.classList.add('active');
+      renderGames();
+    });
+  });
+
+  openGameFilters?.addEventListener('click', () => gameFiltersPanel.classList.add('is-open'));
+  closeGameFilters?.addEventListener('click', () => gameFiltersPanel.classList.remove('is-open'));
+
+  applyGameFilters?.addEventListener('click', () => {
+    const generationInput = document.querySelector('input[name="filterGeneration"]:checked');
+    activeGameGeneration = generationInput?.value || 'all';
+    gameChips.forEach((chip) => chip.classList.toggle('active', chip.dataset.generation === activeGameGeneration));
+    renderGames();
+    gameFiltersPanel.classList.remove('is-open');
+  });
+
+  clearGameFilters?.addEventListener('click', () => {
+    activeGameGeneration = 'all';
+    document.querySelector('input[name="filterGeneration"][value="all"]').checked = true;
+    document.querySelectorAll('input[name="filterPlatform"]').forEach((input) => input.checked = false);
+    gameChips.forEach((chip) => chip.classList.toggle('active', chip.dataset.generation === 'all'));
+    renderGames();
+  });
+}
+
+const gameDetailContent = document.getElementById('gameDetailContent');
+const gameDetailMenuBtn = document.getElementById('gameDetailMenuBtn');
+const gameDetailOptions = document.getElementById('gameDetailOptions');
+
+if (gameDetailContent) {
+  const game = getSelectedGame();
+
+  gameDetailContent.innerHTML = `
+    <div class="game-hero-image"><img src="${game.hero}" alt="${game.title}"></div>
+    <div class="game-detail-topline">
+      <h1 class="game-detail-name">${game.title}</h1>
+      <span class="game-generation-badge chip-${game.generation}">${game.generationLabel}</span>
+    </div>
+    <span class="game-detail-year">${game.year}</span>
+    <section class="game-description-box">
+      <h2 class="font-pricedown">Descripción</h2>
+      <p>${game.description}</p>
+    </section>
+    <section class="game-info-table">${getGameInfoRows(game)}</section>
+  `;
+
+  gameDetailMenuBtn?.addEventListener('click', () => gameDetailOptions.classList.toggle('is-open'));
+
+  gameDetailOptions?.querySelectorAll('button').forEach((button) => {
+    button.addEventListener('click', () => {
+      if (button.dataset.gameAction === 'edit') {
+        window.location.href = `edit-game.html?game=${game.id}`;
+      }
+      if (button.dataset.gameAction === 'delete') {
+        window.location.href = 'games.html';
+      }
+    });
+  });
+}
+
+const editGameForm = document.getElementById('editGameForm');
+const editGamePreview = document.getElementById('editGamePreview');
+const editGameImage = document.getElementById('editGameImage');
+const editGameTitle = document.getElementById('editGameTitle');
+const editGameYear = document.getElementById('editGameYear');
+const editGameGeneration = document.getElementById('editGameGeneration');
+const editGameDescription = document.getElementById('editGameDescription');
+const editGameTable = document.querySelector('.edit-game-table');
+
+if (editGameForm) {
+  const game = getSelectedGame();
+
+  editGamePreview.src = game.hero;
+  editGameTitle.value = game.title;
+  editGameYear.value = game.year;
+  editGameGeneration.textContent = game.generationLabel;
+  editGameGeneration.className = `game-generation-badge chip-${game.generation}`;
+  editGameDescription.value = game.description;
+  editGameTable.innerHTML = getGameInfoRows(game, true);
+
+  editGameImage?.addEventListener('change', () => {
+    const file = editGameImage.files[0];
+    if (!file) return;
+    editGamePreview.src = URL.createObjectURL(file);
+  });
+
+  editGameForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    window.location.href = `game-detail.html?game=${game.id}`;
+  });
+}
+
+

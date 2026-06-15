@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="js/script.js" defer></script>
+    <title>Juegos | GTA Generations</title>
+</head>
+
+<body>
+    <div class="phone dashboard-screen games-screen">
+        <div class="dashboard-bg" aria-hidden="true"></div>
+
+        <main class="games-content">
+            <h1 class="dashboard-title games-title font-pricedown">Juegos</h1>
+
+            <section class="games-toolbar" aria-label="Buscar y filtrar juegos">
+                <label class="games-search">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <input id="gameSearch" type="search" placeholder="Busca algún juego pto">
+                </label>
+                <button id="openGameFilters" class="games-filter-btn" type="button" aria-label="Abrir filtros">
+                    <i class="ph ph-funnel-simple"></i>
+                </button>
+            </section>
+
+            <section class="games-chips" aria-label="Filtros rápidos por generación">
+                <button class="game-chip active" type="button" data-generation="all">Todos</button>
+                <button class="game-chip chip-2d" type="button" data-generation="2d">Era 2D</button>
+                <button class="game-chip chip-3d" type="button" data-generation="3d">Era 3D</button>
+                <button class="game-chip chip-hd" type="button" data-generation="hd">Era HD</button>
+                <button class="game-chip chip-modern" type="button" data-generation="modern">Moderna</button>
+            </section>
+
+            <section id="gamesList" class="games-list" aria-label="Lista de juegos"></section>
+        </main>
+
+        <section id="gameFiltersPanel" class="game-filters-panel" aria-label="Filtros de juegos">
+            <div class="game-filters-card">
+                <button id="closeGameFilters" class="filters-close" type="button" aria-label="Cerrar filtros">
+                    <i class="ph ph-x"></i>
+                </button>
+                <h2 class="font-pricedown">Filtros</h2>
+                <button id="clearGameFilters" class="filters-clear" type="button">Limpiar</button>
+
+                <fieldset>
+                    <legend>Por generación</legend>
+                    <label><input type="radio" name="filterGeneration" value="all" checked> Todos</label>
+                    <label><input type="radio" name="filterGeneration" value="2d"> Era 2D (1997-1999)</label>
+                    <label><input type="radio" name="filterGeneration" value="3d"> Era 3D (2001-2006)</label>
+                    <label><input type="radio" name="filterGeneration" value="hd"> Era HD (2008-2013)</label>
+                    <label><input type="radio" name="filterGeneration" value="modern"> Era Moderna (2013-presente)</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Por plataforma</legend>
+                    <label><input type="checkbox" name="filterPlatform" value="ps2"> PlayStation 2</label>
+                    <label><input type="checkbox" name="filterPlatform" value="ps3"> PlayStation 3</label>
+                    <label><input type="checkbox" name="filterPlatform" value="xbox"> Xbox</label>
+                    <label><input type="checkbox" name="filterPlatform" value="xbox360"> Xbox 360</label>
+                    <label><input type="checkbox" name="filterPlatform" value="pc"> PC</label>
+                </fieldset>
+
+                <button id="applyGameFilters" class="filters-apply font-pricedown" type="button">Aplicar filtro</button>
+            </div>
+        </section>
+
+        <nav class="dashboard-nav" aria-label="Navegación principal">
+            <button class="nav-item" type="button" data-page="dashboard.html" aria-label="Dashboard">
+                <i class="ph ph-squares-four"></i>
+            </button>
+            <button class="nav-item" type="button" data-page="generations.html" aria-label="Generaciones">
+                <i class="ph ph-tree-structure"></i>
+            </button>
+            <button class="nav-item" type="button" data-page="profile.html" aria-label="Perfil">
+                <i class="ph ph-user-circle"></i>
+            </button>
+            <button class="nav-item active" type="button" data-page="games.html" aria-label="Juegos">
+                <i class="ph ph-game-controller"></i>
+            </button>
+            <button class="nav-item" type="button" aria-label="Personajes">
+                <i class="ph ph-users"></i>
+            </button>
+        </nav>
+    </div>
+</body>
+
+</html>

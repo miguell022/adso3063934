@@ -1645,3 +1645,989 @@ footer button.active {
   min-width: 108px !important;
   max-width: 108px;
 }
+
+/* Profile section */
+.profile-screen {
+  border: 0;
+}
+
+.profile-content {
+  position: relative;
+  z-index: 1;
+  height: 574px;
+  padding: 25px 22px 18px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.profile-content::-webkit-scrollbar {
+  display: none;
+}
+
+.profile-title {
+  margin: 0 0 14px;
+  color: #050505;
+  -webkit-text-stroke: 1px #e7b11a;
+  font-size: 21px;
+  text-align: center;
+  text-shadow:
+    0 2px 0 #000,
+    0 0 12px rgba(255, 204, 26, 0.45);
+}
+
+.profile-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.profile-avatar {
+  width: 86px;
+  height: 86px;
+  object-fit: cover;
+  border: 2px solid #008cff;
+  border-radius: 50%;
+  background: #e7e7e7;
+  box-shadow: 0 0 18px rgba(0, 140, 255, 0.34);
+}
+
+.profile-name {
+  margin: -2px 0 0;
+  padding: 2px 8px 3px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.82);
+  color: #fff;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.profile-panel {
+  margin-bottom: 28px;
+  padding: 12px 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.36);
+  backdrop-filter: blur(2px);
+}
+
+.profile-panel-title {
+  margin: -3px 0 10px;
+  color: #050505;
+  -webkit-text-stroke: 1px #e7b11a;
+  font-size: 18px;
+  line-height: 1;
+  text-shadow: 0 2px 0 #000;
+}
+
+.profile-info-row,
+.profile-action-row,
+.profile-link-row {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+  color: #fff;
+  text-align: left;
+}
+
+.profile-info-row:last-of-type,
+.profile-action-row:last-child {
+  border-bottom: 0;
+}
+
+.profile-info-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  margin-right: 10px;
+  place-items: center;
+  border: 1px solid rgba(255, 208, 47, 0.86);
+  border-radius: 4px;
+  color: #ffd02f;
+  font-size: 24px;
+}
+
+.profile-info-row strong {
+  display: block;
+  color: #fff;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.profile-info-row p {
+  margin: 2px 0 0;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.profile-link-row {
+  justify-content: space-between;
+  padding: 8px 0 0;
+  color: #050505;
+  -webkit-text-stroke: 1px #e7b11a;
+  font-size: 17px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.profile-link-row i,
+.profile-action-row > i {
+  margin-left: auto;
+  color: #fff;
+  font-size: 22px;
+}
+
+.profile-action-row {
+  min-height: 56px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.profile-action-row:hover,
+.profile-link-row:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.profile-header {
+  position: relative;
+  z-index: 3;
+  height: 58px;
+  padding-top: 20px;
+  padding-left: 18px;
+}
+
+.profile-form-content {
+  height: 516px;
+  padding: 0 12px 18px;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.36);
+  backdrop-filter: blur(2px);
+}
+
+.profile-avatar-picker {
+  position: relative;
+  display: block;
+  width: 94px;
+  height: 94px;
+  margin: -3px auto 12px;
+  overflow: hidden;
+  border: 2px solid #008cff;
+  border-radius: 50%;
+  background: #d8d8d8;
+  cursor: pointer;
+}
+
+.profile-avatar-picker img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.68;
+}
+
+.profile-avatar-picker span {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 42px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.72);
+}
+
+.profile-avatar-picker input {
+  display: none;
+}
+
+.profile-form label {
+  margin: 7px 0 4px;
+  color: #fff;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.profile-form input,
+.profile-form textarea {
+  width: 100%;
+  border: 0;
+  border-radius: 3px;
+  background: #fff;
+  color: #222;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  outline: none;
+}
+
+.profile-form input {
+  height: 36px;
+  padding: 0 9px;
+}
+
+.profile-form textarea {
+  min-height: 140px;
+  padding: 9px;
+  resize: none;
+  line-height: 1.25;
+}
+
+.profile-form input:focus,
+.profile-form textarea:focus {
+  box-shadow: 0 0 0 2px rgba(255, 208, 47, 0.65);
+}
+
+.profile-save-btn {
+  align-self: center;
+  min-width: 188px;
+  height: 36px;
+  margin-top: 16px;
+  border: 1px solid #ffd02f;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.68);
+  color: #ffd02f;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.profile-save-btn:hover {
+  background: rgba(255, 208, 47, 0.12);
+}
+
+.password-content {
+  height: 516px;
+  padding: 42px 12px 18px;
+}
+
+.password-content .profile-title {
+  margin-bottom: 18px;
+}
+
+.password-symbol {
+  display: grid;
+  width: 95px;
+  height: 95px;
+  margin: 0 auto 28px;
+  place-items: center;
+  border: 1px solid #ffd02f;
+  border-radius: 50%;
+  color: #ffd02f;
+  font-size: 82px;
+}
+
+.password-form {
+  gap: 15px;
+  padding: 28px 16px 32px;
+}
+
+.profile-input-icon {
+  position: relative;
+}
+
+.profile-input-icon i {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  color: #ffd02f;
+  font-size: 16px;
+  transform: translateY(-50%);
+}
+
+.profile-input-icon input {
+  padding-left: 32px;
+}
+
+/* Profile row arrows */
+.profile-row-arrow {
+  display: grid;
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: 2px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.profile-row-arrow i {
+  display: block;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.profile-link-row .profile-row-arrow {
+  margin-right: 0;
+}
+
+.profile-action-row .profile-row-arrow {
+  margin-right: 0;
+}
+
+/* Games section */
+.games-screen,
+.game-detail-screen {
+  border: 0;
+}
+
+.games-content {
+  position: relative;
+  z-index: 1;
+  height: 574px;
+  padding: 32px 13px 14px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.games-content::-webkit-scrollbar,
+.game-detail-content::-webkit-scrollbar {
+  display: none;
+}
+
+.games-title {
+  margin: 0 0 18px;
+  color: #050505;
+  -webkit-text-stroke: 1px #e7b11a;
+  font-size: 28px;
+  text-align: center;
+  text-shadow: 0 2px 0 #000, 0 0 12px rgba(255, 204, 26, 0.45);
+}
+
+.games-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.games-search {
+  position: relative;
+  flex: 1;
+}
+
+.games-search i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  color: #777;
+  font-size: 17px;
+  transform: translateY(-50%);
+}
+
+.games-search input {
+  width: 100%;
+  height: 36px;
+  padding: 0 12px 0 34px;
+  border: 0;
+  border-radius: 4px;
+  background: #fff;
+  color: #222;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  outline: none;
+}
+
+.games-filter-btn {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.58);
+  color: #fff;
+  cursor: pointer;
+}
+
+.games-filter-btn i {
+  font-size: 26px;
+}
+
+.games-chips {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.games-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.game-chip {
+  height: 31px;
+  flex: 0 0 auto;
+  padding: 0 9px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.74);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.game-chip.active {
+  background: #111;
+}
+
+.chip-2d {
+  border-color: #9b24ff;
+  color: #fff;
+  background: #6411a1;
+}
+
+.chip-3d {
+  border-color: #ffad1f;
+  color: #fff;
+  background: #111;
+}
+
+.chip-hd {
+  border-color: #008cff;
+  color: #fff;
+  background: #111;
+}
+
+.chip-modern {
+  border-color: #ff167d;
+  color: #fff;
+  background: #111;
+}
+
+.games-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+}
+
+.game-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px 1fr 27px;
+  gap: 8px;
+  min-height: 110px;
+  padding: 8px;
+  border: 1px solid #9b24ff;
+  border-radius: 5px;
+  background: linear-gradient(90deg, rgba(91, 0, 132, 0.78), rgba(42, 0, 65, 0.82));
+  color: #fff;
+  cursor: pointer;
+}
+
+.game-card img {
+  width: 64px;
+  height: 78px;
+  object-fit: cover;
+  border: 1px solid #9b24ff;
+  border-radius: 4px;
+}
+
+.game-card h2 {
+  margin: 0 0 4px;
+  color: #fff;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.game-card-year {
+  display: inline-grid;
+  height: 20px;
+  min-width: 46px;
+  margin-bottom: 5px;
+  place-items: center;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.game-card p {
+  margin: 0;
+  color: #fff;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.game-card-arrow {
+  align-self: center;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+}
+
+.game-filters-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: none;
+  padding: 78px 12px 70px;
+  background: rgba(0, 0, 0, 0.64);
+}
+
+.game-filters-panel.is-open {
+  display: block;
+}
+
+.game-filters-card {
+  position: relative;
+  min-height: 388px;
+  padding: 17px 13px 20px;
+  border: 1px solid #e7b11a;
+  border-radius: 4px;
+  background: rgba(18, 18, 18, 0.96);
+  color: #fff;
+}
+
+.game-filters-card h2 {
+  margin: 0 0 20px;
+  color: #050505;
+  -webkit-text-stroke: 1px #e7b11a;
+  font-size: 20px;
+  text-align: center;
+}
+
+.filters-close,
+.filters-clear {
+  position: absolute;
+  top: 22px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.filters-close {
+  left: 12px;
+  color: #ffd02f;
+  font-size: 22px;
+}
+
+.filters-clear {
+  right: 12px;
+  color: #ff167d;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.game-filters-card fieldset {
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+}
+
+.game-filters-card legend {
+  margin-bottom: 7px;
+  color: #fff;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.game-filters-card label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.filters-apply {
+  display: grid;
+  width: 180px;
+  height: 30px;
+  margin: 20px auto 0;
+  place-items: center;
+  border: 1px solid #ffd02f;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.68);
+  color: #ffd02f;
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.game-detail-header {
+  position: relative;
+  z-index: 4;
+  height: 74px;
+  padding-top: 18px;
+  padding-left: 18px;
+}
+
+.game-detail-menu {
+  position: absolute;
+  top: 20px;
+  right: 18px;
+  width: 28px;
+  height: 38px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.game-detail-options {
+  position: absolute;
+  top: 18px;
+  right: 42px;
+  display: none;
+  width: 102px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.game-detail-options.is-open {
+  display: block;
+}
+
+.game-detail-options button {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #333;
+  background: #fff;
+  color: #111;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.game-detail-content {
+  position: relative;
+  z-index: 1;
+  height: 500px;
+  padding: 0 8px 14px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.game-hero-image,
+.edit-game-cover {
+  display: block;
+  width: 100%;
+  height: 168px;
+  overflow: hidden;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.game-hero-image img,
+.edit-game-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-detail-topline,
+.edit-game-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.game-detail-name,
+.edit-game-title-field input {
+  min-width: 0;
+  color: #fff;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.game-generation-badge {
+  display: grid;
+  min-width: 55px;
+  height: 29px;
+  place-items: center;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.game-detail-year,
+.edit-game-year {
+  display: inline-grid;
+  width: 62px;
+  height: 31px;
+  margin-top: 8px;
+  place-items: center;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.game-description-box,
+.game-info-table {
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 4px;
+  background: rgba(40, 40, 40, 0.72);
+  backdrop-filter: blur(2px);
+}
+
+.game-description-box h2 {
+  margin: 0 0 9px;
+  color: #ffd02f;
+  font-size: 21px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.game-description-box p,
+.game-description-box textarea {
+  margin: 0;
+  color: #fff;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.game-info-row {
+  display: grid;
+  grid-template-columns: 32px 1fr 1fr;
+  align-items: center;
+  min-height: 31px;
+  border-bottom: 1px solid #e7b11a;
+  color: #fff;
+}
+
+.game-info-row:last-child {
+  border-bottom: 0;
+}
+
+.game-info-row i {
+  color: #ffd02f;
+  font-size: 20px;
+}
+
+.game-info-row strong {
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.game-info-row span:last-child {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  text-align: right;
+}
+
+.edit-game-form {
+  display: block;
+}
+
+.edit-game-cover {
+  position: relative;
+  cursor: pointer;
+}
+
+.edit-game-cover img {
+  opacity: 0.6;
+}
+
+.edit-game-cover span {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 70px;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.75);
+}
+
+.edit-game-cover input {
+  display: none;
+}
+
+.edit-game-title-field {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.edit-game-title-field input,
+.edit-game-year,
+.editable-description textarea,
+.edit-game-table input {
+  border: 0;
+  outline: none;
+}
+
+.edit-game-title-field input {
+  width: 190px;
+  background: transparent;
+}
+
+.edit-game-title-field i,
+.editable-description h2 i,
+.edit-game-table i:last-child {
+  color: #ffd02f;
+  font-size: 20px;
+}
+
+.editable-description textarea {
+  width: 100%;
+  min-height: 95px;
+  resize: none;
+  background: transparent;
+}
+
+.edit-game-table input {
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  font-size: 10px;
+  text-align: right;
+}
+
+.edit-game-table .game-info-row {
+  grid-template-columns: 32px 1fr 1fr 22px;
+}
+
+.edit-game-save {
+  display: grid;
+  width: 180px;
+  height: 34px;
+  margin: 15px auto 0;
+  place-items: center;
+  border: 1px solid #ffd02f;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.68);
+  color: #ffd02f;
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Games generation colors refinement */
+.game-chip.chip-2d,
+.game-chip.chip-3d,
+.game-chip.chip-hd,
+.game-chip.chip-modern {
+  background: rgba(0, 0, 0, 0.74) !important;
+  color: #fff !important;
+}
+
+.game-chip.chip-2d {
+  border-color: #9b24ff !important;
+}
+
+.game-chip.chip-3d {
+  border-color: #ffad1f !important;
+}
+
+.game-chip.chip-hd {
+  border-color: #008cff !important;
+}
+
+.game-chip.chip-modern {
+  border-color: #ff167d !important;
+}
+
+.game-chip.chip-2d.active {
+  background: #6411a1 !important;
+}
+
+.game-chip.chip-3d.active {
+  background: #9b5a00 !important;
+}
+
+.game-chip.chip-hd.active {
+  background: #004f94 !important;
+}
+
+.game-chip.chip-modern.active {
+  background: #94104b !important;
+}
+
+.game-card.game-card-2d {
+  border-color: #9b24ff !important;
+  background: linear-gradient(90deg, rgba(91, 0, 132, 0.78), rgba(42, 0, 65, 0.82)) !important;
+}
+
+.game-card.game-card-2d img {
+  border-color: #9b24ff !important;
+}
+
+.game-card.game-card-3d {
+  border-color: #ffad1f !important;
+  background: linear-gradient(90deg, rgba(127, 72, 0, 0.78), rgba(51, 28, 0, 0.84)) !important;
+}
+
+.game-card.game-card-3d img {
+  border-color: #ffad1f !important;
+}
+
+.game-card.game-card-hd {
+  border-color: #008cff !important;
+  background: linear-gradient(90deg, rgba(0, 72, 132, 0.78), rgba(0, 28, 58, 0.84)) !important;
+}
+
+.game-card.game-card-hd img {
+  border-color: #008cff !important;
+}
+
+.game-card.game-card-modern {
+  border-color: #ff167d !important;
+  background: linear-gradient(90deg, rgba(134, 0, 64, 0.78), rgba(58, 0, 31, 0.84)) !important;
+}
+
+.game-card.game-card-modern img {
+  border-color: #ff167d !important;
+}

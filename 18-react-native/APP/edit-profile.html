@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="js/script.js" defer></script>
+    <title>Editar perfil | GTA Generations</title>
+</head>
+
+<body>
+    <div class="phone dashboard-screen profile-screen edit-profile-screen">
+        <div class="dashboard-bg" aria-hidden="true"></div>
+
+        <header class="profile-header">
+            <a id="backBtn" href="profile.html" aria-label="Volver al perfil">
+                <i class="ph ph-arrow-circle-left"></i>
+            </a>
+        </header>
+
+        <main class="profile-content profile-form-content">
+            <h1 class="dashboard-title profile-title font-pricedown">Editar perfil</h1>
+
+            <form id="editProfileForm" class="profile-form">
+                <label class="profile-avatar-picker" for="profileImage">
+                    <img id="profilePreview" src="img/photo.jpg" alt="Avatar de usuario">
+                    <span><i class="ph ph-pencil-simple"></i></span>
+                    <input id="profileImage" type="file" accept="image/*">
+                </label>
+
+                <label for="profileName">Nombre:</label>
+                <input id="profileName" type="text" value="Juan Machete" autocomplete="off">
+
+                <label for="profileEmail">Email:</label>
+                <input id="profileEmail" type="email" value="juan02@mail.com" autocomplete="off">
+
+                <label for="profileBio">Biografía:</label>
+                <textarea id="profileBio">Fan de Grand Theft Auto, explorador de generaciones y mundos abiertos.</textarea>
+
+                <button class="profile-save-btn font-pricedown" type="submit">Guardar cambios</button>
+            </form>
+        </main>
+
+        <nav class="dashboard-nav" aria-label="Navegación principal">
+            <button class="nav-item" type="button" data-page="dashboard.html" aria-label="Dashboard">
+                <i class="ph ph-squares-four"></i>
+            </button>
+            <button class="nav-item" type="button" data-page="generations.html" aria-label="Generaciones">
+                <i class="ph ph-tree-structure"></i>
+            </button>
+            <button class="nav-item active" type="button" data-page="profile.html" aria-label="Perfil">
+                <i class="ph ph-user-circle"></i>
+            </button>
+            <button class="nav-item" type="button" data-page="games.html" aria-label="Juegos">
+                <i class="ph ph-game-controller"></i>
+            </button>
+            <button class="nav-item" type="button" aria-label="Personajes">
+                <i class="ph ph-users"></i>
+            </button>
+        </nav>
+    </div>
+</body>
+
+</html>
+
+
