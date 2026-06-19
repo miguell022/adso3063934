@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="js/script.js" defer></script>
+    <title>Editar personaje | GTA Generations</title>
+</head>
+
+<body>
+    <div class="phone dashboard-screen character-detail-screen edit-character-screen">
+        <div class="dashboard-bg" aria-hidden="true"></div>
+
+        <header class="character-detail-header">
+            <a id="backBtn" href="characters.html" aria-label="Volver a personajes">
+                <i class="ph ph-arrow-circle-left"></i>
+            </a>
+        </header>
+
+        <main class="character-detail-content">
+            <form id="editCharacterForm" class="edit-character-form">
+                <label class="edit-character-cover" for="editCharacterImage">
+                    <img id="editCharacterPreview" src="img/CJNew.png" alt="Imagen del personaje">
+                    <span><i class="ph ph-pencil-simple"></i></span>
+                    <input id="editCharacterImage" type="file" accept="image/*">
+                </label>
+
+                <label class="edit-character-title-field">
+                    <input id="editCharacterName" type="text" value="Carl Johnson (CJ)">
+                    <i class="ph ph-pencil-simple"></i>
+                </label>
+
+                <div class="character-detail-subline">
+                    <input id="editCharacterGame" class="edit-character-game" type="text" value="GTA: San Andreas">
+                    <span id="editCharacterGeneration" class="character-generation-badge chip-3d">Era 3D</span>
+                </div>
+
+                <section class="character-description-box editable-description">
+                    <h2 class="font-pricedown">Descripción <i class="ph ph-pencil-simple"></i></h2>
+                    <textarea id="editCharacterDescription"></textarea>
+                </section>
+
+                <section class="character-info-table edit-character-table" aria-label="Datos editables del personaje"></section>
+
+                <button class="edit-character-save font-pricedown" type="submit">Guardar cambios</button>
+            </form>
+        </main>
+
+        <nav class="dashboard-nav" aria-label="Navegación principal">
+            <button class="nav-item" type="button" data-page="dashboard.html" aria-label="Dashboard">
+                <i class="ph ph-squares-four"></i>
+            </button>
+            <button class="nav-item" type="button" data-page="generations.html" aria-label="Generaciones">
+                <i class="ph ph-tree-structure"></i>
+            </button>
+            <button class="nav-item" type="button" data-page="profile.html" aria-label="Perfil">
+                <i class="ph ph-user-circle"></i>
+            </button>
+            <button class="nav-item" type="button" data-page="games.html" aria-label="Juegos">
+                <i class="ph ph-game-controller"></i>
+            </button>
+            <button class="nav-item active" type="button" data-page="characters.html" aria-label="Personajes">
+                <i class="ph ph-users"></i>
+            </button>
+        </nav>
+    </div>
+</body>
+
+</html>

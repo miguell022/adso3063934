@@ -7,34 +7,33 @@
     <link rel="stylesheet" href="CSS/style.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="js/script.js" defer></script>
-    <title>Juegos por generación | GTA Generations</title>
+    <title>Ver personaje | GTA Generations</title>
 </head>
 
 <body>
-    <div class="phone dashboard-screen generation-games-screen">
+    <div class="phone dashboard-screen character-detail-screen">
         <div class="dashboard-bg" aria-hidden="true"></div>
 
-        <header class="generation-games-header">
-            <a id="backBtn" href="generations.html" aria-label="Volver a generaciones">
+        <header class="character-detail-header">
+            <a id="backBtn" href="characters.html" aria-label="Volver a personajes">
                 <i class="ph ph-arrow-circle-left"></i>
             </a>
+            <button id="characterDetailMenuBtn" class="game-detail-menu" type="button" aria-label="Opciones del personaje">
+                <i class="ph ph-dots-three-vertical"></i>
+            </button>
+            <div id="characterDetailOptions" class="game-detail-options">
+                <button type="button" data-character-action="edit">Editar</button>
+                <button type="button" data-character-action="delete">Eliminar</button>
+            </div>
         </header>
 
-        <main class="generation-games-content">
-            <h1 id="generationGamesTitle" class="dashboard-title generation-games-title font-pricedown">Juegos de la generación</h1>
-
-            <section class="generation-games-intro">
-                <p id="generationGamesSubtitle">Conoce los juegos de esta generación de consolas</p>
-            </section>
-
-            <section id="generationGamesList" class="generation-games-list" aria-label="Juegos de la generación"></section>
-        </main>
+        <main id="characterDetailContent" class="character-detail-content"></main>
 
         <nav class="dashboard-nav" aria-label="Navegación principal">
             <button class="nav-item" type="button" data-page="dashboard.html" aria-label="Dashboard">
                 <i class="ph ph-squares-four"></i>
             </button>
-            <button class="nav-item active" type="button" data-page="generations.html" aria-label="Generaciones">
+            <button class="nav-item" type="button" data-page="generations.html" aria-label="Generaciones">
                 <i class="ph ph-tree-structure"></i>
             </button>
             <button class="nav-item" type="button" data-page="profile.html" aria-label="Perfil">
@@ -43,7 +42,7 @@
             <button class="nav-item" type="button" data-page="games.html" aria-label="Juegos">
                 <i class="ph ph-game-controller"></i>
             </button>
-            <button class="nav-item" type="button" data-page="characters.html" aria-label="Personajes">
+            <button class="nav-item active" type="button" data-page="characters.html" aria-label="Personajes">
                 <i class="ph ph-users"></i>
             </button>
         </nav>
@@ -51,7 +50,3 @@
 </body>
 
 </html>
-
-
-
-

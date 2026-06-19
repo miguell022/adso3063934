@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="js/script.js" defer></script>
+    <title>Personajes | GTA Generations</title>
+</head>
+
+<body>
+    <div class="phone dashboard-screen characters-screen">
+        <div class="dashboard-bg" aria-hidden="true"></div>
+
+        <main class="characters-content">
+            <h1 class="dashboard-title characters-title font-pricedown">Personajes</h1>
+
+            <section class="characters-toolbar" aria-label="Buscar y filtrar personajes">
+                <label class="characters-search">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <input id="characterSearch" type="search" placeholder="Busca algún personaje pto">
+                </label>
+                <button id="openCharacterFilters" class="characters-filter-btn" type="button" aria-label="Abrir filtros">
+                    <i class="ph ph-funnel-simple"></i>
+                </button>
+            </section>
+
+            <section class="characters-chips" aria-label="Filtros rápidos por generación">
+                <button class="character-chip active" type="button" data-generation="all">Todos</button>
+                <button class="character-chip chip-2d" type="button" data-generation="2d">Era 2D</button>
+                <button class="character-chip chip-3d" type="button" data-generation="3d">Era 3D</button>
+                <button class="character-chip chip-hd" type="button" data-generation="hd">Era HD</button>
+                <button class="character-chip chip-modern" type="button" data-generation="modern">Moderna</button>
+            </section>
+
+            <section id="charactersList" class="characters-list" aria-label="Lista de personajes"></section>
+        </main>
+
+        <section id="characterFiltersPanel" class="character-filters-panel" aria-label="Filtros de personajes">
+            <div class="character-filters-card">
+                <button id="closeCharacterFilters" class="filters-close" type="button" aria-label="Cerrar filtros">
+                    <i class="ph ph-x"></i>
+                </button>
+                <h2 class="font-pricedown">Filtros</h2>
+                <button id="clearCharacterFilters" class="filters-clear" type="button">Limpiar</button>
+
+                <fieldset>
+                    <legend>Por generación</legend>
+                    <label><input type="radio" name="characterFilterGeneration" value="all" checked> Todos</label>
+                    <label><input type="radio" name="characterFilterGeneration" value="2d"> Era 2D (1997-1999)</label>
+                    <label><input type="radio" name="characterFilterGeneration" value="3d"> Era 3D (2001-2006)</label>
+                    <label><input type="radio" name="characterFilterGeneration" value="hd"> Era HD (2008-2013)</label>
+                    <label><input type="radio" name="characterFilterGeneration" value="modern"> Era Moderna (2013-presente)</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Por plataforma</legend>
+                    <select id="characterPlatformFilter">
+                        <option value="all">Todas las plataformas</option>
+                        <option value="ps2">PlayStation 2</option>
+                        <option value="ps3">PlayStation 3</option>
+                        <option value="xbox360">Xbox 360</option>
+                        <option value="pc">PC</option>
+                        <option value="ps5">PlayStation 5</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Ordenar por</legend>
+                    <label><input type="radio" name="characterSort" value="az" checked> Nombre A-Z</label>
+                    <label><input type="radio" name="characterSort" value="za"> Nombre Z-A</label>
+                    <label><input type="radio" name="characterSort" value="old"> Más antiguos</label>
+                    <label><input type="radio" name="characterSort" value="new"> Más recientes</label>
+                </fieldset>
+
+                <button id="applyCharacterFilters" class="filters-apply font-pricedown" type="button">Aplicar filtro</button>
+            </div>
+        </section>
+
+        <nav class="dashboard-nav" aria-label="Navegación principal">
+            <button class="nav-item" type="button" data-page="dashboard.html" aria-label="Dashboard">
+                <i class="ph ph-squares-four"></i>
+            </button>
+            <button class="nav-item" type="button" data-page="generations.html" aria-label="Generaciones">
+                <i class="ph ph-tree-structure"></i>
+            </button>
+            <button class="nav-item" type="button" data-page="profile.html" aria-label="Perfil">
+                <i class="ph ph-user-circle"></i>
+            </button>
+            <button class="nav-item" type="button" data-page="games.html" aria-label="Juegos">
+                <i class="ph ph-game-controller"></i>
+            </button>
+            <button class="nav-item active" type="button" data-page="characters.html" aria-label="Personajes">
+                <i class="ph ph-users"></i>
+            </button>
+        </nav>
+    </div>
+</body>
+
+</html>

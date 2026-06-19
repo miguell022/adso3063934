@@ -2631,3 +2631,451 @@ footer button.active {
 .game-card.game-card-modern img {
   border-color: #ff167d !important;
 }
+
+/* Characters section */
+.characters-screen,
+.character-detail-screen {
+  border: 0;
+}
+
+.characters-content {
+  position: relative;
+  z-index: 1;
+  height: 574px;
+  padding: 32px 12px 14px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.characters-content::-webkit-scrollbar,
+.character-detail-content::-webkit-scrollbar {
+  display: none;
+}
+
+.characters-title {
+  margin: 0 0 18px;
+  color: #050505;
+  -webkit-text-stroke: 1px #e7b11a;
+  font-size: 25px;
+  text-align: center;
+  text-shadow: 0 2px 0 #000, 0 0 12px rgba(255, 204, 26, 0.45);
+}
+
+.characters-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.characters-search {
+  position: relative;
+  flex: 1;
+}
+
+.characters-search i {
+  position: absolute;
+  top: 50%;
+  left: 9px;
+  color: #777;
+  font-size: 16px;
+  transform: translateY(-50%);
+}
+
+.characters-search input {
+  width: 100%;
+  height: 32px;
+  padding: 0 10px 0 31px;
+  border: 0;
+  border-radius: 4px;
+  background: #fff;
+  color: #222;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  outline: none;
+}
+
+.characters-filter-btn {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.58);
+  color: #fff;
+  cursor: pointer;
+}
+
+.characters-filter-btn i {
+  font-size: 24px;
+}
+
+.characters-chips {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 13px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.characters-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.character-chip {
+  height: 27px;
+  flex: 0 0 auto;
+  padding: 0 8px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.74);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.character-chip.chip-2d,
+.character-chip.chip-3d,
+.character-chip.chip-hd,
+.character-chip.chip-modern {
+  background: rgba(0, 0, 0, 0.74) !important;
+}
+
+.character-chip.chip-2d.active { background: #6411a1 !important; }
+.character-chip.chip-3d.active { background: #9b5a00 !important; }
+.character-chip.chip-hd.active { background: #004f94 !important; }
+.character-chip.chip-modern.active { background: #94104b !important; }
+
+.characters-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 12px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+}
+
+.character-card {
+  min-height: 158px;
+  padding: 7px;
+  border: 1px solid #ffd02f;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.76);
+  color: #fff;
+  cursor: pointer;
+}
+
+.character-card img {
+  display: block;
+  width: 78px;
+  height: 78px;
+  margin: 0 auto 6px;
+  object-fit: cover;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.character-card h2 {
+  margin: 0 0 5px;
+  color: #fff;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.character-card-game {
+  display: block;
+  margin-bottom: 7px;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.character-card-badge,
+.character-generation-badge {
+  display: inline-grid;
+  min-width: 52px;
+  height: 22px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.character-card-2d { border-color: #9b24ff; color: #9b24ff; }
+.character-card-3d { border-color: #ffad1f; color: #34ff23; }
+.character-card-hd { border-color: #008cff; color: #008cff; }
+.character-card-modern { border-color: #ff167d; color: #ff167d; }
+
+.character-filters-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: none;
+  padding: 58px 12px 70px;
+  background: rgba(0, 0, 0, 0.64);
+}
+
+.character-filters-panel.is-open {
+  display: block;
+}
+
+.character-filters-card {
+  position: relative;
+  min-height: 442px;
+  padding: 17px 13px 20px;
+  border: 1px solid #e7b11a;
+  border-radius: 4px;
+  background: rgba(18, 18, 18, 0.96);
+  color: #fff;
+}
+
+.character-filters-card h2 {
+  margin: 0 0 20px;
+  color: #050505;
+  -webkit-text-stroke: 1px #e7b11a;
+  font-size: 20px;
+  text-align: center;
+}
+
+.character-filters-card fieldset {
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+}
+
+.character-filters-card legend {
+  margin-bottom: 7px;
+  color: #fff;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.character-filters-card label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.character-filters-card select {
+  width: 100%;
+  height: 32px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.76);
+  color: #ffd02f;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.character-detail-header {
+  position: relative;
+  z-index: 4;
+  height: 74px;
+  padding-top: 18px;
+  padding-left: 18px;
+}
+
+.character-detail-content {
+  position: relative;
+  z-index: 1;
+  height: 500px;
+  padding: 0 8px 14px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.character-hero-image,
+.edit-character-cover {
+  display: block;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  border: 3px solid #fff;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.character-hero-image img,
+.edit-character-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.character-detail-name,
+.edit-character-title-field input {
+  margin: 12px 0 5px;
+  color: #fff;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.character-detail-subline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.character-game-name,
+.edit-character-game {
+  min-width: 0;
+  color: #34ff23;
+  -webkit-text-stroke: 1px #050505;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.character-description-box,
+.character-info-table {
+  margin-top: 10px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 4px;
+  background: rgba(40, 40, 40, 0.72);
+  backdrop-filter: blur(2px);
+}
+
+.character-description-box h2 {
+  margin: 0 0 7px;
+  color: #ffd02f;
+  font-size: 20px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.character-description-box p,
+.character-description-box textarea {
+  margin: 0;
+  color: #fff;
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.character-info-row {
+  display: grid;
+  grid-template-columns: 32px 1fr 1fr;
+  align-items: center;
+  min-height: 31px;
+  border-bottom: 1px solid #e7b11a;
+  color: #fff;
+}
+
+.character-info-row:last-child {
+  border-bottom: 0;
+}
+
+.character-info-row i {
+  color: #ffd02f;
+  font-size: 20px;
+}
+
+.character-info-row strong {
+  font-family: "Post No Bills Colombo", Arial, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.character-info-row span:last-child {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  text-align: right;
+}
+
+.edit-character-cover {
+  position: relative;
+  cursor: pointer;
+}
+
+.edit-character-cover img {
+  opacity: 0.58;
+}
+
+.edit-character-cover span {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 66px;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.75);
+}
+
+.edit-character-cover input {
+  display: none;
+}
+
+.edit-character-title-field {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.edit-character-title-field input,
+.edit-character-game,
+.edit-character-table input,
+.editable-description textarea {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  outline: none;
+}
+
+.edit-character-title-field i,
+.character-description-box h2 i,
+.edit-character-table i:last-child {
+  color: #ffd02f;
+  font-size: 20px;
+}
+
+.edit-character-table .character-info-row {
+  grid-template-columns: 32px 1fr 1fr 22px;
+}
+
+.edit-character-table input {
+  color: #fff;
+  font-size: 10px;
+  text-align: right;
+}
+
+.edit-character-save {
+  display: grid;
+  width: 180px;
+  height: 34px;
+  margin: 15px auto 0;
+  place-items: center;
+  border: 1px solid #ffd02f;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.68);
+  color: #ffd02f;
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+}

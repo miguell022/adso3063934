@@ -843,3 +843,407 @@ if (editGameForm) {
 }
 
 
+
+// Characters section
+const gtaCharactersData = [
+  {
+    id: 'cj',
+    name: 'Carl Johnson (CJ)',
+    game: 'GTA: San Andreas',
+    generation: '3d',
+    generationLabel: 'Era 3D',
+    year: 2004,
+    image: 'img/CJNew.png',
+    hero: 'img/cjHD.jpg',
+    platforms: ['pc', 'ps2', 'xbox'],
+    description: 'Carl Johnson, conocido como CJ, es el protagonista de Grand Theft Auto: San Andreas. Tras vivir varios años en Liberty City, vuelve a Los Santos en 1992 después del asesinato de su madre, Beverly Johnson. Su historia gira alrededor de reconstruir Grove Street Families, recuperar el respeto de su barrio, proteger a su familia y enfrentarse a la corrupción policial de C.R.A.S.H.',
+    nationality: 'Estadounidense',
+    occupation: 'Pandillero',
+    city: 'Los Santos',
+    voice: 'Young Maylay',
+    crimeDate: '1992'
+  },
+  {
+    id: 'tommy',
+    name: 'Tommy Vercetti',
+    game: 'GTA: Vice City',
+    generation: '3d',
+    generationLabel: 'Era 3D',
+    year: 2002,
+    image: 'img/TommyVercetti.png',
+    hero: 'img/TommyVercetti.png',
+    platforms: ['pc', 'ps2', 'xbox'],
+    description: 'Tommy Vercetti es el protagonista de Grand Theft Auto: Vice City. Después de salir de prisión, es enviado a Vice City por la familia Forelli, pero una emboscada lo obliga a construir su propio imperio criminal en la ciudad.',
+    nationality: 'Estadounidense',
+    occupation: 'Jefe criminal',
+    city: 'Vice City',
+    voice: 'Ray Liotta',
+    crimeDate: '1986'
+  },
+  {
+    id: 'claude',
+    name: 'Claude Speed',
+    game: 'GTA III',
+    generation: '3d',
+    generationLabel: 'Era 3D',
+    year: 2001,
+    image: 'img/gtaIII.png',
+    hero: 'img/gtaIII.png',
+    platforms: ['pc', 'ps2', 'xbox'],
+    description: 'Claude es el protagonista silencioso de Grand Theft Auto III. Tras ser traicionado por Catalina durante un robo, escapa en Liberty City y empieza a trabajar para distintas organizaciones criminales mientras busca venganza.',
+    nationality: 'Desconocida',
+    occupation: 'Criminal',
+    city: 'Liberty City',
+    voice: 'Sin voz',
+    crimeDate: '2001'
+  },
+  {
+    id: 'toni',
+    name: 'Toni Cipriani',
+    game: 'GTA: Liberty City Stories',
+    generation: '3d',
+    generationLabel: 'Era 3D',
+    year: 2005,
+    image: 'img/GtaLibertyCity.png',
+    hero: 'img/GtaLibertyCity.png',
+    platforms: ['ps2'],
+    description: 'Toni Cipriani es el protagonista de Grand Theft Auto: Liberty City Stories. Regresa a Liberty City después de permanecer escondido y vuelve a trabajar para la familia Leone, ganando poder dentro de la mafia.',
+    nationality: 'Estadounidense',
+    occupation: 'Mafioso',
+    city: 'Liberty City',
+    voice: 'Danny Mastrogiorgio',
+    crimeDate: '1998'
+  },
+  {
+    id: 'victor',
+    name: 'Victor Vance',
+    game: 'GTA: Vice City Stories',
+    generation: '3d',
+    generationLabel: 'Era 3D',
+    year: 2006,
+    image: 'img/GtaViceCityStories.png',
+    hero: 'img/GtaViceCityStories.png',
+    platforms: ['ps2'],
+    description: 'Victor Vance es el protagonista de Grand Theft Auto: Vice City Stories. Es un exsoldado que termina involucrado en el crimen de Vice City mientras intenta proteger a su familia y sobrevivir entre bandas rivales.',
+    nationality: 'Estadounidense',
+    occupation: 'Exsoldado',
+    city: 'Vice City',
+    voice: 'Dorian Missick',
+    crimeDate: '1984'
+  },
+  {
+    id: 'niko',
+    name: 'Niko Bellic',
+    game: 'GTA IV',
+    generation: 'hd',
+    generationLabel: 'Era HD',
+    year: 2008,
+    image: 'img/NikoBellic.png',
+    hero: 'img/NikoBellic.png',
+    platforms: ['pc', 'ps3', 'xbox360'],
+    description: 'Niko Bellic es el protagonista de Grand Theft Auto IV. Llega a Liberty City desde Europa del Este buscando una nueva vida, pero su pasado militar, las deudas de su primo Roman y el crimen organizado lo arrastran otra vez a la violencia.',
+    nationality: 'Serbio',
+    occupation: 'Exsoldado',
+    city: 'Liberty City',
+    voice: 'Michael Hollick',
+    crimeDate: '2008'
+  },
+  {
+    id: 'johnny',
+    name: 'Johnny Klebitz',
+    game: 'GTA IV: The Lost and Damned',
+    generation: 'hd',
+    generationLabel: 'Era HD',
+    year: 2009,
+    image: 'img/gtaIV.png',
+    hero: 'img/gtaIV.png',
+    platforms: ['pc', 'ps3', 'xbox360'],
+    description: 'Johnny Klebitz es el protagonista de The Lost and Damned. Es vicepresidente del club de motociclistas The Lost MC y queda atrapado entre la lealtad al club, conflictos internos y guerras criminales en Liberty City.',
+    nationality: 'Estadounidense',
+    occupation: 'Motociclista criminal',
+    city: 'Liberty City',
+    voice: 'Scott Hill',
+    crimeDate: '2008'
+  },
+  {
+    id: 'luis',
+    name: 'Luis Fernando Lopez',
+    game: 'GTA IV: The Ballad of Gay Tony',
+    generation: 'hd',
+    generationLabel: 'Era HD',
+    year: 2009,
+    image: 'img/GTA_IV_portada.webp',
+    hero: 'img/GTA_IV_portada.webp',
+    platforms: ['pc', 'ps3', 'xbox360'],
+    description: 'Luis Fernando Lopez es el protagonista de The Ballad of Gay Tony. Trabaja como guardaespaldas y socio de Tony Prince, moviéndose entre clubes nocturnos, deudas, lujos y criminales de Liberty City.',
+    nationality: 'Dominicano-estadounidense',
+    occupation: 'Guardaespaldas',
+    city: 'Liberty City',
+    voice: 'Mario D Leon',
+    crimeDate: '2008'
+  },
+  {
+    id: 'michael',
+    name: 'Michael De Santa',
+    game: 'GTA V',
+    generation: 'hd',
+    generationLabel: 'Era HD',
+    year: 2013,
+    image: 'img/GTA_V.webp',
+    hero: 'img/gtaV.png',
+    platforms: ['pc', 'ps3', 'xbox360'],
+    description: 'Michael De Santa es uno de los protagonistas de Grand Theft Auto V. Es un antiguo ladrón de bancos que vive bajo protección de testigos en Los Santos, hasta que vuelve al crimen por problemas familiares y económicos.',
+    nationality: 'Estadounidense',
+    occupation: 'Exladrón de bancos',
+    city: 'Los Santos',
+    voice: 'Ned Luke',
+    crimeDate: '2013'
+  },
+  {
+    id: 'franklin ',
+    name: 'Franklin Clinton',
+    game: 'GTA V',
+    generation: 'hd',
+    generationLabel: 'Era HD',
+    year: 2013,
+    image: 'img/GTA_V.webp',
+    hero: 'img/gtaV.png',
+    platforms: ['pc', 'ps3', 'xbox360'],
+    description: 'Franklin Clinton es uno de los protagonistas de Grand Theft Auto V. Empieza trabajando como recuperador de autos en Los Santos y busca salir de la vida de pandillas para entrar a golpes criminales de mayor nivel.',
+    nationality: 'Estadounidense',
+    occupation: 'Ladrón / conductor',
+    city: 'Los Santos',
+    voice: 'Shawn Fonteno',
+    crimeDate: '2013'
+  },
+  {
+    id: 'trevor',
+    name: 'Trevor Phillips',
+    game: 'GTA V',
+    generation: 'hd',
+    generationLabel: 'Era HD',
+    year: 2013,
+    image: 'img/TrevorPhillips.png',
+    hero: 'img/TrevorPhillips.png',
+    platforms: ['pc', 'ps3', 'xbox360'],
+    description: 'Trevor Phillips es uno de los protagonistas de Grand Theft Auto V. Es un criminal impredecible, antiguo socio de Michael y líder de Trevor Philips Enterprises en el condado de Blaine.',
+    nationality: 'Canadiense',
+    occupation: 'Criminal',
+    city: 'Blaine County',
+    voice: 'Steven Ogg',
+    crimeDate: '2013'
+  },
+  {
+    id: 'lucia',
+    name: 'Lucia',
+    game: 'GTA VI',
+    generation: 'modern',
+    generationLabel: 'Moderna',
+    year: 2026,
+    image: 'img/GTA_VI_portada.webp',
+    hero: 'img/GtaVI.png',
+    platforms: ['ps5'],
+    description: 'Lucia es una de las protagonistas de Grand Theft Auto VI. La historia la presenta en Leonida y Vice City, formando parte de una nueva etapa de la saga con una narrativa criminal compartida.',
+    nationality: 'Por confirmar',
+    occupation: 'Criminal',
+    city: 'Vice City',
+    voice: 'Por confirmar',
+    crimeDate: '2026'
+  },
+  {
+    id: 'jason',
+    name: 'Jason',
+    game: 'GTA VI',
+    generation: 'modern',
+    generationLabel: 'Moderna',
+    year: 2026,
+    image: 'img/GTA_VI_portada.webp',
+    hero: 'img/GtaVI.png',
+    platforms: ['ps5'],
+    description: 'Jason es uno de los protagonistas de Grand Theft Auto VI junto a Lucia. La historia lo ubica en Leonida y Vice City dentro de una narrativa criminal de la nueva generación de la saga.',
+    nationality: 'Por confirmar',
+    occupation: 'Criminal',
+    city: 'Vice City',
+    voice: 'Por confirmar',
+    crimeDate: '2026'
+  }
+];
+function getSelectedCharacter() {
+  const params = new URLSearchParams(window.location.search);
+  const characterId = params.get('character') || 'cj';
+  return gtaCharactersData.find((character) => character.id === characterId) || gtaCharactersData[0];
+}
+
+function getCharacterInfoRows(character, editable = false) {
+  const rows = [
+    ['ph-globe', 'Nacionalidad', character.nationality],
+    ['ph-briefcase', 'Ocupación', character.occupation],
+    ['ph-buildings', 'Ciudad', character.city],
+    ['ph-waveform', 'Actor de voz', character.voice],
+    ['ph-calendar', 'Fecha de delincuencia', character.crimeDate]
+  ];
+
+  return rows.map(([icon, label, value]) => `
+    <div class="character-info-row">
+      <i class="ph ${icon}"></i>
+      <strong>${label}</strong>
+      ${editable ? `<input type="text" value="${value}"> <i class="ph ph-pencil-simple"></i>` : `<span>${value}</span>`}
+    </div>
+  `).join('');
+}
+
+const charactersList = document.getElementById('charactersList');
+const characterSearch = document.getElementById('characterSearch');
+const characterChips = document.querySelectorAll('.character-chip');
+const openCharacterFilters = document.getElementById('openCharacterFilters');
+const closeCharacterFilters = document.getElementById('closeCharacterFilters');
+const characterFiltersPanel = document.getElementById('characterFiltersPanel');
+const applyCharacterFilters = document.getElementById('applyCharacterFilters');
+const clearCharacterFilters = document.getElementById('clearCharacterFilters');
+const characterPlatformFilter = document.getElementById('characterPlatformFilter');
+let activeCharacterGeneration = 'all';
+let activeCharacterSort = 'az';
+
+function renderCharacters() {
+  if (!charactersList) return;
+
+  const searchTerm = (characterSearch?.value || '').toLowerCase();
+  const selectedPlatform = characterPlatformFilter?.value || 'all';
+
+  let filteredCharacters = gtaCharactersData.filter((character) => {
+    const matchesSearch = character.name.toLowerCase().includes(searchTerm) || character.game.toLowerCase().includes(searchTerm);
+    const matchesGeneration = activeCharacterGeneration === 'all' || character.generation === activeCharacterGeneration;
+    const matchesPlatform = selectedPlatform === 'all' || character.platforms.includes(selectedPlatform);
+
+    return matchesSearch && matchesGeneration && matchesPlatform;
+  });
+
+  filteredCharacters = [...filteredCharacters].sort((a, b) => {
+    if (activeCharacterSort === 'za') return b.name.localeCompare(a.name);
+    if (activeCharacterSort === 'old') return a.year - b.year;
+    if (activeCharacterSort === 'new') return b.year - a.year;
+    return a.name.localeCompare(b.name);
+  });
+
+  charactersList.innerHTML = filteredCharacters.map((character) => `
+    <article class="character-card character-card-${character.generation}" data-character="${character.id}">
+      <img src="${character.image}" alt="${character.name}">
+      <h2>${character.name}</h2>
+      <span class="character-card-game">${character.game}</span>
+      <span class="character-card-badge">${character.generationLabel}</span>
+    </article>
+  `).join('');
+
+  document.querySelectorAll('.character-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      window.location.href = `character-detail.html?character=${card.dataset.character}`;
+    });
+  });
+}
+
+if (charactersList) {
+  renderCharacters();
+
+  characterSearch?.addEventListener('input', renderCharacters);
+
+  characterChips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      activeCharacterGeneration = chip.dataset.generation;
+      characterChips.forEach((item) => item.classList.remove('active'));
+      chip.classList.add('active');
+      renderCharacters();
+    });
+  });
+
+  openCharacterFilters?.addEventListener('click', () => characterFiltersPanel.classList.add('is-open'));
+  closeCharacterFilters?.addEventListener('click', () => characterFiltersPanel.classList.remove('is-open'));
+
+  applyCharacterFilters?.addEventListener('click', () => {
+    const generationInput = document.querySelector('input[name="characterFilterGeneration"]:checked');
+    const sortInput = document.querySelector('input[name="characterSort"]:checked');
+    activeCharacterGeneration = generationInput?.value || 'all';
+    activeCharacterSort = sortInput?.value || 'az';
+    characterChips.forEach((chip) => chip.classList.toggle('active', chip.dataset.generation === activeCharacterGeneration));
+    renderCharacters();
+    characterFiltersPanel.classList.remove('is-open');
+  });
+
+  clearCharacterFilters?.addEventListener('click', () => {
+    activeCharacterGeneration = 'all';
+    activeCharacterSort = 'az';
+    document.querySelector('input[name="characterFilterGeneration"][value="all"]').checked = true;
+    document.querySelector('input[name="characterSort"][value="az"]').checked = true;
+    if (characterPlatformFilter) characterPlatformFilter.value = 'all';
+    characterChips.forEach((chip) => chip.classList.toggle('active', chip.dataset.generation === 'all'));
+    renderCharacters();
+  });
+}
+
+const characterDetailContent = document.getElementById('characterDetailContent');
+const characterDetailMenuBtn = document.getElementById('characterDetailMenuBtn');
+const characterDetailOptions = document.getElementById('characterDetailOptions');
+
+if (characterDetailContent) {
+  const character = getSelectedCharacter();
+
+  characterDetailContent.innerHTML = `
+    <div class="character-hero-image"><img src="${character.hero}" alt="${character.name}"></div>
+    <h1 class="character-detail-name">${character.name}</h1>
+    <div class="character-detail-subline">
+      <span class="character-game-name">${character.game}</span>
+      <span class="character-generation-badge chip-${character.generation}">${character.generationLabel}</span>
+    </div>
+    <section class="character-description-box">
+      <h2 class="font-pricedown">Descripción</h2>
+      <p>${character.description}</p>
+    </section>
+    <section class="character-info-table">${getCharacterInfoRows(character)}</section>
+  `;
+
+  characterDetailMenuBtn?.addEventListener('click', () => characterDetailOptions.classList.toggle('is-open'));
+
+  characterDetailOptions?.querySelectorAll('button').forEach((button) => {
+    button.addEventListener('click', () => {
+      if (button.dataset.characterAction === 'edit') {
+        window.location.href = `edit-character.html?character=${character.id}`;
+      }
+      if (button.dataset.characterAction === 'delete') {
+        window.location.href = 'characters.html';
+      }
+    });
+  });
+}
+
+const editCharacterForm = document.getElementById('editCharacterForm');
+const editCharacterPreview = document.getElementById('editCharacterPreview');
+const editCharacterImage = document.getElementById('editCharacterImage');
+const editCharacterName = document.getElementById('editCharacterName');
+const editCharacterGame = document.getElementById('editCharacterGame');
+const editCharacterGeneration = document.getElementById('editCharacterGeneration');
+const editCharacterDescription = document.getElementById('editCharacterDescription');
+const editCharacterTable = document.querySelector('.edit-character-table');
+
+if (editCharacterForm) {
+  const character = getSelectedCharacter();
+
+  editCharacterPreview.src = character.hero;
+  editCharacterName.value = character.name;
+  editCharacterGame.value = character.game;
+  editCharacterGeneration.textContent = character.generationLabel;
+  editCharacterGeneration.className = `character-generation-badge chip-${character.generation}`;
+  editCharacterDescription.value = character.description;
+  editCharacterTable.innerHTML = getCharacterInfoRows(character, true);
+
+  editCharacterImage?.addEventListener('change', () => {
+    const file = editCharacterImage.files[0];
+    if (!file) return;
+    editCharacterPreview.src = URL.createObjectURL(file);
+  });
+
+  editCharacterForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    window.location.href = `character-detail.html?character=${character.id}`;
+  });
+}
+
+
