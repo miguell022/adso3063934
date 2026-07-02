@@ -10,11 +10,13 @@ function createTable(sql, tableName) {
 db.serialize(() => {
     // Users Table
     createTable(`CREATE TABLE IF NOT EXISTS users(
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username TEXT UNIQUE,
-        password TEXT,
-        image TEXT
-    )`, 'users');
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    username TEXT UNIQUE,
+    password TEXT,
+    email TEXT UNIQUE,
+    birth_date TEXT,
+    image TEXT
+)`, 'users');
 
     // Tokens closed with logout
     createTable(`CREATE TABLE IF NOT EXISTS blacklisted_tokens(

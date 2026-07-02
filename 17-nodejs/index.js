@@ -11,14 +11,16 @@ app.use(cors());
 
 const SECRET_KEY = 'your_secret';
 
-// AUTH ENDPOINTS:
+// AUTH ENDPOINTS: //
+
 // POST: /register
 app.post('/register', async (req, res) => {
-    const {username, password, image} = req.body;
+    const { username, password, email, birth_date, image } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    db.run(`INSERT INTO users (username, password, image)
-            VALUES(?, ?, ?)`, [username, hashedPassword, image], (err) => {
+    db.run(`INSERT INTO users (username, password, email, birth_date, image)
+            VALUES(?, ?, ?, ?, ?)`, 
+            [username, hashedPassword, email, birth_date, image], (err) => {
                 if(err) return res.status(400).json({error: 'User already exists!'});
                 res.json({message: 'User Registered!'});
             }
@@ -50,6 +52,44 @@ app.post('/logout', auth, (req, res) => {
     });
 });
 
+// PUT: /users/profile
+app.put('/users/profile', auth, (req, res) => {
+    const { username, email } = req.body;
+
+    db.run(`UPDATE users SET username = ?, email = ? WHERE id = ?`,
+        [username, email, req.user.id], function(err) {
+            if(err) return res.status(400).json({error: 'No se pudo actualizar el perfil.'});
+            if(this.changes === 0) return res.status(404).json({error: 'Usuario no encontrado.'});
+            res.json({ message: 'Perfil actualizado.' });
+        }
+    );
+});
+
+// GET: /users/profile
+app.get('/users/profile', auth, (req, res) => {
+    db.get(`SELECT id, username, email, image FROM users WHERE id = ?`, 
+        [req.user.id], (err, user) => {
+            if(err) return res.status(500).json({error: 'Database error!'});
+            if(!user) return res.status(404).json({error: 'User not found!'});
+            res.json(user);
+        }
+    );
+});
+
+// PUT: /users/password
+app.put('/users/password', auth, async (req, res) => {
+    const { password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    db.run(`UPDATE users SET password = ? WHERE id = ?`,
+        [hashedPassword, req.user.id], function(err) {
+            if(err) return res.status(400).json({error: 'No se pudo actualizar la contraseña.'});
+            if(this.changes === 0) return res.status(404).json({error: 'Usuario no encontrado.'});
+            res.json({ message: 'Contraseña actualizada.' });
+        }
+    );
+});
+
 // GTA GAMES
 
 // GET: /gta-games
@@ -60,6 +100,10 @@ app.get('/gta-games', auth, (req, res) => {
                    gta_games.main_city,
                    gta_games.protagonist,
                    gta_games.image,
+                   gta_games.description,
+                   gta_games.genre,
+                   gta_games.developer,
+                   gta_games.platforms,
                    gta_games.console_generation_id,
                    console_generations.name AS console_generation
             FROM gta_games
@@ -78,6 +122,10 @@ app.get('/gta-games/:id', auth, (req, res) => {
                    gta_games.main_city,
                    gta_games.protagonist,
                    gta_games.image,
+                   gta_games.description,
+                   gta_games.genre,
+                   gta_games.developer,
+                   gta_games.platforms,
                    gta_games.console_generation_id,
                    console_generations.name AS console_generation
             FROM gta_games
@@ -92,25 +140,27 @@ app.get('/gta-games/:id', auth, (req, res) => {
 
 // POST: /gta-games
 app.post('/gta-games', auth, (req, res) => {
-    const {title, release_year, main_city, protagonist, image, console_generation_id} = req.body;
+    const { title, release_year, main_city, protagonist, image, description, genre, developer, platforms, console_generation_id } = req.body;
 
-    db.run(`INSERT INTO gta_games (title, release_year, main_city, protagonist, image, console_generation_id)
-            VALUES (?, ?, ?, ?, ?, ?)`, [title, release_year, main_city, protagonist, image, console_generation_id], function(err) {
+    db.run(`INSERT INTO gta_games (title, release_year, main_city, protagonist, image, description, genre, developer, platforms, console_generation_id)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            [title, release_year, main_city, protagonist, image, description, genre, developer, platforms, console_generation_id], function(err) {
         if(err) return res.status(400).json({error: 'GTA game already exists or invalid generation!'});
-        res.json({id: this.lastID, title, release_year, main_city, protagonist, image, console_generation_id});
+        res.json({id: this.lastID, title, release_year, main_city, protagonist, image, description, genre, developer, platforms, console_generation_id});
     });
 });
 
 // PUT: /gta-games/:id
 app.put('/gta-games/:id', auth, (req, res) => {
-    const {title, release_year, main_city, protagonist, image, console_generation_id} = req.body;
+    const { title, release_year, main_city, protagonist, image, description, genre, developer, platforms, console_generation_id } = req.body;
 
     db.run(`UPDATE gta_games
-            SET title = ?, release_year = ?, main_city = ?, protagonist = ?, image = ?, console_generation_id = ?
-            WHERE id = ?`, [title, release_year, main_city, protagonist, image, console_generation_id, req.params.id], function(err) {
+            SET title = ?, release_year = ?, main_city = ?, protagonist = ?, image = ?, description = ?, genre = ?, developer = ?, platforms = ?, console_generation_id = ?
+            WHERE id = ?`,
+            [title, release_year, main_city, protagonist, image, description, genre, developer, platforms, console_generation_id, req.params.id], function(err) {
         if(err) return res.status(400).json({error: 'Could not update GTA game!'});
         if(this.changes === 0) return res.status(404).json({error: 'GTA game not found!'});
-        res.json({id: Number(req.params.id), title, release_year, main_city, protagonist, image, console_generation_id});
+        res.json({id: Number(req.params.id), title, release_year, main_city, protagonist, image, description, genre, developer, platforms, console_generation_id});
     });
 });
 
@@ -199,6 +249,7 @@ app.get('/gta-games/:id/characters', auth, (req, res) => {
         res.json(rows);
     });
 });
+
 // CONSOLE GENERATIONS
 
 // GET: /console-generations
@@ -260,8 +311,3 @@ app.get('/console-generations/:id/gta-games', auth, (req, res) => {
 });
 
 app.listen(3000, () => console.log('Server running on http://localhost:3000'));
-
-
-
-
-
